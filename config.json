@@ -24,9 +24,9 @@
     "padrao": "auto"
   },
   "webapp": {
-    "habilitado": true,
+    "habilitado": false,
     "porta": 3055,
-    "urlPublica": "http://SEU-IP-OU-DOMINIO:3055"
+    "urlPublica": "http://localhost:3055"
   },
   "zoneApi": {
     "baseUrl": "https://zone.api.br",

@@ -24,8 +24,7 @@
 10. [Como adicionar um comando novo](#-como-adicionar-um-comando-novo)
 11. [Deixar rodando 24h](#-deixar-rodando-24h)
 12. [Problemas comuns](#-problemas-comuns)
-13. [Subir no GitHub](#-subir-no-github)
-14. [Créditos e licença](#-créditos-e-licença)
+13. [Créditos e licença](#-créditos-e-licença)
 
 ---
 
@@ -78,7 +77,7 @@ Outros recursos:
 
 ```bash
 sudo apt update && sudo apt install -y git ffmpeg nodejs npm
-git clone https://github.com/SEU-USUARIO/system-nejire.git
+git clone https://github.com/kauanbreno179-stack/System-Nejire.git
 cd system-nejire
 npm install
 ```
@@ -88,7 +87,7 @@ npm install
 ```bash
 pkg update && pkg upgrade -y
 pkg install -y git nodejs ffmpeg
-git clone https://github.com/SEU-USUARIO/system-nejire.git
+git clone https://github.com/kauanbreno179-stack/System-Nejire.git
 cd system-nejire
 npm install
 ```
@@ -100,7 +99,7 @@ npm install
 3. No terminal:
 
 ```bash
-git clone https://github.com/SEU-USUARIO/system-nejire.git
+git clone https://github.com/kauanbreno179-stack/System-Nejire.git
 cd system-nejire
 npm install
 ```
@@ -148,7 +147,7 @@ A sessão fica salva em `sessions/main`. Nas próximas vezes o bot conecta sozin
 | `economia` | Nome da moeda e limites do `daily` |
 | `decoracao` | Liga/desliga a decoração azul e a fonte miúda |
 
-> ⚠️ **Cuidado com o que você sobe pro GitHub:** o `config.json` tem seu número e as chaves das APIs. Veja a seção [Subir no GitHub](#-subir-no-github).
+> by lopess
 
 ## 🚀 Como usar
 
@@ -295,11 +294,9 @@ No Termux: `pkg install tmux`, abra uma sessão (`tmux`) e rode `npm start` dent
 | O áudio do menu não sai | Confira `×audiomenu` (precisa estar ligado e com áudio salvo) e teste com `×testaraudiomenu` |
 | Erro de módulo não encontrado | Rode `npm install` |
 
-## 🐙 Subir no GitHub
+## 🐙 veja minha API
 
-Veja o passo a passo completo em **[GITHUB.md](./GITHUB.md)**.
-
-Resumo: crie o repositório como **privado**, rode `git init`, `git add .`, `git commit`, `git remote add origin ...` e `git push -u origin main`.
+**https://lopes-api.store**
 
 ## 📜 Créditos e licença
 

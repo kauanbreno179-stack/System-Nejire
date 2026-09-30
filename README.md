@@ -1,30 +1,64 @@
 <div align="center">
 
-# 🩵 System Nejire
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20&height=230&section=header&text=System%20Nejire&fontSize=68&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=%F0%9F%A9%B5%20bot%20de%20WhatsApp%20%E2%80%A2%20identidade%20azul%20aesthetic%20%F0%9F%A9%B5&descAlignY=60&descSize=20" alt="System Nejire" width="100%"/>
 
-**Bot de WhatsApp com identidade azul aesthetic, mais de 660 comandos, 4 RPGs, pesca, economia, IA, downloader, moderação e muito mais.**
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=38C6DC&center=true&vCenter=true&width=640&lines=660%2B+comandos+%F0%9F%A9%B5;4+RPGs+completos+%F0%9F%8E%AE;pesca%2C+economia%2C+IA+e+downloader+%F0%9F%8E%A3;login+por+pairing+code+%F0%9F%94%91;feito+por+Lopes+%F0%9F%92%99" alt="Typing SVG" /></a>
 
-`Node.js` · `Baileys` · `Pairing code` · `v2.1.0`
+<br/>
+
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-38C6DC?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Baileys](https://img.shields.io/badge/Baileys-WhatsApp-3276E8?style=for-the-badge&logo=whatsapp&logoColor=white)
+![Versão](https://img.shields.io/badge/vers%C3%A3o-2.1.0-DDF8FF?style=for-the-badge&labelColor=38C6DC&color=DDF8FF&logoColor=black)
+![Comandos](https://img.shields.io/badge/comandos-660%2B-38C6DC?style=for-the-badge)
+![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-3276E8?style=for-the-badge)
+
+[![Canal](https://img.shields.io/badge/📢_Canal_oficial-atualizações-38C6DC?style=for-the-badge)](https://whatsapp.com/channel/0029Vb8rVXsDOQIWsbKuAd34)
+[![Suporte](https://img.shields.io/badge/💬_Suporte-WhatsApp-3276E8?style=for-the-badge)](https://wa.me/5567998229189)
+[![API](https://img.shields.io/badge/🌐_Lopes_API-lopes--api.store-38C6DC?style=for-the-badge)](https://lopes-api.store)
+
+<br/>
+
+**𓆩🩵𓆪 ⋆｡° ʙᴏᴛ ᴅᴇ ᴡʜᴀᴛsᴀᴘᴘ ᴄᴏᴍ ɪᴅᴇɴᴛɪᴅᴀᴅᴇ ᴀᴢᴜʟ ᴀᴇsᴛʜᴇᴛɪᴄ °｡⋆ 𓆩🩵𓆪**
 
 </div>
+
+<br/>
+
+> [!IMPORTANT]
+> 🩵 **Obrigado por baixar essa base!** Ela é **gratuita** e foi feita com muito carinho.
+> Qualquer dúvida, é só chamar o [suporte](https://wa.me/5567998229189) e **siga o [canal](https://whatsapp.com/channel/0029Vb8rVXsDOQIWsbKuAd34) para receber as ATUALIZAÇÕES**.
+> 🚫 **É proibido vender, revender ou cobrar por esta base.** Se você pagou por ela, foi enganado(a).
 
 ---
 
 ## 📚 Índice
 
+<table>
+<tr>
+<td>
+
 1. [O que é](#-o-que-é)
 2. [O que o bot faz](#-o-que-o-bot-faz)
-3. [Requisitos](#-requisitos)
-4. [Instalação](#-instalação)
-5. [Primeiro login (pairing code)](#-primeiro-login-pairing-code)
-6. [Configuração (`config.json`)](#-configuração-configjson)
-7. [Como usar](#-como-usar)
-8. [🎧 Áudio do menu](#-áudio-do-menu)
-9. [Estrutura do projeto](#-estrutura-do-projeto)
-10. [Como adicionar um comando novo](#-como-adicionar-um-comando-novo)
-11. [Deixar rodando 24h](#-deixar-rodando-24h)
-12. [Problemas comuns](#-problemas-comuns)
-13. [Créditos e licença](#-créditos-e-licença)
+3. [Como funciona](#-como-funciona)
+4. [Requisitos](#-requisitos)
+5. [Instalação](#-instalação)
+6. [Primeiro login (pairing code)](#-primeiro-login-pairing-code)
+
+</td>
+<td>
+
+7. [Configuração (`config.json`)](#-configuração-configjson)
+8. [Como usar](#-como-usar)
+9. [🎧 Áudio do menu](#-áudio-do-menu)
+10. [Estrutura do projeto](#-estrutura-do-projeto)
+11. [Adicionar um comando novo](#-como-adicionar-um-comando-novo)
+12. [Deixar rodando 24h](#-deixar-rodando-24h)
+13. [Problemas comuns](#-problemas-comuns)
+14. [Suporte, regras e créditos](#-suporte-regras-e-créditos)
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -34,65 +68,106 @@ O **System Nejire** é um bot de WhatsApp feito em **Node.js** em cima da biblio
 
 O login é feito por **código de pareamento** (sem QR code), então dá pra rodar até no celular, pelo Termux.
 
+> [!TIP]
+> Para ver tudo dentro do WhatsApp, mande `×menu`.
+
 ## ✨ O que o bot faz
 
 O menu principal tem **mais de 660 comandos** divididos em categorias, fora os 4 RPGs:
 
-| Categoria | O que tem |
-|---|---|
-| 👑 Dono | broadcast, backup, autobackup, ligar/desligar comandos, adicionar donos, trocar nome/foto/recado do bot, etc. |
-| 🫐 Admin | antis (link, fig, imagem, vídeo, áudio, doc, trava, fake, porn, canal, bot…), ban, promover, rebaixar, `postarstatus` |
-| 🐚 Boas-vindas | mensagem de entrada e saída de grupo, configurável |
-| 🗣️ Figurinhas | criar e converter figurinhas |
-| 🏊 Download | play (áudio/vídeo), TikTok, Instagram, Spotify, Pinterest, letra de música |
-| 🧊 Cubo 3D | renderizador 3D próprio que gera imagem/vídeo |
-| 🌊 IA & diversão | IA de conversa, modo AI, memes, piadas, frases motivacionais, curiosidades, etc. |
-| 🧩 Utilidades | calculadoras, conversores, geradores, validadores, texto, data e hora |
-| 🕵️ Detetive | jogo de investigação com casos |
-| 🎲 Jogos & sorte | quiz, roleta, dados, loteria, cartas, sinuca |
-| 💎 VIP / 🌀 Aluguel | planos VIP e aluguel do bot para grupos |
-| 🐾 Sistemas | economia (Nejicoins), XP, ranking, perfil, daily, trabalho |
-| 🎣 Pesca | jogo de pesca completo, com **mini app web** |
-| 🎮 RPGs | **Minecraft RPG**, **Simulador de Vida**, **Miraculous RPG** e **Fantasia RPG** |
+| | Categoria | O que tem |
+|:-:|---|---|
+| 👑 | **Dono** | broadcast, backup, autobackup, ligar/desligar comandos, adicionar donos, trocar nome/foto/recado do bot, etc. |
+| 🫐 | **Admin** | antis (link, fig, imagem, vídeo, áudio, doc, trava, fake, porn, canal, bot…), ban, promover, rebaixar, `postarstatus` |
+| 🐚 | **Boas-vindas** | mensagem de entrada e saída de grupo, configurável |
+| 🗣️ | **Figurinhas** | criar e converter figurinhas |
+| 🏊 | **Download** | play (áudio/vídeo), TikTok, Instagram, Spotify, Pinterest, letra de música |
+| 🧊 | **Cubo 3D** | renderizador 3D próprio que gera imagem/vídeo |
+| 🌊 | **IA & diversão** | IA de conversa, modo AI, memes, piadas, frases motivacionais, curiosidades, etc. |
+| 🧩 | **Utilidades** | calculadoras, conversores, geradores, validadores, texto, data e hora |
+| 🕵️ | **Detetive** | jogo de investigação com casos |
+| 🎲 | **Jogos & sorte** | quiz, roleta, dados, loteria, cartas, sinuca |
+| 💎 | **VIP / Aluguel** | planos VIP e aluguel do bot para grupos |
+| 🐾 | **Sistemas** | economia (Nejicoins), XP, ranking, perfil, daily, trabalho |
+| 🎣 | **Pesca** | jogo de pesca completo, com **mini app web** |
+| 🎮 | **RPGs** | **Minecraft RPG**, **Simulador de Vida**, **Miraculous RPG** e **Fantasia RPG** |
 
-Outros recursos:
+<details>
+<summary><b>🎮 Ver os 4 RPGs</b></summary>
 
-- **Sub-bots**: qualquer pessoa pode virar um sub-bot do Nejire (`×subbot 5511999999999`).
-- **Modo AI**, **antipv**, **anticall**, **autoler**, **presença** e **autobackup**.
-- **Menu por dispositivo**: menu com botões (Android) ou menu em texto (iPhone).
-- **Áudio no menu**: o dono marca um áudio e ele sai junto toda vez que o menu é pedido.
+<br/>
 
-> Para ver tudo dentro do WhatsApp, mande `×menu`.
+| RPG | Ajuda | Começar |
+|---|---|---|
+| ⛏️ Minecraft RPG | `×mcajuda` | `×mccomecar` |
+| 🏙️ Simulador de Vida | `×vdajuda` | `×vdcomecar` |
+| 🐞 Miraculous RPG | `×mrajuda` | `×mrcomecar` |
+| 🐉 Fantasia RPG | `×faajuda` | `×facomecar` |
+
+Use `×rpgs` para listar todos.
+
+</details>
+
+<details>
+<summary><b>➕ Outros recursos</b></summary>
+
+<br/>
+
+- 🤖 **Sub-bots**: qualquer pessoa pode virar um sub-bot do Nejire (`×subbot 5511999999999`).
+- 🧠 **Modo AI**, **antipv**, **anticall**, **autoler**, **presença** e **autobackup**.
+- 📱 **Menu por dispositivo**: menu com botões (Android) ou menu em texto (iPhone).
+- 🎧 **Áudio no menu**: o dono marca um áudio e ele sai junto toda vez que o menu é pedido.
+
+</details>
+
+## 🧬 Como funciona
+
+```mermaid
+flowchart LR
+    A([📱 Mensagem no WhatsApp]) --> B[connect.js<br/>conexão com o Baileys]
+    B --> C[index.js<br/>handler central]
+    C --> D{{SISTEMAS/<br/>um arquivo por sistema}}
+    D --> E[menu/nejiremenu.js<br/>registro dos comandos]
+    D --> F[utils/<br/>decoração e envio]
+    F --> G([🩵 Resposta azul aesthetic])
+```
 
 ## 📦 Requisitos
 
-- **Node.js 18 ou superior** (recomendado 20+) e **npm**
-- **ffmpeg** instalado (usado em figurinhas animadas, áudio e vídeo)
-- Um **número de WhatsApp** só pro bot (não use o seu principal)
-- Internet estável
+- ![Node](https://img.shields.io/badge/-Node.js%2018%2B-38C6DC?logo=nodedotjs&logoColor=white) e **npm** (recomendado Node 20+)
+- ![ffmpeg](https://img.shields.io/badge/-ffmpeg-3276E8?logo=ffmpeg&logoColor=white) instalado (usado em figurinhas animadas, áudio e vídeo)
+- 📱 Um **número de WhatsApp** só pro bot (não use o seu principal)
+- 🌐 Internet estável
 
 ## 🛠️ Instalação
 
-### Linux / VPS (Ubuntu, Debian)
+<details open>
+<summary><b>🐧 Linux / VPS (Ubuntu, Debian)</b></summary>
 
 ```bash
 sudo apt update && sudo apt install -y git ffmpeg nodejs npm
 git clone https://github.com/kauanbreno179-stack/System-Nejire.git
-cd system-nejire
+cd System-Nejire
 npm install
 ```
 
-### Termux (Android)
+</details>
+
+<details>
+<summary><b>📱 Termux (Android)</b></summary>
 
 ```bash
 pkg update && pkg upgrade -y
 pkg install -y git nodejs ffmpeg
 git clone https://github.com/kauanbreno179-stack/System-Nejire.git
-cd system-nejire
+cd System-Nejire
 npm install
 ```
 
-### Windows
+</details>
+
+<details>
+<summary><b>🪟 Windows</b></summary>
 
 1. Instale o [Node.js LTS](https://nodejs.org) e o [Git](https://git-scm.com).
 2. Instale o [ffmpeg](https://ffmpeg.org/download.html) e coloque no `PATH`.
@@ -100,11 +175,14 @@ npm install
 
 ```bash
 git clone https://github.com/kauanbreno179-stack/System-Nejire.git
-cd system-nejire
+cd System-Nejire
 npm install
 ```
 
-> 💡 O arquivo `autoinstall.js` roda toda vez que o bot inicia e instala sozinho qualquer módulo que estiver faltando.
+</details>
+
+> [!NOTE]
+> O arquivo `autoinstall.js` roda toda vez que o bot inicia e instala sozinho qualquer módulo que estiver faltando.
 
 ## 🔑 Primeiro login (pairing code)
 
@@ -122,7 +200,8 @@ npm install
 
 A sessão fica salva em `sessions/main`. Nas próximas vezes o bot conecta sozinho.
 
-> Se a sessão quebrar (deslogada ou revogada), apague a pasta `sessions/main` e faça o pareamento de novo.
+> [!WARNING]
+> Se a sessão quebrar (deslogada ou revogada), apague a pasta `sessions/main` e faça o pareamento de novo. **Nunca suba a pasta `sessions/` para o GitHub**, ela é o login do bot.
 
 ## ⚙️ Configuração (`config.json`)
 
@@ -147,8 +226,6 @@ A sessão fica salva em `sessions/main`. Nas próximas vezes o bot conecta sozin
 | `economia` | Nome da moeda e limites do `daily` |
 | `decoracao` | Liga/desliga a decoração azul e a fonte miúda |
 
-> by lopess
-
 ## 🚀 Como usar
 
 O prefixo padrão é `×`. Alguns exemplos:
@@ -160,7 +237,7 @@ O prefixo padrão é `×`. Alguns exemplos:
 | `×figurinha` | Cria figurinha de uma imagem/vídeo (envie ou responda) |
 | `×play nome da música` | Baixa e envia a música |
 | `×pesca` | Abre o painel de pesca |
-| `×rpgs` | Lista os 4 RPGs (`×mccomecar`, `×vdcomecar`, `×mrcomecar`, `×facomecar`) |
+| `×rpgs` | Lista os 4 RPGs |
 | `×alugar` | Mostra os planos de aluguel |
 | `×subbot 5511999999999` | Cria um sub-bot |
 | `×modo-adr` / `×modo-ios` | Escolhe o menu com botões ou em texto |
@@ -193,18 +270,19 @@ Você marca um áudio uma vez, o bot guarda e, **toda vez que alguém pedir o me
 
 Apelidos: `×setaudiomenu`, `×addaudiomenu`, `×delaudiomenu`, `×rmaudiomenu`, `×testeaudiomenu`.
 
-### Detalhes
-
-- O áudio é guardado no formato original: se você marcar uma **nota de voz**, ela sai como nota de voz. Se marcar um **mp3/áudio comum**, sai como áudio comum.
-- Limite de **16 MB** (limite do WhatsApp para áudio). Prefira arquivos pequenos.
-- Se o envio do áudio falhar, o menu **continua saindo normalmente**.
-- Para trocar o áudio, é só marcar outro com `×definiraudiomenu`.
-- O arquivo fica em `menu/audio/`. Se você subir o projeto pro GitHub com essa pasta, o áudio vai junto.
+> [!NOTE]
+> - O áudio é guardado no formato original: **nota de voz** sai como nota de voz, **mp3/áudio comum** sai como áudio comum.
+> - Limite de **16 MB** (limite do WhatsApp para áudio). Prefira arquivos pequenos.
+> - Se o envio do áudio falhar, o menu **continua saindo normalmente**.
+> - Para trocar o áudio, é só marcar outro com `×definiraudiomenu`.
 
 ## 🗂️ Estrutura do projeto
 
+<details>
+<summary><b>📁 Ver a árvore de pastas</b></summary>
+
 ```
-system-nejire/
+System-Nejire/
 ├── connect.js            # ponto de entrada: conecta no WhatsApp (npm start)
 ├── index.js              # handler central: recebe as mensagens e chama os comandos
 ├── subbot.js             # sistema de sub-bots
@@ -223,6 +301,7 @@ system-nejire/
 │   ├── botoes.js         # montagem dos botões/listas
 │   ├── foto/             # imagem do menu
 │   └── audio/            # áudio do menu (criado por ×definiraudiomenu)
+├── assets/               # imagens usadas no README
 ├── utils/                # funções de apoio (envio, decoração, jid, ffmpeg, db…)
 ├── sticker/              # metadados de figurinha (exif)
 ├── webapp/               # mini app web da pesca (Express)
@@ -230,6 +309,8 @@ system-nejire/
 ├── database/             # dados dos usuários (JSON, criados automaticamente)
 └── sessions/             # sessão do WhatsApp (não sobe pro GitHub)
 ```
+
+</details>
 
 ## ➕ Como adicionar um comando novo
 
@@ -262,7 +343,8 @@ Depois:
    { cmd: "oizinho", desc: "manda um oi" }
    ```
 
-Helpers que já vêm no `ctx`: `reply(texto)`, `reagir(emoji)`, `enviar(conn, jid, conteudo)`, `getMediaBuffer(msg, tipo)`, `exigirDono()`, `exigirAdmin()`, `exigirGrupo()`.
+> [!TIP]
+> Helpers que já vêm no `ctx`: `reply(texto)`, `reagir(emoji)`, `enviar(conn, jid, conteudo)`, `getMediaBuffer(msg, tipo)`, `exigirDono()`, `exigirAdmin()`, `exigirGrupo()`.
 
 ## ♻️ Deixar rodando 24h
 
@@ -277,11 +359,17 @@ pm2 startup
 
 Comandos úteis: `pm2 logs nejire`, `pm2 restart nejire`, `pm2 stop nejire`.
 
+> [!IMPORTANT]
 > Faça o **primeiro login** com `npm start` (precisa digitar o número). Depois que a sessão existir, pode usar o PM2.
 
 No Termux: `pkg install tmux`, abra uma sessão (`tmux`) e rode `npm start` dentro dela.
 
 ## 🩹 Problemas comuns
+
+<details>
+<summary><b>Ver a tabela de problemas e soluções</b></summary>
+
+<br/>
 
 | Problema | Solução |
 |---|---|
@@ -294,20 +382,47 @@ No Termux: `pkg install tmux`, abra uma sessão (`tmux`) e rode `npm start` dent
 | O áudio do menu não sai | Confira `×audiomenu` (precisa estar ligado e com áudio salvo) e teste com `×testaraudiomenu` |
 | Erro de módulo não encontrado | Rode `npm install` |
 
-## 🐙 veja minha API
+</details>
 
-**https://lopes-api.store**
-
-## 📜 Créditos e licença
-
-- Criado por **Lopes**.
-- Baseado na biblioteca [Baileys](https://github.com/WhiskeySockets/Baileys) (`@systemzero/baileys`).
-- Licença **MIT** (veja o campo `license` do `package.json`).
+## 🌐 Veja minha API
 
 <div align="center">
 
-🩵 Feito com muito azul 🩵
+[![Lopes API](https://img.shields.io/badge/🌐_Acesse_a_LOPES_API-lopes--api.store-3276E8?style=for-the-badge)](https://lopes-api.store)
 
 </div>
-# System-Nejire
-# System-Nejire
+
+## 📜 Suporte, regras e créditos
+
+| | |
+|---|---|
+| 💬 **Suporte** | [wa.me/5567998229189](https://wa.me/5567998229189) |
+| 📢 **Canal (atualizações)** | [Clique para seguir](https://whatsapp.com/channel/0029Vb8rVXsDOQIWsbKuAd34) |
+| 👤 **Criador** | **Lopes** (by lopes) |
+| 📚 **Base** | [Baileys](https://github.com/WhiskeySockets/Baileys) (`@systemzero/baileys`) |
+| 📄 **Licença** | MIT (veja o campo `license` do `package.json`) |
+
+> [!CAUTION]
+> ✖ **Proibido vender, revender ou cobrar** por esta base, total ou parcialmente.
+> ✖ **Proibido remover os créditos** do criador.
+> ✔ Pode usar, estudar, editar e personalizar para uso próprio, mantendo os créditos.
+
+<br/>
+
+<div align="center">
+
+**⋆｡° 𓆩🩵𓆪 ᴄʜᴀɴɴᴇʟ ɴ³ᴊɪʀᴇ 𓆩🩵𓆪 °｡⋆**
+
+<a href="./menu/foto/nejire-menu.jpg">
+  <img src="./assets/nejire-menu-preview.jpg" alt="System Nejire" width="520"/>
+</a>
+
+<sub>🩵 clique na imagem para abrir em tamanho original 🩵</sub>
+
+<br/>
+
+🩵 Feito com muito azul, by **Lopes** 🩵
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20&height=120&section=footer" alt="" width="100%"/>
+
+</div>

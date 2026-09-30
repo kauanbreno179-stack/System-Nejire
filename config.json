@@ -23,7 +23,7 @@
   "plataforma": {
     "padrao": "auto"
   },
-  "webapp": { //não está funcionando ainda
+  "webapp": {
     "habilitado": true,
     "porta": 3055,
     "urlPublica": "http://SEU-IP-OU-DOMINIO:3055"

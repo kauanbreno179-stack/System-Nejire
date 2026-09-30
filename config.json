@@ -1,0 +1,152 @@
+{
+  "nome": "System Nejire",
+  "versao": "2.1.0",
+  "descricao": "Bot próprio inspirado na Nejire Hado ou nejire shan",
+  "prefixo": "×",
+  "numeroDono": "556798229189",
+  "nomeDono": "Lopes",
+  "emojiPrincipal": "🩵",
+  "tema": {
+    "corPrincipal": "#38C6DC",
+    "corSecundaria": "#3276E8",
+    "corDestaque": "#DDF8FF"
+  },
+  "figurinha": {
+    "packname": "System Nejire",
+    "author": "lopess 🫐"
+  },
+  "canal": {
+    "id": "120363429452111423@newsletter",
+    "nome": "𐙚ࣻࣻ༄ᶜʰᵃⁿⁿᵉˡ ⁿ³ʲⁱʳᵉ ⊹𓅗⊹",
+    "url": "https://whatsapp.com/channel/0029Vb8rVXsDOQIWsbKuAd34"
+  },
+  "plataforma": {
+    "padrao": "auto"
+  },
+  "webapp": { //não está funcionando ainda
+    "habilitado": true,
+    "porta": 3055,
+    "urlPublica": "http://SEU-IP-OU-DOMINIO:3055"
+  },
+  "zoneApi": {
+    "baseUrl": "https://zone.api.br",
+    "apikey": "SeuToken",
+    "endpoints": {
+      "gemma": "/api/ia/gemma-4",
+      "gpt6luna": "/api/ia/gpt-6-luna",
+      "tts": "/api/tts-kordix",
+      "polychat": "/api/v1/poly-chat",
+      "player": "/v2/player",
+      "tiktokSearch": "/api/tiktok/search",
+      "gimage2": "/api/search/gimage2",
+      "appstore": "/search/appstore",
+      "soundcloud": "/api/soundcloud/search",
+      "wagroups": "/api/search/wagroups",
+      "apple": "/search/apple",
+      "attp": "/canvas/attp",
+      "roleta": "/canvas/roleta",
+      "deepai": "/api/ia/deepai",
+      "tts3": "/api/v2/tts3",
+      "nsfwcheck": "/api/nsfwcheck",
+      "upload": "/api/upload"
+    },
+    "vozNejire": "Nejire hado",
+    "idioma": "pt",
+    "polychatCharacterPadrao": "vShSe"
+  },
+  "modoai": {
+    "maxHistoricoPorPessoa": 8,
+    "maxCaracteresResposta": 900
+  },
+  "lopesApi": {
+    "baseUrl": "https://lopes-api.store",
+    "token": "SeuToken",
+    "parametroToken": "apikey",
+    "parametroConsulta": "url",
+    "timeoutMs": 30000,
+    "endpoints": {
+      "play": "/api/download/play",
+      "playVideo": "/api/download/ytmp4",
+      "tiktok": "/api/download/tiktok",
+      "instagram": "/api/download/instagram",
+      "spotify": "/api/download/spotify",
+      "pinterest": "/api/search/pinterest",
+      "letra": "/api/search/lyrics",
+      "gpt": "/api/ia/gpt",
+      "clima": "/api/consulta/clima"
+    }
+  },
+  "boasVindas": {
+    "ativo": true,
+    "legendaEntrada": "╭─❍ 𓆩🩵𓆪 ⋆｡° ʙᴏᴀs ᴠɪɴᴅᴀs °｡⋆ 𓆩🩵𓆪 ❍─╮\n│ 𓇼 ᴏɪɪ, @user! 𓂃𓈒𓏸\n│ 💙 ᴠᴏᴄᴇ̂ ᴄʜᴇɢᴏᴜ ɴᴏ *@group*\n│ 🐬 ᴊᴀ́ sᴏᴍᴏs @membros ᴘᴇssᴏᴀs\n│ 🫐 ꜰɪᴄᴀ ᴀ̀ ᴠᴏɴᴛᴀᴅᴇ ᴇ ᴅɪᴠɪʀᴛᴀ-sᴇ\n╰─ 𓆝 ⋆｡° 🌀 °｡⋆ 𓆝 ─╯",
+    "legendaSaida": "╭─❍ 𓆩🌊𓆪 ⋆｡° ᴀᴛᴇ́ ʟᴏɢᴏ °｡⋆ 𓆩🌊𓆪 ❍─╮\n│ 𓂃 @user sᴀɪᴜ ᴅᴏ ɢʀᴜᴘᴏ...\n│ 💙 *@group* ᴊᴀ́ sᴇɴᴛᴇ sᴀᴜᴅᴀᴅᴇ\n│ 🐳 ᴠᴏʟᴛᴇ sᴇᴍᴘʀᴇ ǫᴜᴇ ǫᴜɪsᴇʀ\n╰─ 𓇼 𓂃𓈒𓏸 🩵 𓏸𓈒𓂃 𓇼 ─╯"
+  },
+  "vip": {
+    "planos": [
+      {
+        "id": "bronze",
+        "nome": "🥉 Bronze",
+        "dias": 7,
+        "preco": "R$ 5,00"
+      },
+      {
+        "id": "prata",
+        "nome": "🥈 Prata",
+        "dias": 30,
+        "preco": "R$ 12,00"
+      },
+      {
+        "id": "ouro",
+        "nome": "🥇 Ouro",
+        "dias": 90,
+        "preco": "R$ 30,00"
+      }
+    ]
+  },
+  "aluguel": {
+    "planos": [
+      {
+        "id": "semanal",
+        "nome": "📆 Semanal",
+        "dias": 7,
+        "preco": "R$ 10,00"
+      },
+      {
+        "id": "mensal",
+        "nome": "🗓️ Mensal",
+        "dias": 30,
+        "preco": "R$ 25,00"
+      },
+      {
+        "id": "anual",
+        "nome": "📅 Anual",
+        "dias": 365,
+        "preco": "R$ 150,00"
+      }
+    ]
+  },
+  "economia": {
+    "moeda": "🌨️ Nejicoins",
+    "dailyMin": 50,
+    "dailyMax": 200
+  },
+  "decoracao": {
+    "ativa": true,
+    "fonteMiuda": true,
+    "estilo": "oceano-aesthetic",
+    "emojisAzuis": [
+      "💙",
+      "🩵",
+      "🔵",
+      "💎",
+      "🫐",
+      "🌊",
+      "🌀",
+      "💠",
+      "🧿",
+      "🐬",
+      "🐳",
+      "❄️"
+    ]
+  }
+}

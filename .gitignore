@@ -1,0 +1,11 @@
+
+node_modules/
+sessions/
+*.log
+
+database/*.json
+!database/.gitkeep
+
+tmp/
+*.tmp
+.DS_Store

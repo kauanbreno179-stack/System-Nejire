@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESCA2 - RPG 3D</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #canvas-container {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* HUD - Interface sobreposta */
+        #hud {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .hud-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 15px 20px;
+            color: #fff;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .wallet-card {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4ade80;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions {
+            max-width: 300px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
+
+        /* Miras / Crosshair */
+        #crosshair {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            margin-top: -5px;
+            margin-left: -5px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            transition: transform 0.1s ease;
+        }
+
+        /* Indicador de Ação */
+        #action-prompt {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: none;
+            border: 1px solid #38bdf8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Modal do Mercado / Loja */
+        #shop-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid #38bdf8;
+            border-radius: 16px;
+            padding: 24px;
+            color: #fff;
+            display: none;
+            pointer-events: auto;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            z-index: 100;
+        }
+
+        #shop-modal h2 {
+            margin-bottom: 10px;
+            color: #38bdf8;
+            font-size: 22px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .shop-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .shop-btn {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .shop-btn:hover {
+            background: #0369a1;
+        }
+
+        .close-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            float: right;
+            margin-top: 10px;
+        }
+
+        /* Tela de bloqueio do PointerLock */
+        #blocker {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        #blocker h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #38bdf8;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+        }
+    </style>
+
+    <!-- Importação das Bibliotecas Necessárias via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+</head>
+<body>
+
+    <div id="canvas-container"></div>
+
+    <div id="blocker">
+        <h1>YOKU 3D EXPERIÊNCIA</h1>
+        <p>Clique em qualquer lugar da tela para Entrar e Andar (360°)</p>
+        <p style="font-size: 12px; color: #94a3b8; margin-top: 15px;">W, A, S, D = Mover | MOUSE = Olhar em Volta | E = Interagir / Pescar / Mercado</p>
+    </div>
+
+    <div id="hud">
+        <div class="hud-top">
+            <div class="card wallet-card">
+                <span>💰 Saldo: R$ <span id="balance">150.00</span></span>
+            </div>
+            <div class="card instructions">
+                <p><b>Controles:</b></p>
+                <p>🚶 <b>WASD:</b> Caminhar pelo cenário</p>
+                <p>👀 <b>Mouse:</b> Girar câmera 360°</p>
+                <p>🎣 <b>E na Beira da Água:</b> Arremessar Vara de Pesca</p>
+                <p>🏪 <b>E perto do Atendente:</b> Abrir o Mercado</p>
+            </div>
+        </div>
+
+        <div id="action-prompt">[E] Interagir</div>
+        <div id="crosshair"></div>
+    </div>
+
+    <!-- Modal do Mercado -->
+    <div id="shop-modal">
+        <h2>🏪 Mercado do Porto (Atendente Yoku)</h2>
+        <div id="shop-items-container">
+            <!-- Itens injetados via JS -->
+        </div>
+        <button class="close-btn" onclick="closeShop()">Fechar [ESC]</button>
+    </div>
+
+    <script>
+        // --- 1. CONFIGURAÇÕES INICIAIS E VARIÁVEIS GLOBAIS ---
+        let scene, camera, renderer, controls, world;
+        let prevTime = performance.now();
+        const velocity = new THREE.Vector3();
+        const direction = new THREE.Vector3();
+        let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
+        
+        // Elementos do Jogo
+        let playerBody, fishingRodGroup, bobberMesh, fishingLine;
+        let isFishing = false, isFishHooked = false, fishBitingTimer = null;
+        let playerBalance = 150.00;
+        let inventory = [];
+
+        // Atendentes / NPCs e Mercado
+        let npcs = [];
+        let nearNPC = false;
+        let activeNPC = null;
+        let nearWater = false;
+
+        // Materiais para reutilização
+        let waterMesh, waterMaterial;
+
+        // --- 2. INICIALIZAÇÃO DA CENA 3D (THREE.JS + CANNON.JS) ---
+        function init() {
+            const container = document.getElementById('canvas-container');
+
+            // Renderizador WebGL
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance" });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.2;
+            container.appendChild(renderer.domElement);
+
+            // Cena
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0e17);
+            scene.fog = new THREE.FogExp2(0x0a0e17, 0.015);
+
+            // Câmera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+            // Mundo Físico (Cannon.js)
+            world = new CANNON.World();
+            world.gravity.set(0, -9.82, 0);
+
+            // Controles PointerLock (Mão / 360° Câmera)
+            controls = new THREE.PointerLockControls(camera, document.body);
+
+            const blocker = document.getElementById('blocker');
+            blocker.addEventListener('click', () => {
+                controls.lock();
+            });
+
+            controls.addEventListener('lock', () => {
+                blocker.style.display = 'none';
+            });
+
+            controls.addEventListener('unlock', () => {
+                if (document.getElementById('shop-modal').style.display !== 'block') {
+                    blocker.style.display = 'flex';
+                }
+            });
+
+            scene.add(controls.getObject());
+
+            // Criar Jogador Físico
+            const mass = 70, radius = 1.3;
+            const sphereShape = new CANNON.Sphere(radius);
+            playerBody = new CANNON.Body({ mass: mass });
+            playerBody.addShape(sphereShape);
+            playerBody.position.set(0, 2, 10);
+            playerBody.linearDamping = 0.9;
+            world.addBody(playerBody);
+
+            // Adicionar Iluminação
+            setupLighting();
+
+            // Construir Cenário (Mercado, Cais, Oceano, Vegetação)
+            buildEnvironment();
+
+            // Modelar Vara de Pesca na mão do jogador
+            buildFishingRod();
+
+            // Criar NPCs / Atendentes
+            createNPCs();
+
+            // Event Listeners de Teclado
+            setupKeyListeners();
+
+            // Evento de Redimensionamento de Janela
+            window.addEventListener('resize', onWindowResize);
+
+            // Iniciar Loop de Animação
+            animate();
+        }
+
+        // --- 3. ILUMINAÇÃO AVANÇADA ---
+        function setupLighting() {
+            // Luz Ambiente Noturna/Criação do Clima
+            const ambientLight = new THREE.AmbientLight(0x1e293b, 1.5);
+            scene.add(ambientLight);
+
+            // Luz Direcional (Simulando a Lua/Céu)
+            const sunLight = new THREE.DirectionalLight(0x38bdf8, 2.0);
+            sunLight.position.set(30, 40, -20);
+            sunLight.castShadow = true;
+            sunLight.shadow.mapSize.width = 2048;
+            sunLight.shadow.mapSize.height = 2048;
+            sunLight.shadow.camera.near = 0.5;
+            sunLight.shadow.camera.far = 150;
+            const d = 40;
+            sunLight.shadow.camera.left = -d;
+            sunLight.shadow.camera.right = d;
+            sunLight.shadow.camera.top = d;
+            sunLight.shadow.camera.bottom = -d;
+            scene.add(sunLight);
+
+            // Luz do Postes/Mercado (PointLight quentinha)
+            const shopLight = new THREE.PointLight(0xfcb316, 3, 20);
+            shopLight.position.set(-8, 4, -4);
+            shopLight.castShadow = true;
+            scene.add(shopLight);
+        }
+
+        // --- 4. CONSTRUÇÃO DO CENÁRIO (MODELAGEM 3D VIA CÓDIGO) ---
+        function buildEnvironment() {
+            // Chão / Píer / Cais de Madeira
+            const pierGeo = new THREE.BoxGeometry(20, 1, 30);
+            const pierMat = new THREE.MeshStandardMaterial({ color: 0x332211, roughness: 0.8 });
+            const pier = new THREE.Mesh(pierGeo, pierMat);
+            pier.position.set(0, -0.5, 5);
+            pier.receiveShadow = true;
+            scene.add(pier);
+
+            // Colisão do Píer no Cannon.js
+            const pierShape = new CANNON.Box(new CANNON.Vec3(10, 0.5, 15));
+            const pierBody = new CANNON.Body({ mass: 0 });
+            pierBody.addShape(pierShape);
+            pierBody.position.set(0, -0.5, 5);
+            world.addBody(pierBody);
+
+            // Água (Superfície Shader/Animada)
+            const waterGeo = new THREE.PlaneGeometry(200, 200, 64, 64);
+            waterMaterial = new THREE.MeshStandardMaterial({
+                color: 0x0284c7,
+                roughness: 0.1,
+                metalness: 0.8,
+                transparent: true,
+                opacity: 0.85
+            });
+            waterMesh = new THREE.Mesh(waterGeo, waterMaterial);
+            waterMesh.rotation.x = -Math.PI / 2;
+            waterMesh.position.set(0, -1.2, -80);
+            scene.add(waterMesh);
+
+            // Estrutura do Mercado / Quiosque
+            const shopGroup = new THREE.Group();
+
+            // Balcão
+            const counterGeo = new THREE.BoxGeometry(6, 1.2, 1.5);
+            const counterMat = new THREE.MeshStandardMaterial({ color: 0x475569, roughness: 0.5 });
+            const counter = new THREE.Mesh(counterGeo, counterMat);
+            counter.position.set(-8, 0.6, -4);
+            counter.castShadow = true;
+            counter.receiveShadow = true;
+            shopGroup.add(counter);
+
+            // Teto/Toldo do Mercado
+            const roofGeo = new THREE.ConeGeometry(5, 2, 4);
+            const roofMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.3 });
+            const roof = new THREE.Mesh(roofGeo, roofMat);
+            roof.position.set(-8, 4, -4);
+            roof.rotation.y = Math.PI / 4;
+            shopGroup.add(roof);
+
+            // Detalhes: Caixas de Peixe no Mercado
+            for(let i=0; i<3; i++) {
+                const boxGeo = new THREE.BoxGeometry(1, 0.8, 1);
+                const boxMat = new THREE.MeshStandardMaterial({ color: 0x78350f });
+                const box = new THREE.Mesh(boxGeo, boxMat);
+                box.position.set(-10 + (i*1.2), 0.4, -2.5);
+                box.castShadow = true;
+                shopGroup.add(box);
+            }
+
+            scene.add(shopGroup);
+        }
+
+        // --- 5. MODELAGEM DA VARA DE PESCA NA MÃO DO JOGADOR ---
+        function buildFishingRod() {
+            fishingRodGroup = new THREE.Group();
+
+            // Cabo da Vara
+            const handleGeo = new THREE.CylinderGeometry(0.03, 0.04, 0.8, 16);
+            const handleMat = new THREE.MeshStandardMaterial({ color: 0x111111 });
+            const handle = new THREE.Mesh(handleGeo, handleMat);
+            handle.rotation.x = Math.PI / 3;
+            fishingRodGroup.add(handle);
+
+            // Corpo/Corpo Extensível da Vara
+            const poleGeo = new THREE.CylinderGeometry(0.01, 0.025, 2.5, 16);
+            const poleMat = new THREE.MeshStandardMaterial({ color: 0xef4444, metalness: 0.5 });
+            const pole = new THREE.Mesh(poleGeo, poleMat);
+            pole.position.set(0, 0.8, -0.8);
+            pole.rotation.x = Math.PI / 4;
+            fishingRodGroup.add(pole);
+
+            // Posiciona a Vara no Canto Inferior Direito da Câmera (First Person)
+            fishingRodGroup.position.set(0.4, -0.4, -0.5);
+            camera.add(fishingRodGroup);
+
+            // Bóia de Pesca (Objeto 3D que vai pra água)
+            const bobberGeo = new THREE.SphereGeometry(0.12, 16, 16);
+            const bobberMat = new THREE.MeshStandardMaterial({ color: 0xff0000, roughness: 0.2 });
+            bobberMesh = new THREE.Mesh(bobberGeo, bobberMat);
+            bobberMesh.visible = false;
+            scene.add(bobberMesh);
+
+            // Linha de Pesca (Renderizada via BufferGeometry dinâmico)
+            const lineGeo = new THREE.BufferGeometry();
+            const lineMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.6 });
+            fishingLine = new THREE.Line(lineGeo, lineMat);
+            fishingLine.visible = false;
+            scene.add(fishingLine);
+        }
+
+        // --- 6. CRIAÇÃO DOS ATENDENTES / NPCs COM ANIMAÇÕES E FALA ---
+        function createNPCs() {
+            // Criando o Atendente "Yoku" atrás do balcão
+            const npcGroup = new THREE.Group();
+
+            // Corpo/Tronco
+            const bodyGeo = new THREE.CylinderGeometry(0.3, 0.3, 1.2, 16);
+            const bodyMat = new THREE.MeshStandardMaterial({ color: 0x0284c7 });
+            const body = new THREE.Mesh(bodyGeo, bodyMat);
+            body.position.y = 1.2;
+            body.castShadow = true;
+            npcGroup.add(body);
+
+            // Cabeça
+            const headGeo = new THREE.SphereGeometry(0.25, 16, 16);
+            const headMat = new THREE.MeshStandardMaterial({ color: 0xfbcfe8 });
+            const head = new THREE.Mesh(headGeo, headMat);
+            head.position.y = 2.0;
+            head.castShadow = true;
+            npcGroup.add(head);
+
+            // Chapéu de Pescador do Atendente
+            const hatGeo = new THREE.ConeGeometry(0.4, 0.2, 16);
+            const hatMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b });
+            const hat = new THREE.Mesh(hatGeo, hatMat);
+            hat.position.y = 2.25;
+            npcGroup.add(hat);
+
+            // Posição do Atendente no Mercado
+            npcGroup.position.set(-8, 0, -5.2);
+            scene.add(npcGroup);
+
+            // Salva referência do NPC
+            npcs.push({
+                name: 'Yoku (Atendente)',
+                group: npcGroup,
+                head: head,
+                position: npcGroup.position,
+                dialogue: 'Olá! Sou o Yoku. Quer vender seus peixes ou comprar novas varas de pesca?'
+            });
+        }
+
+        // --- 7. SISTEMA DE FALA POR SÍNTESE DE VOZ (TTS) & BALÕES 3D ---
+        function speakNPC(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Para falas anteriores
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'pt-BR';
+                utterance.rate = 1.1;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        // --- 8. MINIGAME DE PESCA FÍSICO E ANIMAÇÕES ---
+        function toggleFishing() {
+            if (!nearWater && !isFishing) return;
+
+            if (!isFishing) {
+                // Iniciar Animação de Arremesso
+                isFishing = true;
+                
+                // Animação da Vara caindo com TWEEN
+                new TWEEN.Tween(fishingRodGroup.rotation)
+                    .to({ x: Math.PI / 6 }, 300)
+                    .yoyo(true)
+                    .repeat(1)
+                    .start();
+
+                // Lançar Bóia na água
+                const targetZ = -12 - Math.random() * 8;
+                bobberMesh.position.set(0, 2, -2).applyMatrix4(camera.matrixWorld);
+                bobberMesh.visible = true;
+                fishingLine.visible = true;
+
+                new TWEEN.Tween(bobberMesh.position)
+                    .to({ x: bobberMesh.position.x + (Math.random()*4 - 2), y: -1.1, z: targetZ }, 1000)
+                    .easing(TWEEN.Easing.Cubic.Out)
+                    .onComplete(() => {
+                        // Aguardar Peixe Fisgar (Entre 3 e 7 segundos)
+                        const waitTime = 3000 + Math.random() * 4000;
+                        fishBitingTimer = setTimeout(() => {
+                            if (isFishing) triggerFishBite();
+                        }, waitTime);
+                    })
+                    .start();
+
+            } else {
+                // Recolher a Linha / Puxar Peixe
+                if (isFishHooked) {
+                    completeFishing(true);
+                } else {
+                    completeFishing(false);
+                }
+            }
+        }
+
+        function triggerFishBite() {
+            isFishHooked = true;
+            document.getElementById('action-prompt').innerText = "💥 O PEIXE FISGOU! Pressione [E] para Puxar!";
+            document.getElementById('action-prompt').style.display = 'block';
+
+            // Animação da Bóia Afundando na Água
+            new TWEEN.Tween(bobberMesh.position)
+                .to({ y: -1.8 }, 200)
+                .yoyo(true)
+                .repeat(10)
+                .start();
+
+            // Timer para o peixe fugir se demorar mais de 3 segundos
+            setTimeout(() => {
+                if (isFishing && isFishHooked) {
+                    document.getElementById('action-prompt').innerText = "❌ O peixe escapou!";
+                    setTimeout(() => { completeFishing(false); }, 1500);
+                }
+            }, 3500);
+        }
+
+        function completeFishing(success) {
+            clearTimeout(fishBitingTimer);
+            
+            if (success) {
+                const fishTypes = [
+                    { name: '🐟 Tilápia', price: 45.00 },
+                    { name: '🐠 Peixe-Palhaço', price: 90.00 },
+                    { name: '🐙 Polvo Gigante', price: 210.00 },
+                    { name: '👑 Peixe Ouro Lendário', price: 850.00 }
+                ];
+                const caught = fishTypes[Math.floor(Math.random() * fishTypes.length)];
+                
+                playerBalance += caught.price;
+                inventory.push(caught);
+                updateHUD();
+
+                alert(`🎉 Você pescou um ${caught.name}! adicionado +R$ ${caught.price.toFixed(2)} ao saldo!`);
+            }
+
+            // Resetar Estados da Pesca
+            isFishing = false;
+            isFishHooked = false;
+            bobberMesh.visible = false;
+            fishingLine.visible = false;
+            document.getElementById('action-prompt').style.display = 'none';
+        }
+
+        // --- 9. MERCADO E INTERAÇÃO COM ATENDENTE ---
+        function openShop() {
+            controls.unlock();
+            const shopModal = document.getElementById('shop-modal');
+            const itemsContainer = document.getElementById('shop-items-container');
+            shopModal.style.display = 'block';
+
+            // Fala do NPC Atendente
+            speakNPC(npcs[0].dialogue);
+
+            itemsContainer.innerHTML = `
+                <div class="shop-item">
+                    <div>
+                        <strong>🎣 Vara de Carbono Pro</strong>
+                        <p style="font-size: 11px; color: #94a3b8;">Aumenta velocidade da pesca em 50%</p>
+                    </div>
+                    <button class="shop-btn" onclick="buyItem('Vara Pro', 250)">R$ 250.00</button>
+                </div>
+                <div class="shop-item">
+                    <div>
+                        <strong>🪱 Isca Especial (x5)</strong>
+                        <p style="font-size: 11px; color: #94a3b8;">Atrai peixes mais raros</p>
+                    </div>
+                    <button class="shop-btn" onclick="buyItem('Iscas', 35)">R$ 35.00</button>
+                </div>
+            `;
+        }
+
+        function buyItem(itemName, price) {
+            if (playerBalance >= price) {
+                playerBalance -= price;
+                updateHUD();
+                speakNPC(`Obrigado por comprar ${itemName}! Volte sempre.`);
+                alert(`Você comprou ${itemName}!`);
+            } else {
+                speakNPC("Desculpe, você não tem dinheiro suficiente!");
+                alert("Saldo insuficiente!");
+            }
+        }
+
+        function closeShop() {
+            document.getElementById('shop-modal').style.display = 'none';
+            controls.lock();
+        }
+
+        function updateHUD() {
+            document.getElementById('balance').innerText = playerBalance.toFixed(2);
+        }
+
+        // --- 10. CONTROLES DE MOVIMENTAÇÃO WASD + TECLAS ---
+        function setupKeyListeners() {
+            const onKeyDown = function (event) {
+                switch (event.code) {
+                    case 'KeyW': moveForward = true; break;
+                    case 'KeyA': moveLeft = true; break;
+                    case 'KeyS': moveBackward = true; break;
+                    case 'KeyD': moveRight = true; break;
+                    case 'KeyE':
+                        if (nearNPC) openShop();
+                        else if (nearWater || isFishing) toggleFishing();
+                        break;
+                }
+            };
+
+            const onKeyUp = function (event) {
+                switch (event.code) {
+                    case 'KeyW': moveForward = false; break;
+                    case 'KeyA': moveLeft = false; break;
+                    case 'KeyS': moveBackward = false; break;
+                    case 'KeyD': moveRight = false; break;
+                }
+            };
+
+            document.addEventListener('keydown', onKeyDown);
+            document.addEventListener('keyup', onKeyUp);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // --- 11. LOOP DE ANIMAÇÃO E RENDERIZAÇÃO (FPS/PHYSICS/TWEEN) ---
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const time = performance.now();
+            const delta = (time - prevTime) / 1000;
+
+            // Atualiza Física do Cannon.js
+            world.step(1 / 60, delta, 3);
+
+            // Atualiza Tween.js (Animações de interpolação)
+            TWEEN.update();
+
+            // Movimentação do Jogador em Primeira Pessoa
+            if (controls.isLocked) {
+                velocity.x -= velocity.x * 10.0 * delta;
+                velocity.z -= velocity.z * 10.0 * delta;
+
+                direction.z = Number(moveForward) - Number(moveBackward);
+                direction.x = Number(moveRight) - Number(moveLeft);
+                direction.normalize();
+
+                const moveSpeed = 40.0;
+                if (moveForward || moveBackward) velocity.z -= direction.z * moveSpeed * delta;
+                if (moveLeft || moveRight) velocity.x -= direction.x * moveSpeed * delta;
+
+                controls.moveRight(-velocity.x * delta);
+                controls.moveForward(-velocity.z * delta);
+
+                // Sincronizar o corpo físico com a câmera
+                playerBody.position.x = camera.position.x;
+                playerBody.position.z = camera.position.z;
+                camera.position.y = 1.6; // Altura dos olhos do jogador
+            }
+
+            // Animação Suave da Água (Ondulação)
+            if (waterMesh) {
+                waterMesh.position.y = -1.2 + Math.sin(time * 0.002) * 0.05;
+            }
+
+            // Atualizar Linha de Pesca Renderizada
+            if (isFishing && fishingLine.visible) {
+                const rodTipWorldPos = new THREE.Vector3();
+                fishingRodGroup.children[1].getWorldPosition(rodTipWorldPos);
+
+                const points = [rodTipWorldPos, bobberMesh.position];
+                fishingLine.geometry.setFromPoints(points);
+            }
+
+            // Verificação de Proximidade com NPCs e com a Água
+            const playerPos = camera.position;
+
+            // Proximidade com Atendente Yoku
+            const distToNPC = playerPos.distanceTo(npcs[0].position);
+            const prompt = document.getElementById('action-prompt');
+
+            if (distToNPC < 3.5) {
+                nearNPC = true;
+                activeNPC = npcs[0];
+                prompt.innerText = `[E] Falar com ${activeNPC.name}`;
+                prompt.style.display = 'block';
+
+                // Olhar do NPC para o Jogador suavemente
+                npcs[0].head.lookAt(playerPos.x, npcs[0].head.position.y, playerPos.z);
+            } else {
+                nearNPC = false;
+            }
+
+            // Proximidade com a Beira da Água
+            if (playerPos.z < -8 && !nearNPC) {
+                nearWater = true;
+                if (!isFishing && !isFishHooked) {
+                    prompt.innerText = "[E] Lançar Anzol na Água";
+                    prompt.style.display = 'block';
+                }
+            } else if (!nearNPC && !isFishHooked) {
+                nearWater = false;
+                if (!isFishing) prompt.style.display = 'none';
+            }
+
+            prevTime = time;
+            renderer.render(scene, camera);
+        }
+
+        // Inicia tudo ao carregar a página
+        window.onload = init;
+    </script>
+</body>
+</html>

@@ -1,0 +1,2962 @@
+{
+  "casos": [
+    {
+      "id": "azul01",
+      "numero": 1,
+      "titulo": "O Silêncio da Galeria Azul",
+      "capa": "🖼️",
+      "resumo": "Um curador é encontrado morto na noite de abertura de uma exposição. Quatro suspeitos, um segredo financeiro e uma galeria pintada de azul do teto ao chão.",
+      "requerCodigo": true,
+      "vitima": {
+        "nome": "Renato Aoki",
+        "idade": 47,
+        "ocupacao": "Curador-chefe da Galeria Azul"
+      },
+      "local": "Sala de curadoria da Galeria Azul, no centro da cidade",
+      "dataHora": "noite da vernissage (abertura), entre 21h40 e 22h10",
+      "introducao": "A Galeria Azul estava lotada para a abertura da exposição \"Maré\". Por volta das 22h20, uma das seguranças encontrou Renato Aoki, curador-chefe, caído atrás da própria mesa, na sala de curadoria — a única porta que ficava trancada durante o evento. A festa continuava do outro lado da parede, ninguém tinha ouvido nada. Quatro pessoas estiveram perto daquela porta durante a janela do crime. Uma delas mentiu sobre onde estava.",
+      "suspeitos": [
+        {
+          "id": "marina",
+          "nome": "Marina Kael",
+          "apelido": "a artista revelada",
+          "idade": 29,
+          "ocupacao": "Artista da exposição \"Maré\"",
+          "descricao": "Estava tendo a primeira grande exposição da carreira. Nervosa a noite toda, bebeu pouco, sumiu por uns 15 minutos no meio do evento.",
+          "alibi": "Diz que foi até o terraço fumar um cigarro sozinha, longe da sala de curadoria.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "terraço",
+                "terraco",
+                "onde voce estava",
+                "onde você estava"
+              ],
+              "resposta": "\"Eu tava no terraço, já falei. Fumando. Sozinha. Ninguém me viu porque ninguém sobe lá, é meio escondido.\""
+            },
+            {
+              "gatilhos": [
+                "camera",
+                "câmera",
+                "seguranca",
+                "segurança"
+              ],
+              "resposta": "\"Câmera no terraço? Duvido que tenha. É área de manutenção, não é bem aberta pro público não...\" *ela hesita*"
+            },
+            {
+              "gatilhos": [
+                "renato",
+                "vitima",
+                "vítima",
+                "relacao",
+                "relação"
+              ],
+              "resposta": "\"Renato foi ótimo comigo, foi ele que me deu a chance de expor. Não tinha motivo nenhum pra mexer com ele.\""
+            },
+            {
+              "gatilhos": [
+                "dinheiro",
+                "financeiro",
+                "contrato"
+              ],
+              "resposta": "\"Contrato? Eu só sei que ele ia aumentar minha comissão depois dessa mostra. Isso me interessava viva, não morta, óbvio.\""
+            },
+            {
+              "gatilhos": [
+                "post",
+                "instagram",
+                "rede social",
+                "foto"
+              ],
+              "resposta": "\"Ah, postei uma foto do terraço sim, pra provar que eu tava lá. Depois apago porque ficou uma legenda meio brega.\""
+            }
+          ],
+          "respostaPadrao": "\"Já disse tudo que sabia. Isso é meio perturbador de reviver, sabia?\"",
+          "genero": "feminino",
+          "personalidadeIA": "Nervosa por ser sua primeira grande exposição, fala rápido quando está confortável mas fecha o jogo quando o assunto aperta. Gentil, um pouco insegura, evita confronto direto.",
+          "segredoIA": "Ela sumiu por uns 15 minutos não só pra fumar — recebeu uma notícia ruim sobre uma dívida pessoal por telefone e tem vergonha disso. Não tem nenhuma relação com o crime, mas evita entrar em detalhes por constrangimento."
+        },
+        {
+          "id": "diego",
+          "nome": "Diego Ferraz",
+          "apelido": "o sócio financeiro",
+          "idade": 51,
+          "ocupacao": "Sócio-administrador da Galeria Azul",
+          "descricao": "Cuida da parte financeira da galeria há 8 anos. Estava circulando pelo evento cumprimentando patrocinadores. Suado, mesmo com o ar-condicionado ligado.",
+          "alibi": "Diz que passou a noite toda no salão principal, ao lado dos patrocinadores.",
+          "culpado": true,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "salao",
+                "salão"
+              ],
+              "resposta": "\"Fiquei o tempo todo perto dos patrocinadores, pode perguntar pra qualquer um deles.\" *ele evita olhar nos olhos*"
+            },
+            {
+              "gatilhos": [
+                "financeiro",
+                "dinheiro",
+                "auditoria",
+                "desvio",
+                "contas",
+                "extrato"
+              ],
+              "resposta": "\"F-financeiro? Tá tudo em ordem nas contas da galeria, sempre esteve.\" *a voz falha na palavra 'ordem'*"
+            },
+            {
+              "gatilhos": [
+                "renato",
+                "vitima",
+                "vítima",
+                "relacao",
+                "relação",
+                "briga"
+              ],
+              "resposta": "\"Eu e o Renato discutimos, sim, todo sócio discute. Mas não é motivo pra... isso.\""
+            },
+            {
+              "gatilhos": [
+                "chave",
+                "porta",
+                "sala de curadoria"
+              ],
+              "resposta": "\"Eu tenho cópia da chave, tenho desde que a galeria abriu. E daí? Isso não prova nada.\""
+            },
+            {
+              "gatilhos": [
+                "contador",
+                "whatsapp",
+                "mensagem",
+                "conversa"
+              ],
+              "resposta": "\"Conversa com meu contador é rotina, a gente troca mensagem toda semana sobre balanço.\" *ele desconversa rápido demais*"
+            },
+            {
+              "gatilhos": [
+                "cracha",
+                "crachá",
+                "theo",
+                "segurança theo"
+              ],
+              "resposta": "\"O crachá do Théo? Não faço ideia do número, por que isso importaria?\""
+            }
+          ],
+          "respostaPadrao": "\"Olha, eu só quero que isso acabe logo. A galeria já tá sofrendo o bastante com a repercussão.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Tenta parecer controlado e sociável, mas fica visivelmente mais monossilábico, gagueja levemente e desvia de assunto com elogios à galeria sempre que o tema é dinheiro ou contas.",
+          "segredoIA": "Ele desviou cerca de R$ 340 mil da galeria usando notas fiscais falsas de manutenção predial ao longo de anos. Renato o confrontou com isso horas antes do crime, dizendo que ia expor tudo pra imprensa na manhã seguinte — Diego entrou em pânico e o atacou com a estatueta de bronze, na própria sala de curadoria."
+        },
+        {
+          "id": "iasmin",
+          "nome": "Iasmin Duarte",
+          "apelido": "a curadora assistente",
+          "idade": 33,
+          "ocupacao": "Curadora assistente, subordinada direta de Renato",
+          "descricao": "Trabalhava lado a lado com Renato havia 4 anos. Foi vista entrando e saindo da sala de curadoria duas vezes durante a noite, o que é normal pra função dela.",
+          "alibi": "Diz que entrou na sala às 21h50 pra pegar uma prancheta e saiu em menos de um minuto, encontrando Renato vivo e bem.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "prancheta"
+              ],
+              "resposta": "\"Entrei rapidinho pra pegar a prancheta com a lista de convidados VIP. Ele tava vivo, sentado, mexendo no computador.\""
+            },
+            {
+              "gatilhos": [
+                "renato",
+                "vitima",
+                "vítima",
+                "relacao",
+                "relação",
+                "mentor"
+              ],
+              "resposta": "\"Renato foi meu mentor. Aprendi tudo sobre curadoria com ele. Perder ele assim é... difícil de processar.\""
+            },
+            {
+              "gatilhos": [
+                "diego",
+                "financeiro",
+                "briga",
+                "discussao",
+                "discussão"
+              ],
+              "resposta": "\"Semana passada ouvi o Renato e o Diego discutindo atrás da porta fechada. Não entendi tudo, mas ouvi 'auditoria' e 'imprensa'.\""
+            },
+            {
+              "gatilhos": [
+                "computador",
+                "email",
+                "e-mail",
+                "rascunho"
+              ],
+              "resposta": "\"Vi o Renato digitando alguma coisa sério no computador antes de eu sair. Ele fechou a tela rápido quando percebeu que eu tava ali.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu quero muito que isso se resolva. O Renato merece justiça.\"",
+          "genero": "feminino",
+          "personalidadeIA": "Leal e afetuosa ao falar de Renato, observadora, gosta de dar detalhes precisos de horário e sequência de eventos. Fica desconfortável ao falar mal de colegas sem provas.",
+          "segredoIA": "Não tem nenhum segredo grave — só guarda uma desconfiança pessoal e não comprovada de Diego, que prefere não afirmar com todas as letras sem ter certeza."
+        },
+        {
+          "id": "theo",
+          "nome": "Théo Ostrowski",
+          "apelido": "o segurança do evento",
+          "idade": 44,
+          "ocupacao": "Segurança contratado para a vernissage",
+          "descricao": "Responsável por rondar o andar da sala de curadoria durante o evento. Foi ele quem encontrou o corpo.",
+          "alibi": "Diz que fez rondas a cada 15 minutos e só entrou na sala quando notou a porta encostada, fora do padrão.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "ronda"
+              ],
+              "resposta": "\"Fiz ronda no corredor a cada 15 minutos, igual sempre faço. Na última passada a porta tava encostada, o que não é normal.\""
+            },
+            {
+              "gatilhos": [
+                "porta",
+                "chave",
+                "sala de curadoria"
+              ],
+              "resposta": "\"Só o Renato, o Diego e a equipe de limpeza tinham chave daquela sala. Eu mesmo não tenho.\""
+            },
+            {
+              "gatilhos": [
+                "cracha",
+                "crachá",
+                "numero",
+                "número",
+                "identificacao",
+                "identificação"
+              ],
+              "resposta": "\"Meu crachá de segurança? É o zero-cinco, uso ele desde que comecei na empresa terceirizada. Por quê?\""
+            },
+            {
+              "gatilhos": [
+                "camera",
+                "câmera",
+                "gravacao",
+                "gravação"
+              ],
+              "resposta": "\"As câmeras do salão principal gravaram normal. Só não tem câmera dentro da sala de curadoria, nunca teve.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu só quero ajudar a esclarecer o que houve, foi bem chocante encontrar ele daquele jeito.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Fala de forma procedimental, como quem segue protocolo de segurança à risca. Fica um pouco na defensiva quando questionam por que ele tinha tanto acesso ao andar.",
+          "segredoIA": "Não tem nada a esconder sobre o crime em si, só sente um certo peso por ter demorado a notar que a porta estava fora do padrão naquela noite."
+        }
+      ],
+      "evidencias": [
+        {
+          "tipo": "relatorio",
+          "arquivo": "Relatorio_Policial.pdf",
+          "descricao": "Relatório oficial da ocorrência, com horário estimado da morte e observações da perícia."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_marina.txt",
+          "descricao": "Depoimento de Marina Kael."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_diego.txt",
+          "descricao": "Depoimento de Diego Ferraz."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_iasmin.txt",
+          "descricao": "Depoimento de Iasmin Duarte."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_theo.txt",
+          "descricao": "Depoimento de Théo Ostrowski."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_01_mesa.png",
+          "titulo": "Mesa da vítima",
+          "legenda": "A estatueta de bronze (peso de papel) que normalmente fica ao lado do porta-retratos não está em sua posição habitual. Há uma leve marca de arrasto na poeira da mesa."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_02_porta.png",
+          "titulo": "Fechadura da sala de curadoria",
+          "legenda": "Sem sinais de arrombamento. A perícia concluiu que a porta foi aberta com chave ou já estava destrancada — apenas 3 pessoas tinham cópia: Renato, Diego e a equipe de limpeza."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_03_bilhete.png",
+          "titulo": "Bilhete encontrado no bloco de anotações de Renato",
+          "legenda": "Uma sequência escrita à mão na última folha do bloco: KWFZIJ2024. Parece uma cifra de substituição simples (cada letra trocada por outra, sempre pela mesma quantidade de posições no alfabeto)."
+        },
+        {
+          "tipo": "documento_pdf",
+          "arquivo": "Documentos/Extrato_Bancario_Diego.pdf",
+          "titulo": "Extrato bancário (trechos) — Diego Ferraz",
+          "conteudo": [
+            "EXTRATO PARCIAL - CONTA CORRENTE PESSOA FISICA",
+            "Titular: Diego Ferraz. Periodo: ultimos 90 dias.",
+            "",
+            "Foram identificadas 6 transferencias para uma conta em nome de terceiro nao identificado na galeria, totalizando aproximadamente R$ 340.000,00, todas registradas como 'despesas de manutencao predial' na contabilidade da Galeria Azul.",
+            "",
+            "Nao ha nota fiscal ou contrato de prestacao de servico correspondente a nenhuma das transferencias.",
+            "",
+            "Observacao da pericia contabil: o valor e a data das movimentacoes coincidem com um periodo em que a Galeria Azul reportou prejuizo aos socios."
+          ]
+        },
+        {
+          "tipo": "documento_docx",
+          "arquivo": "Documentos/Carta_Demissao_Rascunho.docx",
+          "titulo": "Rascunho de carta — nunca enviada",
+          "conteudo": [
+            "Rascunho encontrado nos arquivos pessoais de Renato Aoki, com data do dia do crime.",
+            "",
+            "\"Diego, esta carta formaliza o que conversamos informalmente: encerro nossa sociedade a partir do dia 1o do mes que vem. A divergencia de R$ 340 mil que encontrei nas contas nao pode continuar sendo tratada como 'manutencao predial'. Vou levar essa questao a reuniao com a imprensa amanha de manha, com ou sem o seu consentimento. Lamento que tenha chegado a esse ponto depois de tantos anos.\"",
+            "",
+            "O documento estava salvo, mas nao havia sido impresso nem enviado por e-mail."
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Conversa_Diego_Contador.png",
+          "titulo": "Conversa recuperada do celular de Diego",
+          "appNome": "Mensagens",
+          "subtitulo": "Contador - Régis Vilhena",
+          "mensagens": [
+            {
+              "de": "Régis",
+              "texto": "Diego, a divergência de 340 mil vai aparecer na auditoria externa. Preciso saber o que você quer que eu faça.",
+              "hora": "20:12",
+              "deMim": false
+            },
+            {
+              "de": "Diego",
+              "texto": "Segura isso até depois do evento de hoje. Não fala nada pro Renato ainda.",
+              "hora": "20:15",
+              "deMim": true
+            },
+            {
+              "de": "Régis",
+              "texto": "Ele já sabe, Diego. Um funcionário comentou que ele tá com um rascunho de carta pronto.",
+              "hora": "21:30",
+              "deMim": false
+            },
+            {
+              "de": "Diego",
+              "texto": "Preciso falar com ele antes da reunião de amanhã. Depois te retorno.",
+              "hora": "21:34",
+              "deMim": true
+            }
+          ]
+        },
+        {
+          "tipo": "print_computador",
+          "arquivo": "Computador/Historico_Navegador_Renato.png",
+          "titulo": "Histórico de navegação do computador de Renato",
+          "subtitulo": "historico://ultimas-48-horas",
+          "linhas": [
+            "21:05 - como denunciar desvio de verba em empresa privada",
+            "21:11 - contato imprensa economia jornal local",
+            "21:19 - modelo de carta de rescisao de sociedade",
+            "21:27 - auditoria externa contabilidade urgente",
+            "21:38 - [aba fechada as pressas]"
+          ]
+        },
+        {
+          "tipo": "post_social",
+          "arquivo": "RedesSociais/Post_Marina_Vernissage.png",
+          "titulo": "Publicação de Marina na noite do evento",
+          "usuario": "@marinakael.art",
+          "legenda": "respirando um pouco antes de voltar pra festa. muito grata pela noite de hoje #Mare #GaleriaAzul",
+          "curtidas": 812,
+          "comentarios": [
+            "que exposição linda!!",
+            "parabens marina, merecia muito",
+            "cade vc, tava te procurando la dentro kkkj"
+          ]
+        },
+        {
+          "tipo": "audio",
+          "arquivo": "Audio_Pistas/audio_seguranca.wav",
+          "titulo": "Trecho recuperado do rádio da segurança",
+          "descricao": "Um segurança tentou avisar um número por rádio pouco antes de encontrar o corpo, mas a transmissão falhou e só restou uma sequência de bipes, provavelmente relacionada ao cofre de documentos da administração.",
+          "codigo": "1947"
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Arquivo_Confidencial.zip",
+          "titulo": "Pasta financeira apreendida no escritório de Renato",
+          "descricao": "Protegida por senha. A perícia acredita que a senha tenha relação com o nome e o ano de fundação da galeria.",
+          "senha": "AZUL1947",
+          "dicaSenha": "Duas informações que aparecem em lugares bem diferentes do material — uma tem a ver com o nome do lugar onde tudo aconteceu, a outra com o tempo em que esse lugar existe — parecem se encaixar numa senha só.",
+          "conteudo": [
+            "PASTA FINANCEIRA - GALERIA AZUL (fundada em 1947)",
+            "==================================================",
+            "",
+            "Rascunho de e-mail encontrado no computador da vitima:",
+            "\"Preciso levar a divergencia de R$ 340 mil nas contas pra reuniao de amanha com a imprensa. Nao posso mais adiar essa conversa com o Diego, mesmo sabendo como ele vai reagir.\"",
+            "",
+            "Este documento e uma peca decisiva da investigacao."
+          ]
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Diario_Digital_Renato.zip",
+          "titulo": "Backup do diário digital de Renato (encontrado na nuvem pessoal dele)",
+          "descricao": "Protegida por senha. É uma cifra de César — o deslocamento usado não está explícito, mas alguém que conhece bem o Théo talvez reconheça o número certo em outro lugar do caso.",
+          "senha": "FRAUDE2024",
+          "dicaSenha": "Tem um bilhete estranho em uma das evidências, parecido com um texto embaralhado por um deslocamento simples de alfabeto. Alguém do caso menciona, meio de passagem, um número que pode servir de chave pra desembaralhar isso.",
+          "conteudo": [
+            "DIARIO PESSOAL - ULTIMA ENTRADA (dia do crime, 19h50)",
+            "==================================================",
+            "",
+            "\"Confirmei hoje de manha, com a ajuda do Regis: e fraude mesmo, nao erro de lancamento. O Diego vem desviando verba da galeria ha pelo menos dois anos usando notas fiscais falsas de manutencao predial. Vou expor isso amanha na reuniao com a imprensa, nem que ele tente me convencer do contrario hoje a noite.\"",
+            "",
+            "Esta entrada foi a ultima salva antes do horario estimado do crime."
+          ]
+        }
+      ],
+      "pistasExtras": [
+        "A reunião marcada para a manhã seguinte ao crime era com jornalistas de economia, não de arte — o convite estava na agenda de Renato.",
+        "Diego é a única pessoa, além de Renato, com chave da sala de curadoria e acesso direto às contas da galeria.",
+        "A estatueta de bronze do peso de papel de Renato está desaparecida da mesa dele desde a noite do crime.",
+        "O rascunho de carta encontrado nos arquivos de Renato menciona o encerramento da sociedade com Diego por causa de uma divergência de R$ 340 mil.",
+        "A sequência de bipes do áudio da segurança, quando contada com calma, forma quatro dígitos — parecem um ano.",
+        "O crachá de segurança do Théo é o número cinco. Pode não ser só um número de identificação qualquer."
+      ],
+      "solucao": {
+        "suspeitoId": "diego",
+        "arma": "estatueta de bronze",
+        "local": "sala de curadoria"
+      },
+      "pontosMax": 120
+    },
+    {
+      "id": "prisma02",
+      "numero": 2,
+      "titulo": "O Assalto ao Cofre da Joalheria Prisma",
+      "capa": "💎",
+      "resumo": "Um cofre foi aberto sem sinais de arrombamento durante o expediente. Só três pessoas sabiam a combinação. Uma delas está mentindo sobre um detalhe pequeno demais para ser irrelevante.",
+      "requerCodigo": true,
+      "vitima": {
+        "nome": "Joalheria Prisma (empresa)",
+        "idade": null,
+        "ocupacao": "Loja de joias de alto padrão"
+      },
+      "local": "Sala do cofre, nos fundos da Joalheria Prisma",
+      "dataHora": "durante o horário de almoço, entre 12h00 e 13h30",
+      "introducao": "Às 13h35, a gerente Clarice voltou do almoço e encontrou o cofre da sala dos fundos aberto e vazio — um colar de esmeraldas avaliado em R$ 2,1 milhões havia sumido. Não havia sinais de arrombamento na porta nem no próprio cofre. Apenas três pessoas conheciam a combinação: a gerente Clarice, o segurança Bruno e o avaliador externo Yuri, que estava na loja fazendo uma vistoria agendada havia semanas.",
+      "suspeitos": [
+        {
+          "id": "clarice",
+          "nome": "Clarice Bittencourt",
+          "apelido": "a gerente",
+          "idade": 42,
+          "ocupacao": "Gerente da Joalheria Prisma",
+          "descricao": "Trabalha na loja há 12 anos. Diz que saiu para almoçar às 12h05 e só voltou às 13h35, como de costume.",
+          "alibi": "Diz que almoçou no restaurante em frente à loja; o garçom confirma parcialmente, mas não sabe precisar o horário exato de saída dela.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "almoco",
+                "almoço",
+                "onde voce estava",
+                "onde você estava"
+              ],
+              "resposta": "\"Almocei no restaurante da esquina, como sempre. Pergunte ao garçom, ele me conhece.\""
+            },
+            {
+              "gatilhos": [
+                "combinacao",
+                "combinação",
+                "cofre",
+                "senha"
+              ],
+              "resposta": "\"Só eu, o Bruno e o Yuri sabíamos a combinação. Isso sempre me incomodou, é gente demais sabendo.\""
+            },
+            {
+              "gatilhos": [
+                "yuri",
+                "avaliador"
+              ],
+              "resposta": "\"O Yuri vem uma vez por ano fazer a vistoria de seguro. Ele pediu pra ficar sozinho na sala do cofre por 'motivos de sigilo do laudo'. Isso sempre foi meio estranho mas nunca questionei.\""
+            },
+            {
+              "gatilhos": [
+                "bruno",
+                "seguranca",
+                "segurança"
+              ],
+              "resposta": "\"O Bruno é de confiança, trabalha comigo há anos. Não vejo motivo pra suspeitar dele.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu realmente quero esse colar de volta, não tenho motivo nenhum pra estar escondendo nada.\"",
+          "genero": "feminino",
+          "personalidadeIA": "Profissional, protetora da loja e da equipe, fica visivelmente incomodada e um pouco na defensiva ao falar sobre o processo de vistoria do Yuri.",
+          "segredoIA": "Não tem nenhum segredo ligado ao crime — só se sente culpada por ter confiado demais no procedimento de privacidade que sempre foi concedido ao avaliador."
+        },
+        {
+          "id": "bruno",
+          "nome": "Bruno Salgado",
+          "apelido": "o segurança",
+          "idade": 39,
+          "ocupacao": "Segurança da Joalheria Prisma",
+          "descricao": "Ficou na loja durante o horário do almoço, cobrindo a entrada sozinho enquanto Clarice e a vendedora saíam.",
+          "alibi": "Diz que não saiu da entrada da loja em nenhum momento durante a janela do crime.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "entrada"
+              ],
+              "resposta": "\"Fiquei na entrada o tempo todo, como sempre fico. Não vi ninguém suspeito entrar.\""
+            },
+            {
+              "gatilhos": [
+                "yuri",
+                "avaliador",
+                "cofre",
+                "sala"
+              ],
+              "resposta": "\"O Yuri pediu pra eu não entrar na sala do cofre enquanto ele fazia a vistoria, disse que era procedimento padrão do seguro. Eu deixei, ele sempre faz isso todo ano.\""
+            },
+            {
+              "gatilhos": [
+                "camera",
+                "câmera"
+              ],
+              "resposta": "\"A câmera da sala do cofre tava com 'manutenção agendada' bem naquele dia. Coincidência estranha, agora que você fala.\""
+            },
+            {
+              "gatilhos": [
+                "protocolo",
+                "ordem de servico",
+                "ordem de serviço"
+              ],
+              "resposta": "\"Ordem de serviço da câmera não passa por mim, isso é direto com a empresa terceirizada de manutenção.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu levo minha função a sério, não tenho nada a esconder.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Cumpridor de regras, um tanto ingênuo, fala com orgulho do próprio trabalho. Ao longo de uma conversa mais longa, começa a perceber sozinho que talvez tenha sido usado.",
+          "segredoIA": "Não sabia de nada sobre o plano, mas conforme a conversa avança e ele reflete em voz alta, vai ficando cada vez mais desconfiado do próprio Yuri — sem ainda ter certeza do motivo."
+        },
+        {
+          "id": "yuri",
+          "nome": "Yuri Kaplan",
+          "apelido": "o avaliador externo",
+          "idade": 45,
+          "ocupacao": "Avaliador de seguros, terceirizado",
+          "descricao": "Faz a vistoria anual do seguro da joalheria. Estava sozinho na sala do cofre por cerca de 40 minutos, alegando sigilo do laudo.",
+          "alibi": "Diz que passou o tempo todo fotografando e catalogando as peças para o laudo do seguro.",
+          "culpado": true,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "vistoria",
+                "laudo"
+              ],
+              "resposta": "\"Fiquei catalogando as peças pro laudo, é um processo longo e detalhado. Preciso de privacidade pra isso, é procedimento da seguradora.\" *ele fala rápido demais*"
+            },
+            {
+              "gatilhos": [
+                "camera",
+                "câmera",
+                "manutencao",
+                "manutenção"
+              ],
+              "resposta": "\"A manutenção da câmera? Não sei de nada sobre isso, deve ser coisa da administração da loja.\" *evita contato visual*"
+            },
+            {
+              "gatilhos": [
+                "combinacao",
+                "combinação",
+                "senha",
+                "cofre"
+              ],
+              "resposta": "\"Eu preciso saber a combinação pra fazer meu trabalho, é assim desde sempre. Isso é normal no meu ramo.\""
+            },
+            {
+              "gatilhos": [
+                "divida",
+                "dívida",
+                "dinheiro",
+                "financeiro",
+                "jogo",
+                "aposta"
+              ],
+              "resposta": "\"Minhas finanças pessoais não têm nada a ver com esse caso.\" *a mão treme levemente ao pegar o copo de água*"
+            },
+            {
+              "gatilhos": [
+                "agenda",
+                "bloco",
+                "anotacao",
+                "anotação"
+              ],
+              "resposta": "\"Meu bloco de anotações é só pra medidas técnicas das peças. Não é nada demais.\""
+            }
+          ],
+          "respostaPadrao": "\"Já expliquei meu procedimento de trabalho, não sei o que mais vocês querem saber.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Charmoso e articulado na superfície, especialista em desviar assunto com jargão técnico do próprio trabalho. Fica visivelmente mais nervoso, breve e evasivo sempre que o tema é o laudo atrasado, dívidas ou dinheiro.",
+          "segredoIA": "Ele tem uma dívida de jogo de aproximadamente R$ 90 mil com prazo vencido. Usou credenciais emprestadas pra abrir uma falsa ordem de manutenção e desligar a câmera da sala do cofre, e roubou o colar de esmeraldas durante os minutos de 'privacidade' da vistoria."
+        }
+      ],
+      "evidencias": [
+        {
+          "tipo": "relatorio",
+          "arquivo": "Relatorio_Policial.pdf",
+          "descricao": "Relatório oficial do registro de ocorrência, com a linha do tempo reconstruída do horário de almoço."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_clarice.txt",
+          "descricao": "Depoimento de Clarice Bittencourt."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_bruno.txt",
+          "descricao": "Depoimento de Bruno Salgado."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_yuri.txt",
+          "descricao": "Depoimento de Yuri Kaplan."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_01_cofre.png",
+          "titulo": "Porta do cofre",
+          "legenda": "Nenhum sinal de arrombamento. O cofre foi aberto com a combinação correta, não forçado."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_02_camera.png",
+          "titulo": "Registro de manutenção da câmera",
+          "legenda": "A ordem de serviço de 'manutenção' da câmera da sala do cofre foi aberta por um número de protocolo externo, não cadastrado no sistema interno da loja."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_03_bloco.png",
+          "titulo": "Página do bloco de anotações de Yuri",
+          "legenda": "Uma anotação escrita à mão, aparentemente fora do padrão técnico do resto do bloco: KZALARXR. Ao lado, um pequeno rabisco com o nome da loja."
+        },
+        {
+          "tipo": "documento_pdf",
+          "arquivo": "Documentos/Laudo_Seguro_Atrasado.pdf",
+          "titulo": "Comunicado interno da seguradora",
+          "conteudo": [
+            "COMUNICADO - SEGURADORA VALEMAR",
+            "Assunto: pendencia de laudo tecnico - avaliador Yuri Kaplan",
+            "",
+            "Informamos que o laudo de avaliacao anual da Joalheria Prisma esta em atraso pelo segundo ano consecutivo por parte do avaliador terceirizado responsavel.",
+            "",
+            "A seguradora solicita regularizacao imediata, sob pena de suspensao do credenciamento do profissional em nosso quadro de avaliadores autorizados."
+          ]
+        },
+        {
+          "tipo": "documento_docx",
+          "arquivo": "Documentos/Contrato_Prestacao_Servico_Yuri.docx",
+          "titulo": "Contrato de prestação de serviço — cláusula de sigilo",
+          "conteudo": [
+            "Contrato de prestacao de servicos entre Joalheria Prisma e Yuri Kaplan, avaliador tecnico.",
+            "",
+            "Clausula 4: Durante a vistoria, o avaliador podera solicitar privacidade na sala do cofre pelo tempo estritamente necessario a catalogacao das pecas, nao podendo esse periodo exceder 20 (vinte) minutos.",
+            "",
+            "Nota da administracao anexada ao contrato: na ultima vistoria registrada, o periodo de privacidade solicitado excedeu o dobro do limite contratual."
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Ligacao_Cobranca_Yuri.png",
+          "titulo": "Print de notificação recuperado do celular de Yuri",
+          "appNome": "Mensagens",
+          "subtitulo": "Cobranca - numero nao salvo",
+          "mensagens": [
+            {
+              "de": "Desconhecido",
+              "texto": "Yuri, o prazo venceu ontem. Precisamos resolver isso essa semana.",
+              "hora": "09:14",
+              "deMim": false
+            },
+            {
+              "de": "Yuri",
+              "texto": "Vou conseguir o valor até sexta, só me dá mais alguns dias.",
+              "hora": "09:20",
+              "deMim": true
+            },
+            {
+              "de": "Desconhecido",
+              "texto": "Já ouvi isso antes. Essa é a última prorrogação.",
+              "hora": "09:22",
+              "deMim": false
+            }
+          ]
+        },
+        {
+          "tipo": "print_computador",
+          "arquivo": "Computador/Log_Protocolo_Manutencao.png",
+          "titulo": "Log do sistema de chamados da empresa terceirizada",
+          "subtitulo": "sistema://chamados/protocolo-externo",
+          "linhas": [
+            "Protocolo #88231 aberto via portal externo (fora do sistema interno da loja)",
+            "Solicitante: nao identificado no cadastro da Joalheria Prisma",
+            "Servico: manutencao preventiva - camera sala do cofre",
+            "Status: concluido as 11h58, cofre reaberto ao publico as 12h00",
+            "Tecnico responsavel: nao consta assinatura de retirada de equipamento"
+          ]
+        },
+        {
+          "tipo": "post_social",
+          "arquivo": "RedesSociais/Post_Bruno_Corrida.png",
+          "titulo": "Publicação antiga de Bruno (rede social)",
+          "usuario": "@bruno.salgado39",
+          "legenda": "treino de hoje concluido, disciplina em primeiro lugar #seguranca #rotina",
+          "curtidas": 34,
+          "comentarios": [
+            "disciplinado demais",
+            "bom trabalho bruno"
+          ]
+        },
+        {
+          "tipo": "audio",
+          "arquivo": "Audio_Pistas/audio_ligacao.wav",
+          "titulo": "Trecho de uma ligação anônima recebida pela polícia",
+          "descricao": "Uma ligação anônima recebida horas depois do assalto trouxe apenas uma sequência de bipes, aparentemente relacionada a uma dívida urgente do avaliador.",
+          "codigo": "90"
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Arquivo_Confidencial.zip",
+          "titulo": "Registros financeiros de Yuri Kaplan, obtidos por ordem judicial",
+          "descricao": "Protegida por senha. A senha tem relação com o nome da joalheria e o valor aproximado da dívida revelada no áudio (em milhares).",
+          "senha": "PRISMA90MIL",
+          "dicaSenha": "O nome do próprio lugar e um valor em dinheiro mencionado em outro canto do material parecem estar combinados nessa senha.",
+          "conteudo": [
+            "REGISTROS FINANCEIROS - YURI KAPLAN (ordem judicial)",
+            "==================================================",
+            "",
+            "Pendencia identificada junto a terceiros: aproximadamente R$ 90.000,00.",
+            "Origem declarada pelo proprio avaliador em depoimento informal anterior: apostas esportivas.",
+            "Prazo de cobranca vencido ha 3 dias na data do assalto.",
+            "",
+            "Este documento e uma peca decisiva da investigacao."
+          ]
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Registro_Protocolo_Cameras.zip",
+          "titulo": "Registro completo do protocolo externo de manutenção (obtido com a empresa terceirizada)",
+          "descricao": "Protegida por senha. É uma cifra de Vigenère — a chave é o nome da loja.",
+          "senha": "VISTORIA",
+          "dicaSenha": "Tem uma anotação estranha em uma das evidências, do tipo que costuma usar uma palavra como chave pra embaralhar o texto. Talvez o nome do próprio lugar sirva pra isso.",
+          "conteudo": [
+            "REGISTRO COMPLETO - PROTOCOLO #88231",
+            "==================================================",
+            "",
+            "O protocolo de 'manutencao preventiva' foi aberto pelo proprio Yuri Kaplan, usando credenciais de acesso emprestadas de um conhecido que trabalha na empresa terceirizada de seguranca eletronica.",
+            "",
+            "O servico jamais foi de fato executado: nenhum tecnico foi despachado ao endereco da joalheria naquele dia.",
+            "",
+            "Este documento comprova que o desligamento da camera da sala do cofre foi deliberado."
+          ]
+        }
+      ],
+      "pistasExtras": [
+        "A ordem de 'manutenção' da câmera da sala do cofre foi aberta por um protocolo externo, não pelo sistema interno da loja — alguém de fora tinha acesso a esse protocolo.",
+        "Yuri é o único suspeito que ficou sozinho na sala do cofre durante a janela do crime.",
+        "O laudo de seguro de Yuri está atrasado há dois anos consecutivos, algo incomum para esse tipo de avaliador.",
+        "Os registros financeiros apreendidos mostram uma dívida de jogo de Yuri Kaplan, próxima de R$ 90 mil.",
+        "A sequência de bipes do áudio da ligação anônima, contada com calma, forma dois dígitos.",
+        "A anotação escrita à mão no bloco de Yuri não parece ter relação com medidas técnicas — e tem o nome da loja rabiscado do lado."
+      ],
+      "solucao": {
+        "suspeitoId": "yuri",
+        "arma": "combinacao do cofre",
+        "local": "sala do cofre"
+      },
+      "pontosMax": 120
+    },
+    {
+      "id": "live03",
+      "numero": 3,
+      "titulo": "A Live Que Ninguém Terminou",
+      "capa": "🔴",
+      "resumo": "Um streamer some no meio da própria transmissão ao vivo, num estúdio trancado por fechadura inteligente. Ele tinha prometido revelar algo grave sobre o canal antigo minutos antes de sumir.",
+      "requerCodigo": true,
+      "vitima": {
+        "nome": "Rafa Tanaka",
+        "idade": 24,
+        "ocupacao": "Criador de conteúdo (canal RTGaming Live)"
+      },
+      "local": "Estúdio de gravação, no quarto de fundos da casa de Rafa",
+      "dataHora": "durante a live, entre 22h47 (última mensagem visível no chat) e 23h02 (equipe arromba a porta)",
+      "introducao": "Às 22h47, Rafa parou de falar no meio de uma frase, olhou pro celular fora de quadro e disse só \"peraí, isso não pode ser agora\". A câmera continuou ligada, mostrando a cadeira vazia, por mais 15 minutos até a transmissão cair sozinha. Quando a equipe arrombou a porta do estúdio (trancada por fechadura inteligente, ativada por ele mesmo no início de toda live), encontraram a cadeira caída e o notebook travado numa tela de notificação — mas nenhum sinal de Rafa. Horas antes, ele tinha postado nas redes que ia \"revelar uma coisa grave sobre o canal antigo\" na live daquela noite.",
+      "suspeitos": [
+        {
+          "id": "bianca",
+          "nome": "Bianca Reis",
+          "apelido": "a empresária do canal",
+          "idade": 31,
+          "ocupacao": "Empresária/manager de Rafa",
+          "descricao": "Cuida da agenda, patrocínios e contratos de Rafa há 2 anos. Estava em outro cômodo da casa cuidando de e-mails durante a live.",
+          "alibi": "Diz que estava na sala, respondendo e-mails de patrocinadores, e só percebeu algo errado quando o chat explodiu de mensagens preocupadas.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "sala",
+                "email",
+                "e-mail"
+              ],
+              "resposta": "\"Eu tava na sala respondendo e-mail de patrocinador, com a porta aberta. Só levantei quando vi o chat da live surtando.\""
+            },
+            {
+              "gatilhos": [
+                "kaique",
+                "canal antigo",
+                "socio",
+                "sócio"
+              ],
+              "resposta": "\"O Kaique e o Rafa se separaram mal, tem quase um ano. Eu não lido com aquele assunto, é história antes de mim.\""
+            },
+            {
+              "gatilhos": [
+                "revelacao",
+                "revelação",
+                "post",
+                "anuncio",
+                "anúncio"
+              ],
+              "resposta": "\"Ele me falou que ia soltar 'uma prova' hoje, mas não me disse o que era. Só falou que já tinha guardado tudo com o advogado.\""
+            },
+            {
+              "gatilhos": [
+                "fechadura",
+                "porta",
+                "codigo",
+                "código",
+                "acesso"
+              ],
+              "resposta": "\"A fechadura inteligente é nova, de uns 8 meses. Só eu, o Rafa e a empresa de instalação temos os códigos atuais.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu só quero encontrar ele, por favor. Pergunta o que precisar.\"",
+          "genero": "feminino",
+          "personalidadeIA": "Profissional, protetora do artista que representa, visivelmente ansiosa com o desaparecimento. Quer ajudar mas é reservada quando o assunto entra em números e contratos.",
+          "segredoIA": "Não tem nenhum segredo ligado ao desaparecimento — só evita falar mal do Kaique publicamente por uma questão de profissionalismo antigo entre eles."
+        },
+        {
+          "id": "kaique",
+          "nome": "Kaique Duarte",
+          "apelido": "o ex-sócio do canal",
+          "idade": 27,
+          "ocupacao": "Ex-parceiro de canal (canal antigo RTG, hoje encerrado)",
+          "descricao": "Dividia o canal RTG com Rafa até a separação, há quase um ano, por 'diferenças criativas' — versão oficial repetida por ambos os lados na época.",
+          "alibi": "Diz que estava sozinho em casa, jogando online, e que nem sabia que Rafa faria live naquela noite.",
+          "culpado": true,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "casa",
+                "jogando"
+              ],
+              "resposta": "\"Tava em casa, jogando com a galera online. Pode confirmar com eles, se quiser.\" *ele demora a responder*"
+            },
+            {
+              "gatilhos": [
+                "canal antigo",
+                "separacao",
+                "separação",
+                "diferencas",
+                "diferenças"
+              ],
+              "resposta": "\"A gente se separou por diferença criativa mesmo, não teve nada mais grave que isso.\""
+            },
+            {
+              "gatilhos": [
+                "dinheiro",
+                "patrocinio",
+                "patrocínio",
+                "desvio",
+                "financeiro"
+              ],
+              "resposta": "\"Eu cuidava da parte financeira do canal antigo, sim, mas tava tudo declarado direitinho na época.\" *a voz fica tensa*"
+            },
+            {
+              "gatilhos": [
+                "fechadura",
+                "porta",
+                "codigo",
+                "código",
+                "acesso",
+                "chave"
+              ],
+              "resposta": "\"Eu já morei lá quando a gente gravava junto, mas isso foi há muito tempo. Duvido que meu código antigo ainda funcione.\""
+            },
+            {
+              "gatilhos": [
+                "revelacao",
+                "revelação",
+                "prova",
+                "post",
+                "live"
+              ],
+              "resposta": "\"Não sabia de nenhuma live hoje, muito menos do que ele ia falar.\""
+            }
+          ],
+          "respostaPadrao": "\"Já falei tudo que sei. Espero que encontrem ele logo.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Tenta soar tranquilo e nostálgico ao falar do canal antigo, mas hesita, troca de assunto e fica visivelmente desconfortável quando perguntam especificamente sobre a noite do desaparecimento ou sobre acesso ao estúdio.",
+          "segredoIA": "Ele ainda tinha o código antigo de acesso à fechadura do estúdio, nunca removido do sistema após a reforma. Entrou no estúdio durante a live pra impedir Rafa de revelar publicamente o desvio de patrocínio do canal antigo, e é o responsável pelo desaparecimento dele."
+        },
+        {
+          "id": "sofia",
+          "nome": "Sofia Lemos",
+          "apelido": "a namorada",
+          "idade": 25,
+          "ocupacao": "Designer, namorada de Rafa há 1 ano",
+          "descricao": "Estava em outra cidade a trabalho na noite do desaparecimento, mas trocava mensagens com Rafa minutos antes da live começar.",
+          "alibi": "Diz que estava num hotel em outra cidade, com check-in confirmado, e que assistia a live pelo celular quando tudo aconteceu.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "hotel",
+                "viagem"
+              ],
+              "resposta": "\"Eu tava num hotel em outra cidade, a trabalho. O check-in tá registrado no nome do hotel, pode confirmar.\""
+            },
+            {
+              "gatilhos": [
+                "mensagem",
+                "conversa",
+                "whatsapp",
+                "antes da live"
+              ],
+              "resposta": "\"A gente trocou mensagem antes da live, ele disse que tava nervoso com o que ia falar, mas animado também. Não achei que fosse tão sério.\""
+            },
+            {
+              "gatilhos": [
+                "kaique",
+                "canal antigo",
+                "ameaca",
+                "ameaça"
+              ],
+              "resposta": "\"O Rafa comentou umas duas vezes que o Kaique mandava mensagem estranha de vez em quando, tipo cobrando alguma coisa. Nunca dei muita atenção.\""
+            },
+            {
+              "gatilhos": [
+                "revelacao",
+                "revelação",
+                "prova",
+                "advogado"
+              ],
+              "resposta": "\"Ele guardou uns documentos com o advogado dele, sim. Falou que ia usar isso na live de hoje.\""
+            }
+          ],
+          "respostaPadrao": "\"Por favor, encontrem ele. Eu respondo qualquer pergunta que ajudar.\"",
+          "genero": "feminino",
+          "personalidadeIA": "Emotiva, visivelmente abalada, fala com carinho genuíno sobre a rotina e os planos do namorado. Tenta ajudar dando detalhes íntimos, às vezes se emociona no meio da fala.",
+          "segredoIA": "Não tem nenhum segredo relevante — só carrega uma culpa silenciosa por não ter insistido mais pra que ele adiasse a revelação pra uma noite em que ela pudesse estar por perto."
+        },
+        {
+          "id": "thiago",
+          "nome": "Thiago Prado",
+          "apelido": "o moderador do chat",
+          "idade": 22,
+          "ocupacao": "Moderador voluntário do chat, fã inscrito desde o início do canal",
+          "descricao": "Ajuda a moderar o chat de Rafa há anos e, por ser de extrema confiança, já ajudou a montar o antigo estúdio — o que faz dele alguém com informações técnicas sobre o local.",
+          "alibi": "Diz que estava moderando o chat de casa, como sempre, e que foi um dos primeiros a notar o silêncio estranho na câmera.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "chat",
+                "moderando"
+              ],
+              "resposta": "\"Tava moderando o chat de casa, como sempre faço em toda live. Fui eu que fixei a mensagem pedindo pra galera ficar calma.\""
+            },
+            {
+              "gatilhos": [
+                "fechadura",
+                "codigo",
+                "código",
+                "acesso",
+                "estudio",
+                "estúdio"
+              ],
+              "resposta": "\"Eu ajudei a montar o estúdio ANTIGO, com o Kaique inclusive. Esse estúdio novo eu nunca nem visitei pessoalmente.\""
+            },
+            {
+              "gatilhos": [
+                "kaique",
+                "canal antigo"
+              ],
+              "resposta": "\"O Kaique sempre foi mais fechado comigo. Nunca gostei muito da forma como ele tratava o Rafa nos bastidores, se quer saber.\""
+            },
+            {
+              "gatilhos": [
+                "obcecado",
+                "fa",
+                "fã",
+                "admirar"
+              ],
+              "resposta": "\"Olha, eu realmente admiro o trabalho do Rafa, sim, mas 'obcecado' é forte demais. Eu só quero ajudar.\""
+            }
+          ],
+          "respostaPadrao": "\"Tomara que ele apareça bem. O chat inteiro tá preocupado.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Fala como um fã extremamente dedicado, às vezes soando bajulador ao se referir a Rafa. Fica na defensiva quando é comparado ao Kaique ou questionado sobre limites da própria admiração.",
+          "segredoIA": "Não tem nenhum segredo ligado ao crime — só sente vergonha de admitir, em voz alta, que sua admiração pelo canal às vezes beira o exagero."
+        }
+      ],
+      "evidencias": [
+        {
+          "tipo": "relatorio",
+          "arquivo": "Relatorio_Policial.pdf",
+          "descricao": "Relatório oficial do boletim de desaparecimento, com a linha do tempo reconstruída a partir da gravação da live."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_bianca.txt",
+          "descricao": "Depoimento de Bianca Reis."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_kaique.txt",
+          "descricao": "Depoimento de Kaique Duarte."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_sofia.txt",
+          "descricao": "Depoimento de Sofia Lemos."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_thiago.txt",
+          "descricao": "Depoimento de Thiago Prado."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_01_estudio.png",
+          "titulo": "Estúdio no momento em que a porta foi arrombada",
+          "legenda": "A cadeira de Rafa está caída de lado. O notebook segue ligado, travado numa tela de notificação de bateria fraca do microfone."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_02_fechadura.png",
+          "titulo": "Fechadura inteligente da porta do estúdio",
+          "legenda": "Sem sinais de arrombamento físico. A fechadura registra apenas entradas por código — nenhuma tentativa de força foi detectada pelo sensor."
+        },
+        {
+          "tipo": "documento_pdf",
+          "arquivo": "Documentos/Contrato_Divisao_Canal.pdf",
+          "titulo": "Contrato de divisão do canal antigo (RTG)",
+          "conteudo": [
+            "CONTRATO DE DISSOLUCAO DE SOCIEDADE - CANAL RTG",
+            "Partes: Rafael Tanaka e Kaique Duarte",
+            "",
+            "Clausula 3: Kaique Duarte, responsavel pela gestao financeira do canal durante a sociedade, se compromete a apresentar prestacao de contas completa dos ultimos 12 meses de patrocinios recebidos.",
+            "",
+            "Anotacao manuscrita na margem, letra de Rafa: 'nunca recebi essa prestacao de contas. checar com o advogado.'"
+          ]
+        },
+        {
+          "tipo": "documento_docx",
+          "arquivo": "Documentos/Rascunho_Post_Explicativo.docx",
+          "titulo": "Rascunho de post — nunca publicado",
+          "conteudo": [
+            "Rascunho encontrado no notebook de Rafa, salvo na tarde do desaparecimento.",
+            "",
+            "\"Gente, hoje na live eu vou mostrar uma coisa que descobri sobre o canal antigo. Nao e facil falar disso porque envolve alguem que foi muito importante pra mim, mas guardei os documentos com o advogado ha meses e chegou a hora. Peco que vocês assistam com calma, sem ir pro ataque com ninguem antes de eu explicar direito.\"",
+            "",
+            "O post nunca chegou a ser publicado."
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Conversa_Kaique_Desconhecido.png",
+          "titulo": "Conversa recuperada do celular de Kaique",
+          "appNome": "Mensagens",
+          "subtitulo": "sem nome salvo",
+          "mensagens": [
+            {
+              "de": "Kaique",
+              "texto": "Ele vai falar hoje na live. Preciso resolver isso antes.",
+              "hora": "22:10",
+              "deMim": true
+            },
+            {
+              "de": "Contato",
+              "texto": "Resolver como? Não faz besteira.",
+              "hora": "22:12",
+              "deMim": false
+            },
+            {
+              "de": "Kaique",
+              "texto": "Só vou conversar com ele pessoalmente. O código antigo ainda deve funcionar.",
+              "hora": "22:31",
+              "deMim": true
+            }
+          ]
+        },
+        {
+          "tipo": "print_computador",
+          "arquivo": "Computador/Log_Fechadura_Estudio.png",
+          "titulo": "Log de acesso da fechadura inteligente do estúdio",
+          "subtitulo": "app://fechadura-smart/historico",
+          "linhas": [
+            "22:40 - Entrada por codigo cadastrado (usuario: Rafa Tanaka)",
+            "22:44 - Porta destravada por codigo NAO cadastrado no sistema atual",
+            "22:44 - Alerta automatico enviado ao aplicativo: 'codigo legado reconhecido'",
+            "23:02 - Porta arrombada manualmente (sensor de forcamento ativado)"
+          ]
+        },
+        {
+          "tipo": "post_social",
+          "arquivo": "RedesSociais/Post_Rafa_Anuncio.png",
+          "titulo": "Publicação de Rafa horas antes da live",
+          "usuario": "@rafatanaka.rtg",
+          "legenda": "hoje na live vou contar uma coisa grave sobre o canal antigo. preparem o coração, mas fiquem tranquilos, já guardei tudo com meu advogado 🙏",
+          "curtidas": 41200,
+          "comentarios": [
+            "MEU CORACAO NAO TA PREPARADO",
+            "isso envolve quem a gente ta pensando?????",
+            "fica com Deus rafa, seja o que for"
+          ]
+        },
+        {
+          "tipo": "audio",
+          "arquivo": "Audio_Pistas/audio_fechadura.wav",
+          "titulo": "Áudio da fechadura capturado pela câmera do estúdio",
+          "descricao": "A câmera do estúdio, ainda ligada, captou o som de confirmação da fechadura ao ser destravada pelo código legado — uma sequência de bipes de confirmação.",
+          "codigo": "0417"
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Backup_Nuvem_Estudio.zip",
+          "titulo": "Backup automático da nuvem do sistema de segurança do estúdio",
+          "descricao": "Protegido por senha. A senha combina a sigla do canal antigo com o código legado usado na fechadura.",
+          "senha": "RTG0417",
+          "dicaSenha": "Uma sigla que aparece bastante no material, somada a um número ouvido em outro lugar bem específico, parecem se conectar.",
+          "conteudo": [
+            "BACKUP - SISTEMA DE SEGURANCA DO ESTUDIO",
+            "==================================================",
+            "",
+            "O codigo '0417' usado as 22h44 corresponde a uma credencial legada, cadastrada ha mais de um ano e nunca removida do sistema apos a reforma do estudio.",
+            "",
+            "Segundo o cadastro original, essa credencial foi criada para 'K.D. - acesso de socio', durante o periodo em que o canal RTG ainda funcionava em sociedade.",
+            "",
+            "Este documento e uma peca decisiva da investigacao."
+          ]
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Emails_Patrocinio.zip",
+          "titulo": "E-mails de patrocínio do canal antigo, obtidos com o advogado de Rafa",
+          "descricao": "Protegida por senha. É uma cifra de Vigenère — a chave é o nome do canal antigo, sem a sigla RTG.",
+          "senha": "DESVIO2024",
+          "dicaSenha": "Uma das evidências traz um texto embaralhado por uma palavra-chave. Talvez o assunto raiz de tudo isso — aquilo que estava prestes a ser revelado — sirva como chave.",
+          "conteudo": [
+            "E-MAILS DE PATROCINIO - CANAL RTG (arquivo do advogado)",
+            "==================================================",
+            "",
+            "Serie de e-mails de 3 patrocinadores diferentes confirmando pagamentos entre R$ 60 mil e R$ 120 mil cada, feitos exclusivamente na conta bancaria administrada por Kaique Duarte durante a sociedade.",
+            "",
+            "Nenhum desses valores consta na prestacao de contas que Kaique deveria ter apresentado apos a dissolucao do canal, conforme a clausula 3 do contrato de divisao.",
+            "",
+            "Parecer do advogado anexado: ha indicio de desvio de valores na ordem de centenas de milhares de reais."
+          ]
+        }
+      ],
+      "pistasExtras": [
+        "A fechadura do estúdio registrou uma entrada às 22h44 por um código 'legado', não cadastrado no sistema atual.",
+        "O contrato de dissolução do canal RTG obrigava Kaique a apresentar uma prestação de contas que, segundo anotação do próprio Rafa, nunca foi entregue.",
+        "Rafa guardou documentos sobre o canal antigo com seu advogado meses antes do desaparecimento, segundo o rascunho de post encontrado no notebook.",
+        "A sequência de bipes da fechadura, contada com calma, forma quatro dígitos.",
+        "O sistema de segurança identifica a credencial usada às 22h44 como pertencente a 'K.D. - acesso de sócio', criada na época em que Kaique ainda dividia o canal com Rafa.",
+        "O post de Rafa horas antes da live já deixava claro que a revelação envolvia 'o canal antigo' — não o canal atual."
+      ],
+      "solucao": {
+        "suspeitoId": "kaique",
+        "arma": "codigo legado da fechadura inteligente",
+        "local": "estudio de gravacao"
+      },
+      "pontosMax": 150
+    },
+    {
+      "id": "testamento04",
+      "numero": 4,
+      "titulo": "O Testamento Trocado",
+      "capa": "📜",
+      "resumo": "Um patriarca é encontrado morto no escritório trancado da mansão da família, na véspera de assinar um novo testamento. Cinco pessoas tinham motivo. Só uma tinha acesso.",
+      "requerCodigo": true,
+      "vitima": {
+        "nome": "Aristides Monteiro Neto",
+        "idade": 78,
+        "ocupacao": "Empresário aposentado, patriarca da família Monteiro"
+      },
+      "local": "Escritório particular, segundo andar da mansão Monteiro",
+      "dataHora": "na noite anterior à assinatura do novo testamento, entre 23h00 e 23h40",
+      "introducao": "Aristides seria o único a assinar, na manhã seguinte, um novo testamento que incluía uma cláusula de auditoria independente sobre o fundo fiduciário da família — e que reduzia drasticamente a herança de um dos filhos. Ele foi encontrado sem vida em seu escritório particular por volta da meia-noite, pela governanta Dona Ivone, que trabalha na casa há 32 anos. A porta do escritório é trancada por fechadura inteligente instalada há poucos meses, com registro de todos os códigos usados. Cinco pessoas estavam na mansão naquela noite.",
+      "suspeitos": [
+        {
+          "id": "heitor",
+          "nome": "Heitor Monteiro",
+          "apelido": "o filho mais velho",
+          "idade": 50,
+          "ocupacao": "Empresário, filho mais velho de Aristides",
+          "descricao": "Seria o principal prejudicado pelo novo testamento, que reduzia sua parte na herança. Estava na mansão, na ala oposta, jogando cartas com o cunhado Rogério.",
+          "alibi": "Diz que jogou cartas com Rogério na sala de jogos até tarde, sem sair de lá.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "cartas",
+                "rogerio",
+                "rogério"
+              ],
+              "resposta": "\"Fiquei jogando cartas com o Rogério a noite toda, na sala de jogos. Ele pode confirmar.\""
+            },
+            {
+              "gatilhos": [
+                "testamento",
+                "heranca",
+                "herança",
+                "auditoria"
+              ],
+              "resposta": "\"Sim, eu sabia que ia perder parte da herança. Não gostei, mas discutir isso com meu pai é bem diferente de fazer o que fizeram com ele.\""
+            },
+            {
+              "gatilhos": [
+                "renata",
+                "advogada"
+              ],
+              "resposta": "\"A Renata sempre foi próxima do meu pai, cuida dos assuntos legais da família há uns 6 anos. Confiável, até onde eu sabia.\""
+            },
+            {
+              "gatilhos": [
+                "fundo",
+                "fiduciario",
+                "fiduciário",
+                "dinheiro"
+              ],
+              "resposta": "\"Nunca prestei muita atenção nos detalhes do fundo, isso sempre foi com meu pai e a advogada dele.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu quero justiça pro meu pai, com ou sem herança nenhuma.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Direto, um tanto ríspido, mas honesto — não esconde que ficou magoado com a decisão do pai sobre o novo testamento, mesmo sabendo que isso o coloca sob suspeita.",
+          "segredoIA": "Não tem nenhum segredo ligado ao crime — só evita demonstrar o quanto realmente ficou magoado com o pai, por orgulho."
+        },
+        {
+          "id": "camila",
+          "nome": "Camila Monteiro",
+          "apelido": "a filha caçula",
+          "idade": 41,
+          "ocupacao": "Designer de interiores, filha caçula de Aristides",
+          "descricao": "Seria beneficiada pelo novo testamento. Estava sozinha em seu quarto, na ala da casa mais distante do escritório, segundo ela.",
+          "alibi": "Diz que foi dormir cedo, por volta das 22h30, e só acordou com a comoção.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "quarto",
+                "dormir"
+              ],
+              "resposta": "\"Fui dormir cedo, tava exausta. Só acordei com o barulho de gente correndo pelo corredor.\""
+            },
+            {
+              "gatilhos": [
+                "testamento",
+                "heranca",
+                "herança"
+              ],
+              "resposta": "\"Eu ia ser beneficiada, sim, mas isso não muda nada — eu preferia meu pai vivo do que qualquer herança.\""
+            },
+            {
+              "gatilhos": [
+                "renata",
+                "advogada"
+              ],
+              "resposta": "\"A Renata sempre foi meio fria comigo, sinceramente. Nunca gostei muito dela, mas nunca desconfiei de nada até agora.\""
+            },
+            {
+              "gatilhos": [
+                "rogerio",
+                "rogério",
+                "marido",
+                "cunhado"
+              ],
+              "resposta": "\"Meu marido tem uns problemas com jogo, todo mundo na família sabe. Mas ele jamais faria algo assim com meu pai.\""
+            }
+          ],
+          "respostaPadrao": "\"Só quero entender o que aconteceu com meu pai.\"",
+          "genero": "feminino",
+          "personalidadeIA": "Gentil, sensível, ainda em choque com a morte do pai. Fica protetora e defensiva sempre que alguém insinua algo contra o marido Rogério.",
+          "segredoIA": "Não tem nenhum segredo relevante além de já saber das dívidas de jogo do marido havia tempos, o que a deixa constrangida quando o assunto surge."
+        },
+        {
+          "id": "renata",
+          "nome": "Renata Salles",
+          "apelido": "a advogada da família",
+          "idade": 47,
+          "ocupacao": "Advogada da família Monteiro há 6 anos",
+          "descricao": "Estava na mansão para revisar os últimos detalhes do novo testamento com Aristides antes da assinatura no dia seguinte. Diz ter saído do escritório às 22h30.",
+          "alibi": "Diz que revisou o testamento com Aristides até 22h30 e depois foi embora, deixando-o vivo e bem no escritório.",
+          "culpado": true,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "saida",
+                "saída"
+              ],
+              "resposta": "\"Sai as 22h30, como já registrado. Aristides estava perfeitamente bem quando fechei a porta.\" *ela responde rápido demais, sem pausa*"
+            },
+            {
+              "gatilhos": [
+                "testamento",
+                "clausula",
+                "cláusula",
+                "auditoria",
+                "fundo",
+                "fiduciario",
+                "fiduciário"
+              ],
+              "resposta": "\"A cláusula de auditoria foi pedido dele, não minha. Eu só redigi o documento conforme instruído.\""
+            },
+            {
+              "gatilhos": [
+                "fechadura",
+                "codigo",
+                "código",
+                "acesso"
+              ],
+              "resposta": "\"Eu tenho código de acesso ao escritório, sim, faz parte do meu trabalho poder entrar pra revisar documentos.\""
+            },
+            {
+              "gatilhos": [
+                "dinheiro",
+                "financeiro",
+                "desvio",
+                "forjado",
+                "forjar"
+              ],
+              "resposta": "\"Não sei do que você está falando. Minha relação com o fundo da família é estritamente profissional.\" *a voz sobe de tom*"
+            },
+            {
+              "gatilhos": [
+                "ligacao",
+                "ligação",
+                "telefone",
+                "mensagem"
+              ],
+              "resposta": "\"Faço várias ligações de trabalho por dia, não vejo relevância nisso.\""
+            }
+          ],
+          "respostaPadrao": "\"Já respondi o que sei. Espero que respeitem o processo legal daqui pra frente.\"",
+          "genero": "feminino",
+          "personalidadeIA": "Extremamente controlada, articulada e profissional na fala — usa vocabulário jurídico quase como escudo. Comete pequenos deslizes de tom (uma pausa maior, uma resposta rápida demais) só quando o assunto é o fundo fiduciário ou a cláusula de auditoria.",
+          "segredoIA": "Ela desviou cerca de R$ 780 mil do fundo fiduciário da família ao longo de 4 anos, forjando assinaturas digitais nas retiradas. Quando Aristides a confrontou sobre 'números que não fechavam' na noite anterior à assinatura do novo testamento, ela entrou em pânico e o atacou com o abridor de cartas de prata do próprio escritório."
+        },
+        {
+          "id": "ivone",
+          "nome": "Ivone Carrara",
+          "apelido": "a governanta",
+          "idade": 61,
+          "ocupacao": "Governanta da família Monteiro há 32 anos",
+          "descricao": "Trabalha na casa desde muito antes de Camila e Heitor nascerem. Foi quem encontrou o corpo, por volta da meia-noite, ao levar um chá que Aristides pedia todas as noites.",
+          "alibi": "Diz que preparou o chá na cozinha, como todas as noites, e subiu ao escritório por volta da meia-noite.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "cha",
+                "chá",
+                "cozinha"
+              ],
+              "resposta": "\"Preparei o chá dele como sempre faço, todas as noites há décadas. Subi por volta da meia-noite e foi quando encontrei.\""
+            },
+            {
+              "gatilhos": [
+                "tempo",
+                "anos",
+                "casa",
+                "familia",
+                "família"
+              ],
+              "resposta": "\"Trabalho pra essa família há 32 anos. Vi essas crianças crescerem. Isso aqui partiu meu coração.\""
+            },
+            {
+              "gatilhos": [
+                "renata",
+                "advogada",
+                "saida",
+                "saída"
+              ],
+              "resposta": "\"Vi a doutora Renata saindo pela porta da frente, sim, mas não sei precisar a hora certa, não olhei o relógio.\""
+            },
+            {
+              "gatilhos": [
+                "barulho",
+                "som",
+                "ouviu"
+              ],
+              "resposta": "\"Não ouvi nada de estranho lá de baixo. As paredes dessa casa são grossas, antigas.\""
+            }
+          ],
+          "respostaPadrao": "\"Só quero que descubram quem fez isso com o senhor Aristides.\"",
+          "genero": "feminino",
+          "personalidadeIA": "Calorosa, maternal, fala da família com muito carinho e uma tristeza genuína e profunda. Detalhista sobre a rotina da casa, tem memória apurada de horários.",
+          "segredoIA": "Não tem nenhum segredo ligado diretamente ao crime — só carrega uma desconfiança pessoal da Renata, baseada em pequenos detalhes ao longo dos anos, que prefere não afirmar com todas as letras sem prova."
+        },
+        {
+          "id": "rogerio",
+          "nome": "Rogério Paiva",
+          "apelido": "o genro",
+          "idade": 44,
+          "ocupacao": "Marido de Camila, sem ocupação fixa no momento",
+          "descricao": "Tem dívidas de jogo conhecidas pela família. Diz ter passado a noite jogando cartas com Heitor na sala de jogos.",
+          "alibi": "Diz que jogou cartas com Heitor a noite toda e postou nas redes sociais durante a partida.",
+          "culpado": false,
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "cartas",
+                "heitor"
+              ],
+              "resposta": "\"Fiquei jogando cartas com o Heitor, pode confirmar com ele. Postei até uma foto da partida.\""
+            },
+            {
+              "gatilhos": [
+                "divida",
+                "dívida",
+                "jogo",
+                "aposta",
+                "dinheiro"
+              ],
+              "resposta": "\"Tenho umas dívidas, sim, mas isso não tem nada a ver com o que aconteceu com meu sogro.\""
+            },
+            {
+              "gatilhos": [
+                "post",
+                "rede social",
+                "instagram",
+                "foto"
+              ],
+              "resposta": "\"Postei sim, durante o jogo mesmo. Pode ver o horário lá.\" *ele parece confiante demais nesse ponto*"
+            },
+            {
+              "gatilhos": [
+                "heranca",
+                "herança",
+                "testamento"
+              ],
+              "resposta": "\"Eu nem sou herdeiro direto, isso é assunto da Camila e do Heitor, não meu.\""
+            }
+          ],
+          "respostaPadrao": "\"Espero que resolvam isso logo, essa casa tá pesada demais.\"",
+          "genero": "masculino",
+          "personalidadeIA": "Tenta parecer descontraído e confiante, mas fica visivelmente nervoso e alonga demais as explicações sempre que o assunto é dinheiro ou dívidas.",
+          "segredoIA": "Tem dívidas de jogo reais e às vezes agenda publicações nas redes sociais com antecedência pra parecer presente em lugares onde não está — uma mentira social por vaidade, sem nenhuma relação direta com o crime."
+        }
+      ],
+      "evidencias": [
+        {
+          "tipo": "relatorio",
+          "arquivo": "Relatorio_Policial.pdf",
+          "descricao": "Relatório oficial da ocorrência, com a linha do tempo reconstruída a partir do log da fechadura inteligente."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_heitor.txt",
+          "descricao": "Depoimento de Heitor Monteiro."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_camila.txt",
+          "descricao": "Depoimento de Camila Monteiro."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_renata.txt",
+          "descricao": "Depoimento de Renata Salles."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_ivone.txt",
+          "descricao": "Depoimento de Ivone Carrara."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_rogerio.txt",
+          "descricao": "Depoimento de Rogério Paiva."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_01_escritorio.png",
+          "titulo": "Escritório no momento do encontro do corpo",
+          "legenda": "Um abridor de cartas de prata, normalmente sobre a mesa junto ao porta-canetas, está fora do lugar, próximo à poltrona."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_02_cofre.png",
+          "titulo": "Pequeno cofre embutido na estante do escritório",
+          "legenda": "O cofre está entreaberto. Segundo o inventário da família, guardava apenas documentos do fundo fiduciário — nenhum item de valor material."
+        },
+        {
+          "tipo": "documento_pdf",
+          "arquivo": "Documentos/Minuta_Testamento_Antigo.pdf",
+          "titulo": "Minuta do testamento antigo (ainda vigente)",
+          "conteudo": [
+            "MINUTA DE TESTAMENTO - VERSAO ANTERIOR (vigente ate a assinatura da nova versao)",
+            "",
+            "Divisao igualitaria da heranca entre os filhos Heitor Monteiro e Camila Monteiro.",
+            "Nenhuma clausula de auditoria sobre o fundo fiduciario administrado pela advogada da familia.",
+            "",
+            "Documento redigido ha 9 anos, sem alteracoes ate a presente data."
+          ]
+        },
+        {
+          "tipo": "documento_docx",
+          "arquivo": "Documentos/Minuta_Testamento_Novo_Rascunho.docx",
+          "titulo": "Rascunho do novo testamento — a ser assinado",
+          "conteudo": [
+            "MINUTA DE TESTAMENTO - NOVA VERSAO (nao assinada)",
+            "",
+            "Clausula adicional 7: fica instituida auditoria independente sobre o fundo fiduciario da familia Monteiro, a ser conduzida por escritorio externo, com prazo de 60 dias a partir da assinatura.",
+            "",
+            "Anotacao manuscrita de Aristides na margem: 'conversar com a Renata sobre os numeros que nao fecham antes de assinar amanha.'"
+          ]
+        },
+        {
+          "tipo": "print_computador",
+          "arquivo": "Computador/Log_Fechadura_Escritorio.png",
+          "titulo": "Log de acesso da fechadura inteligente do escritório",
+          "subtitulo": "app://fechadura-smart/historico",
+          "linhas": [
+            "21:45 - Entrada por codigo (usuario: Aristides Monteiro)",
+            "22:05 - Entrada por codigo (usuario: Renata Salles)",
+            "22:30 - SEM registro de saida do codigo de Renata Salles",
+            "23:12 - Saida por codigo (usuario: Renata Salles)",
+            "00:03 - Entrada por codigo (usuario: Ivone Carrara)"
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Ligacao_Renata_Contato.png",
+          "titulo": "Registro de ligação recuperado do celular de Renata",
+          "appNome": "Chamadas",
+          "subtitulo": "Contato nao identificado",
+          "mensagens": [
+            {
+              "de": "Renata",
+              "texto": "Preciso resolver isso antes que ele descubra a diferenca nos numeros do fundo.",
+              "hora": "23:05",
+              "deMim": true
+            },
+            {
+              "de": "Contato",
+              "texto": "Você disse que já tinha corrigido tudo na planilha.",
+              "hora": "23:07",
+              "deMim": false
+            },
+            {
+              "de": "Renata",
+              "texto": "A auditoria ia achar de qualquer jeito. Preciso de mais tempo.",
+              "hora": "23:09",
+              "deMim": true
+            }
+          ]
+        },
+        {
+          "tipo": "post_social",
+          "arquivo": "RedesSociais/Post_Rogerio_Cartas.png",
+          "titulo": "Publicação de Rogério durante a suposta partida de cartas",
+          "usuario": "@rogerio.paiva",
+          "legenda": "noite de cartas com o cunhado, sequência boa hoje 🃏",
+          "curtidas": 19,
+          "comentarios": [
+            "boa sorte af",
+            "kkkkj ele sempre perde mesmo assim"
+          ]
+        },
+        {
+          "tipo": "audio",
+          "arquivo": "Audio_Pistas/audio_fechadura.wav",
+          "titulo": "Áudio de confirmação capturado pelo assistente de voz do escritório",
+          "descricao": "O assistente de voz do escritório, sempre ativo por rotina de Aristides, captou o som de confirmação da fechadura sendo destravada pouco antes da meia-noite — uma sequência de bipes.",
+          "codigo": "2691"
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Extrato_Fundo_Fiduciario.zip",
+          "titulo": "Extrato completo do fundo fiduciário da família Monteiro",
+          "descricao": "Protegido por senha. A senha combina o sobrenome da família com o código revelado no áudio da fechadura.",
+          "senha": "MONTEIRO2691",
+          "dicaSenha": "O sobrenome de uma família inteira, somado a um número ouvido em outro lugar bem específico, parecem se conectar.",
+          "conteudo": [
+            "EXTRATO COMPLETO - FUNDO FIDUCIARIO MONTEIRO",
+            "==================================================",
+            "",
+            "Nos ultimos 4 anos, foram identificadas retiradas nao documentadas totalizando aproximadamente R$ 780.000,00, todas autorizadas pela assinatura digital de Renata Salles, administradora legal do fundo.",
+            "",
+            "A clausula de auditoria do novo testamento teria exposto essas retiradas em ate 60 dias.",
+            "",
+            "Este documento e uma peca decisiva da investigacao."
+          ]
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Historico_Chamadas_Renata.zip",
+          "titulo": "Histórico detalhado de chamadas de Renata na noite do crime",
+          "descricao": "Protegida por senha. É uma cifra de César — o deslocamento não está explícito, mas tem relação com quantos anos alguém de confiança da casa está na família.",
+          "senha": "FORJADO",
+          "dicaSenha": "Uma das evidências traz um texto embaralhado por um deslocamento simples de alfabeto. Alguém no caso menciona, meio de passagem, há quantos anos está numa rotina — talvez isso valha alguma coisa se você pensar nesse número em termos de alfabeto.",
+          "conteudo": [
+            "HISTORICO DETALHADO DE CHAMADAS - RENATA SALLES",
+            "==================================================",
+            "",
+            "As 23h05, 23h07 e 23h09, tres chamadas foram feitas de dentro da mansao para um contato salvo apenas como 'contador pessoal'.",
+            "",
+            "Pericia em telefonia confirma que o numero pertence a um perito forense particular, especializado em analise de assinatura digital e documentos financeiros.",
+            "",
+            "Conclusao da pericia: ha fortes indicios de que a assinatura digital usada nas retiradas do fundo foi forjada por terceiro a mando da administradora."
+          ]
+        }
+      ],
+      "pistasExtras": [
+        "O log da fechadura mostra que o código de Renata Salles entrou às 22h05 mas não tem registro de saída às 22h30, como ela afirmou — só sai oficialmente às 23h12.",
+        "A cláusula de auditoria do novo testamento incluía justamente o fundo fiduciário administrado pela advogada da família.",
+        "O rascunho do novo testamento tem uma anotação do próprio Aristides sobre 'números que não fecham', endereçada à Renata.",
+        "A sequência de bipes do áudio do escritório, contada com calma, forma quatro dígitos.",
+        "Dona Ivone trabalha para a família Monteiro há 32 anos — pode valer a pena pensar nesse número de um jeito diferente.",
+        "O post de Rogério durante o suposto jogo de cartas pode ter sido publicado na hora — ou pode ter sido agendado com antecedência. Vale conferir se as redes sociais permitem esse tipo de agendamento."
+      ],
+      "solucao": {
+        "suspeitoId": "renata",
+        "arma": "abridor de cartas de prata",
+        "local": "escritorio particular"
+      },
+      "pontosMax": 150
+    },
+    {
+      "id": "app05",
+      "numero": 5,
+      "titulo": "O Aplicativo Perfeito",
+      "capa": "📱",
+      "resumo": "Uma mulher é encontrada morta em casa após um encontro marcado por aplicativo de namoro. A perícia identifica semelhanças fortes demais com dois casos antigos nunca resolvidos.",
+      "requerCodigo": true,
+      "vitima": {
+        "nome": "Camila Studart",
+        "idade": 27,
+        "ocupacao": "Designer gráfica"
+      },
+      "local": "Quarto do apartamento da vítima, apto 402",
+      "dataHora": "noite de um encontro marcado por aplicativo, entre 22h00 e 23h30",
+      "introducao": "Camila Studart foi encontrada morta em seu próprio quarto pela irmã, na manhã seguinte a um encontro marcado por aplicativo de namoro. Não havia sinais de arrombamento — ela mesma abriu a porta. Um bracelete que ela usava todos os dias, item de valor sentimental, não foi encontrado em lugar nenhum do apartamento. A perícia notou algo perturbador: o modus operandi tem semelhanças fortes demais com dois casos não solucionados de mulheres desaparecidas após encontros pelo mesmo aplicativo, nos últimos dois anos.",
+      "suspeitos": [
+        {
+          "id": "rafael",
+          "nome": "Rafael Bittar",
+          "apelido": "o ex-namorado",
+          "idade": 29,
+          "ocupacao": "Corretor de imóveis",
+          "descricao": "Terminou com Camila há 4 meses, mas ainda mandava mensagens possessivas de vez em quando. Ela tinha comentado com amigas que ele não aceitava bem o fim do relacionamento.",
+          "alibi": "Diz que estava numa confraternização da imobiliária a noite toda, com várias testemunhas.",
+          "culpado": false,
+          "genero": "masculino",
+          "personalidadeIA": "Impulsivo, fala alto, se irrita fácil quando sente que está sendo julgado, mas fica visivelmente abalado ao falar da Camila — parece genuinamente destruído com a notícia, mesmo por trás da raiva.",
+          "segredoIA": "Ele realmente ainda mandava mensagens possessivas e não superou o término, o que o deixa constrangido e na defensiva, mas não teve nenhuma participação no crime — estava mesmo na confraternização, com dezenas de testemunhas.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "confraternizacao",
+                "confraternização"
+              ],
+              "resposta": "\"Tava na confraternização da imobiliária, com um monte de gente. Pode perguntar pra qualquer um lá.\""
+            },
+            {
+              "gatilhos": [
+                "mensagem",
+                "whatsapp",
+                "possessivo",
+                "termino",
+                "término"
+              ],
+              "resposta": "\"Ok, eu mandava mensagem demais às vezes, eu sei que isso foi errado. Mas eu jamais faria o que vocês tão insinuando.\""
+            },
+            {
+              "gatilhos": [
+                "app",
+                "aplicativo",
+                "encontro",
+                "match"
+              ],
+              "resposta": "\"Ela tinha me falado que ia sair com alguém do aplicativo, sim. Isso me incomodou, não vou mentir.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu só quero que peguem quem fez isso com ela.\""
+        },
+        {
+          "id": "otavio",
+          "nome": "Otávio Meireles",
+          "apelido": "o match do aplicativo",
+          "idade": 34,
+          "ocupacao": "Não declarada — usava identidade falsa no aplicativo",
+          "descricao": "Conheceu Camila pelo aplicativo semanas antes, se apresentando com outro nome e outras fotos. Foi a última pessoa a vê-la com vida, segundo o histórico do próprio app.",
+          "alibi": "Diz que saiu do apartamento dela por volta das 22h45, ainda viva e bem, e foi direto pra casa.",
+          "culpado": true,
+          "genero": "masculino",
+          "personalidadeIA": "Charmoso, calmo e articulado na superfície, quase estudado demais — como quem já ensaiou a própria versão da história várias vezes. Fica sutilmente mais frio e monossilábico quando o assunto foge do roteiro que ele preparou.",
+          "segredoIA": "Ele usa identidades falsas no aplicativo pra se aproximar de mulheres que se encaixam num padrão específico, guarda pequenos itens pessoais das vítimas como troféu, e é responsável pela morte de Camila e das duas mulheres dos casos não solucionados anteriores. Nunca admite isso, mesmo pressionado — desvia, nega com calma ou finge não entender a pergunta.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "saida",
+                "saída"
+              ],
+              "resposta": "\"Saí de lá por volta de 22h45, ela tava bem, viva, rindo até. Fui direto pra casa depois.\""
+            },
+            {
+              "gatilhos": [
+                "nome falso",
+                "gustavo",
+                "identidade",
+                "fotos"
+              ],
+              "resposta": "\"Todo mundo usa apelido em aplicativo de namoro, não é nada demais.\""
+            },
+            {
+              "gatilhos": [
+                "bracelete",
+                "objeto",
+                "item"
+              ],
+              "resposta": "\"Bracelete? Não reparei em nada assim, sinceramente.\""
+            },
+            {
+              "gatilhos": [
+                "outras mulheres",
+                "outros casos",
+                "padrao",
+                "padrão"
+              ],
+              "resposta": "\"Não sei do que você tá falando. Eu mal conhecia ela.\""
+            }
+          ],
+          "respostaPadrao": "\"Já disse tudo que sei. Espero que encontrem quem fez isso.\""
+        },
+        {
+          "id": "beatriz",
+          "nome": "Beatriz Studart",
+          "apelido": "a irmã",
+          "idade": 31,
+          "ocupacao": "Advogada",
+          "descricao": "Irmã mais velha de Camila. As duas dividiam a herança de um apartamento da família havia meses, numa disputa que gerava alguns atritos entre elas.",
+          "alibi": "Diz que estava em casa, sozinha, e foi ela quem encontrou o corpo na manhã seguinte, ao não conseguir contato com a irmã.",
+          "culpado": false,
+          "genero": "feminino",
+          "personalidadeIA": "Contida, analítica, fala como advogada mesmo em choque — organiza os fatos com uma clareza que soa quase fria, mas quebra a voz ao mencionar detalhes pessoais da irmã.",
+          "segredoIA": "A disputa pela herança do apartamento da família era real e chata, mas nunca foi motivo de rompimento sério entre elas — Beatriz se sente culpada por terem discutido sobre isso na última ligação que tiveram, dias antes.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "encontrou",
+                "corpo"
+              ],
+              "resposta": "\"Eu tava em casa. Fui até lá de manhã porque ela não respondia mensagem, e foi aí que eu encontrei ela.\""
+            },
+            {
+              "gatilhos": [
+                "heranca",
+                "herança",
+                "apartamento",
+                "disputa",
+                "briga"
+              ],
+              "resposta": "\"A gente discutia sobre o apê da família, sim, mas isso é coisa de irmã, não é motivo pra... isso.\""
+            },
+            {
+              "gatilhos": [
+                "app",
+                "aplicativo",
+                "encontro",
+                "match"
+              ],
+              "resposta": "\"Ela me mandou mensagem dizendo que ia sair com um cara do aplicativo naquela noite, pediu pra eu 'ficar de olho' de brincadeira. Eu devia ter dado mais atenção.\""
+            }
+          ],
+          "respostaPadrao": "\"Só quero justiça pela minha irmã.\""
+        },
+        {
+          "id": "denis",
+          "nome": "Denis Farkas",
+          "apelido": "o vizinho",
+          "idade": 38,
+          "ocupacao": "Autônomo, apaixonado por casos policiais reais",
+          "descricao": "Vizinho do mesmo andar, sempre soube tudo o que acontecia no prédio. Acompanha de perto canais e fóruns sobre crimes reais, e já tentou se aproximar da investigação oferecendo teorias.",
+          "alibi": "Diz que estava em casa a noite toda, assistindo a um documentário sobre crimes não resolvidos.",
+          "culpado": false,
+          "genero": "masculino",
+          "personalidadeIA": "Fala rápido demais, ansioso pra ajudar, cita detalhes técnicos de outros casos famosos, meio inconveniente. Se ofende quando acham que ele está sendo suspeito em vez de útil.",
+          "segredoIA": "Ele não tem nenhuma relação com o crime — só é obcecado por esse tipo de caso e se sente, de um jeito estranho, importante por morar perto de uma cena real. Isso o deixa involuntariamente inconveniente durante o interrogatório.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "documentario",
+                "documentário"
+              ],
+              "resposta": "\"Tava em casa vendo um documentário sobre um caso não resolvido, aliás, seu caso tem semelhanças com um episódio que eu vi semana passada...\""
+            },
+            {
+              "gatilhos": [
+                "ouviu",
+                "barulho",
+                "som",
+                "corredor"
+              ],
+              "resposta": "\"Ouvi uns passos no corredor lá pelas 22h50, mas não vi ninguém, a porta do olho mágico tava embaçada.\""
+            },
+            {
+              "gatilhos": [
+                "teoria",
+                "suspeito",
+                "acha"
+              ],
+              "resposta": "\"Eu tenho uma teoria, se quiser ouvir... acho que tem a ver com aplicativo de namoro, tipo aqueles casos em série que...\""
+            }
+          ],
+          "respostaPadrao": "\"Fico à disposição pra ajudar no que precisar, sério.\""
+        }
+      ],
+      "evidencias": [
+        {
+          "tipo": "relatorio",
+          "arquivo": "Relatorio_Policial.pdf",
+          "descricao": "Relatório oficial da ocorrência, com a comparação preliminar com os dois casos anteriores."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_rafael.txt",
+          "descricao": "Depoimento de Rafael Bittar."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_otavio.txt",
+          "descricao": "Depoimento de Otávio Meireles."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_beatriz.txt",
+          "descricao": "Depoimento de Beatriz Studart."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_denis.txt",
+          "descricao": "Depoimento de Denis Farkas."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_01_quarto.png",
+          "titulo": "Quarto da vítima",
+          "legenda": "Dois copos de vinho na cômoda, um deles praticamente intacto. Nenhum sinal de arrombamento na porta — a vítima abriu voluntariamente."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_02_bracelete.png",
+          "titulo": "Registro do bracelete desaparecido",
+          "legenda": "Foto antiga da vítima usando o bracelete que ela nunca tirava. O item não foi encontrado em nenhum cômodo do apartamento nem nos objetos pessoais dela."
+        },
+        {
+          "tipo": "documento_pdf",
+          "arquivo": "Documentos/Laudo_Comparativo_Padrao.pdf",
+          "titulo": "Laudo comparativo entre os três casos",
+          "conteudo": [
+            "LAUDO COMPARATIVO - PERICIA CRIMINAL",
+            "Comparacao entre a ocorrencia atual e dois casos nao solucionados dos ultimos 24 meses.",
+            "",
+            "Caso A (ha 14 meses): mulher desaparecida apos encontro marcado por aplicativo de namoro. Item pessoal de valor sentimental nunca recuperado.",
+            "Caso B (ha 8 meses): mulher encontrada morta em casa apos encontro marcado por aplicativo de namoro. Item pessoal de valor sentimental ausente da cena.",
+            "",
+            "Conclusao preliminar: ha indicios fortes de que os tres casos foram cometidos pela mesma pessoa, com um padrao de comportamento consistente com a retencao de itens pessoais das vitimas."
+          ]
+        },
+        {
+          "tipo": "documento_docx",
+          "arquivo": "Documentos/Mensagens_App_Exportadas.docx",
+          "titulo": "Mensagens do aplicativo, obtidas por ordem judicial",
+          "conteudo": [
+            "Exportacao oficial de mensagens entre a vitima e o perfil 'Gustavo Prado' no aplicativo de encontros.",
+            "",
+            "'Gustavo': oi Camila, adorei seu perfil! que tal a gente se conhecer pessoalmente essa semana?",
+            "Camila: pode ser sim! mas prefiro sair num lugar publico primeiro, tudo bem?",
+            "'Gustavo': claro, mas prefiro conhecer melhor primeiro por aqui mesmo, sabe. nao curto muito lugar cheio",
+            "Camila: hmm tudo bem, vamos conversando entao",
+            "",
+            "Nota da pericia: nenhum registro publico (redes sociais, documentos) do nome 'Gustavo Prado' correspondente as fotos usadas no perfil foi localizado ate o momento."
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Conversa_Camila_Beatriz.png",
+          "titulo": "Conversa entre Camila e a irmã Beatriz, na tarde do crime",
+          "appNome": "Mensagens",
+          "subtitulo": "Beatriz (irmã)",
+          "mensagens": [
+            {
+              "de": "Camila",
+              "texto": "vou sair hj com um cara que conheci num app, se cuidado kkkk",
+              "hora": "18:20",
+              "deMim": true
+            },
+            {
+              "de": "Beatriz",
+              "texto": "toma cuidado mesmo, manda a localização pra mim",
+              "hora": "18:24",
+              "deMim": false
+            },
+            {
+              "de": "Camila",
+              "texto": "mando sim, ele parece super gente boa",
+              "hora": "18:26",
+              "deMim": true
+            }
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Conversa_Apagada_Recuperada.png",
+          "titulo": "Mensagens apagadas, recuperadas do celular da vítima",
+          "appNome": "Aplicativo de Encontros",
+          "subtitulo": "Gustavo Prado",
+          "mensagens": [
+            {
+              "de": "Gustavo",
+              "texto": "não precisa avisar ninguém que a gente vai se ver hoje, curto manter isso só nosso no começo",
+              "hora": "20:05",
+              "deMim": false
+            },
+            {
+              "de": "Camila",
+              "texto": "ah já contei pra minha irmã kk, é normal",
+              "hora": "20:07",
+              "deMim": true
+            },
+            {
+              "de": "Gustavo",
+              "texto": "tudo bem então, só evita passar minha localização pra ela tá bom?",
+              "hora": "20:09",
+              "deMim": false
+            }
+          ]
+        },
+        {
+          "tipo": "print_computador",
+          "arquivo": "Computador/Busca_Gustavo_Prado.png",
+          "titulo": "Histórico de busca do computador da vítima",
+          "subtitulo": "historico://ultimos-7-dias",
+          "linhas": [
+            "19:40 - gustavo prado designer (nenhum resultado relevante)",
+            "19:44 - gustavo prado instagram (perfil nao encontrado)",
+            "19:52 - e normal nao achar rede social de alguem",
+            "19:58 - [aba fechada]"
+          ]
+        },
+        {
+          "tipo": "post_social",
+          "arquivo": "RedesSociais/Story_Camila_Noite.png",
+          "titulo": "Story publicado por Camila na noite do crime",
+          "usuario": "@camilastudart",
+          "legenda": "noite especial ✨ (localização: apto 402)",
+          "curtidas": 340,
+          "comentarios": [
+            "que linda",
+            "boa noite migaa",
+            "cade as fotos do encontro depoisss"
+          ]
+        },
+        {
+          "tipo": "audio",
+          "arquivo": "Audio_Pistas/audio_caixa_postal.wav",
+          "titulo": "Trecho de uma caixa postal antiga encontrada num chip pré-pago",
+          "descricao": "Um chip de celular pré-pago, encontrado numa investigação paralela, tinha uma caixa postal salva com uma sequência de bipes de confirmação de ativação.",
+          "codigo": "3387"
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Backup_Conversas_App.zip",
+          "titulo": "Backup completo das conversas do aplicativo, obtido com a empresa por ordem judicial",
+          "descricao": "Protegido por senha. Alguma coisa relacionada ao próprio aplicativo, combinada com um número específico, parece formar a senha.",
+          "senha": "MATCH3387",
+          "dicaSenha": "O nome do tipo de serviço usado pra marcar o encontro, junto com um número ouvido em outro lugar bem específico do material, parecem se conectar.",
+          "conteudo": [
+            "BACKUP COMPLETO - CONVERSAS DO APLICATIVO (ordem judicial)",
+            "==================================================",
+            "",
+            "O perfil 'Gustavo Prado' foi criado 6 dias antes do primeiro contato com Camila Studart, usando um numero de telefone pre-pago nao vinculado a nenhum documento.",
+            "",
+            "O mesmo numero de telefone foi usado para criar dois outros perfis, com nomes e fotos diferentes, em janelas de tempo proximas aos dois casos anteriores nao solucionados.",
+            "",
+            "Este documento e uma peca decisiva da investigacao."
+          ]
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Perfil_Falso_Otavio.zip",
+          "titulo": "Perfil real por trás do nome falso, reconstruído pela perícia digital",
+          "descricao": "Protegida por senha. É uma cifra de César — o deslocamento não está explícito, mas alguém do caso menciona um número de apartamento que pode servir.",
+          "senha": "CACADOR",
+          "dicaSenha": "Existe um texto embaralhado por um deslocamento simples de alfabeto relacionado a esse arquivo: OMOMPAD. Um número de apartamento mencionado em outro lugar do material pode valer como deslocamento, se você pensar nele em termos de alfabeto.",
+          "conteudo": [
+            "RECONSTRUCAO DE PERFIL - PERICIA DIGITAL",
+            "==================================================",
+            "",
+            "O nome real por tras do perfil 'Gustavo Prado' e Otavio Meireles, identificado por cruzamento de metadados de fotos e localizacao de IP.",
+            "",
+            "Otavio ja usou pelo menos 4 identidades falsas diferentes em aplicativos de encontro nos ultimos 3 anos, sempre com fotos de bancos de imagem ou de perfis roubados.",
+            "",
+            "Em objetos pessoais dele foram encontrados pequenos itens (brincos, pulseiras, um lenco) sem relacao com nenhuma pessoa conhecida de seu circulo social — consistente com pratica de retencao de itens de vitimas.",
+            "",
+            "Este documento e a peca mais decisiva da investigacao."
+          ]
+        }
+      ],
+      "pistasExtras": [
+        "O item de valor sentimental de Camila (o bracelete) sumiu, exatamente como aconteceu nos dois casos anteriores — nenhum outro objeto de valor foi levado.",
+        "O perfil usado por Otávio no aplicativo foi criado poucos dias antes do primeiro contato com Camila, com fotos que não correspondem a nenhuma rede social real dele.",
+        "O mesmo número de telefone pré-pago usado no perfil 'Gustavo Prado' está ligado a outros dois perfis falsos, criados perto das datas dos dois casos anteriores.",
+        "A sequência de bipes do áudio da caixa postal, contada com calma, forma quatro dígitos.",
+        "Um dos suspeitos mora no mesmo prédio da vítima, no apartamento com o mesmo número onde ela morava, só que em outro andar — vale reparar nesse número.",
+        "Itens pessoais sem dono conhecido foram encontrados entre os pertences de Otávio Meireles."
+      ],
+      "solucao": {
+        "suspeitoId": "otavio",
+        "arma": "fio de fone de ouvido da propria vitima",
+        "local": "quarto do apartamento da vitima"
+      },
+      "pontosMax": 170
+    },
+    {
+      "id": "terapia06",
+      "numero": 6,
+      "titulo": "O Grupo de Terça-Feira",
+      "capa": "🛋️",
+      "resumo": "Um psicólogo é encontrado morto no próprio consultório, horas depois de uma sessão de terapia em grupo. Ele estava prestes a quebrar o sigilo profissional por causa de um paciente.",
+      "requerCodigo": true,
+      "vitima": {
+        "nome": "Dr. Henrique Vasques",
+        "idade": 54,
+        "ocupacao": "Psicólogo clínico"
+      },
+      "local": "Consultório particular, sala 12 de um prédio comercial",
+      "dataHora": "após a sessão de terça-feira à noite, entre 21h15 e 22h00",
+      "introducao": "O Dr. Henrique Vasques ficou no consultório depois que o grupo de terapia de terça-feira foi embora, como sempre fazia, pra terminar suas anotações. Foi encontrado morto na manhã seguinte pela secretária da clínica. Segundo registros do próprio computador dele, ele estava redigindo uma notificação às autoridades sobre um paciente, amparado pela exceção de sigilo profissional em caso de risco iminente — mas o documento nunca foi enviado.",
+      "suspeitos": [
+        {
+          "id": "marcelo",
+          "nome": "Marcelo Andrade",
+          "apelido": "o paciente workaholic",
+          "idade": 41,
+          "ocupacao": "Executivo, paciente do grupo há 1 ano",
+          "descricao": "Entrou em terapia por indicação médica depois de dois surtos de raiva no trabalho. Tem histórico de perder a paciência com facilidade, o que sempre o deixa sob suspeita fácil.",
+          "alibi": "Diz que saiu da sessão e foi direto pra academia, com check-in registrado no aplicativo.",
+          "culpado": false,
+          "genero": "masculino",
+          "personalidadeIA": "Direto, um pouco grosseiro no tom, se irrita quando sente que estão insinuando algo sobre seu temperamento, mas relaxa quando percebe que a pergunta é justa.",
+          "segredoIA": "Ele realmente tem dificuldade de controlar a raiva e um histórico incômodo com isso, mas nunca teve nenhum problema sério com o Dr. Henrique — pelo contrário, sentia que a terapia estava ajudando.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "academia"
+              ],
+              "resposta": "\"Fui direto pra academia depois da sessão. Tenho o check-in no aplicativo, pode conferir.\""
+            },
+            {
+              "gatilhos": [
+                "raiva",
+                "surto",
+                "temperamento"
+              ],
+              "resposta": "\"Sim, eu tenho problema com raiva, é por isso que tô em terapia. Isso não faz de mim um assassino.\""
+            },
+            {
+              "gatilhos": [
+                "henrique",
+                "sigilo",
+                "denuncia",
+                "denúncia"
+              ],
+              "resposta": "\"Sigilo quebrado? Não sabia de nada disso. Se fosse comigo, o doutor teria me falado na cara.\""
+            }
+          ],
+          "respostaPadrao": "\"Só quero que isso se resolva logo, o grupo tá abalado.\""
+        },
+        {
+          "id": "debora",
+          "nome": "Débora Klein",
+          "apelido": "a paciente ansiosa",
+          "idade": 36,
+          "ocupacao": "Professora, paciente do grupo há 2 anos",
+          "descricao": "Está em terapia por um quadro de ansiedade e histórico de fuga de situações desconfortáveis. É a paciente mais antiga do grupo.",
+          "alibi": "Diz que foi embora logo depois da sessão e foi direto pra casa, onde mora sozinha.",
+          "culpado": false,
+          "genero": "feminino",
+          "personalidadeIA": "Fala baixo, hesitante, pede desculpa por qualquer coisa, evita contato visual figurado nas respostas. Fica visivelmente mais nervosa quando o assunto é confronto direto.",
+          "segredoIA": "Não tem nenhum segredo relacionado ao crime — só sente um medo genuíno e desproporcional de estar sendo suspeita, típico do próprio quadro de ansiedade que a trouxe à terapia.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "casa"
+              ],
+              "resposta": "\"Fui pra casa direto, moro sozinha, então ninguém pode confirmar, eu sei que isso parece ruim...\""
+            },
+            {
+              "gatilhos": [
+                "grupo",
+                "sessao",
+                "sessão",
+                "clima"
+              ],
+              "resposta": "\"A sessão foi normal, tensa como sempre é quando alguém do grupo compartilha algo pesado, mas nada fora do comum.\""
+            },
+            {
+              "gatilhos": [
+                "yago",
+                "estranho",
+                "comportamento"
+              ],
+              "resposta": "\"Eu... prefiro não comentar sobre os outros pacientes. Mas às vezes o clima fica estranho, sim.\""
+            }
+          ],
+          "respostaPadrao": "\"Desculpa, eu fico muito nervosa com esse tipo de pergunta.\""
+        },
+        {
+          "id": "yago",
+          "nome": "Yago Salgado",
+          "apelido": "o paciente charmoso",
+          "idade": 33,
+          "ocupacao": "Consultor de marketing, paciente do grupo há 8 meses",
+          "descricao": "Entrou no grupo recentemente. Carismático, articulado, sempre parece ter a resposta certa — o tipo de paciente que outros terapeutas descreveriam como 'fácil demais'.",
+          "alibi": "Diz que saiu da sessão e foi encontrar amigos num bar, mas não soube precisar horários exatos.",
+          "culpado": true,
+          "genero": "masculino",
+          "personalidadeIA": "Extremamente charmoso, calmo, fala com uma calma quase estudada, sempre trazendo a conversa de volta pra um tom gentil e razoável. Muda sutilmente de tom, ficando mais frio e cortante, só quando o assunto entra em sigilo, denúncia ou comportamento fora das sessões.",
+          "segredoIA": "O Dr. Henrique vinha notando um padrão perigoso no comportamento de Yago fora das sessões (indícios de perseguição e ameaças a uma ex-namorada) e estava preparando uma notificação às autoridades, amparado pela exceção de sigilo em caso de risco iminente. Yago descobriu isso por uma indiscrição da secretária Cátia e matou o Dr. Henrique pra impedir a denúncia. Nunca admite isso, mantém a calma o tempo todo, nega com tranquilidade ou desconversa com charme.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "bar",
+                "amigos"
+              ],
+              "resposta": "\"Fui encontrar uns amigos num bar depois, não anotei hora, sabe como é, a noite passa rápido.\""
+            },
+            {
+              "gatilhos": [
+                "sigilo",
+                "denuncia",
+                "denúncia",
+                "notificacao",
+                "notificação"
+              ],
+              "resposta": "\"Sigilo quebrado? Isso soa como um mal-entendido enorme. Eu tinha uma relação ótima com o Dr. Henrique.\" *o tom fica sutilmente mais frio*"
+            },
+            {
+              "gatilhos": [
+                "ex-namorada",
+                "perseguicao",
+                "perseguição",
+                "ameaca",
+                "ameaça"
+              ],
+              "resposta": "\"Não sei de onde vem essa insinuação. Relacionamentos terminam, às vezes de forma mais dolorida que outras, só isso.\""
+            },
+            {
+              "gatilhos": [
+                "catia",
+                "cátia",
+                "secretaria",
+                "secretária"
+              ],
+              "resposta": "\"A Cátia é sempre muito solícita comigo, adoro conversar com ela na recepção.\""
+            }
+          ],
+          "respostaPadrao": "\"Espero sinceramente que encontrem quem fez isso com o doutor. Ele era importante pra mim.\""
+        },
+        {
+          "id": "paula",
+          "nome": "Paula Menezes",
+          "apelido": "a paciente mais nova",
+          "idade": 24,
+          "ocupacao": "Estudante de pós-graduação, paciente do grupo há 5 meses",
+          "descricao": "A mais nova do grupo, entrou em terapia por conta própria depois de um período difícil. Observadora, mais quieta que os outros.",
+          "alibi": "Diz que foi a última a sair da sala de espera, entre os pacientes, e que viu o Dr. Henrique ainda organizando papéis quando saiu.",
+          "culpado": false,
+          "genero": "feminino",
+          "personalidadeIA": "Observadora, fala com cuidado, escolhe bem as palavras antes de responder, tem boa memória de detalhes pequenos do ambiente.",
+          "segredoIA": "Não tem nenhum segredo relacionado ao crime — só notou, sem dar muita importância na hora, que Yago parecia visivelmente tenso ao sair da sessão naquele dia, um detalhe que só faz sentido em retrospecto.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "sala de espera"
+              ],
+              "resposta": "\"Fui a última a sair da sala de espera. O doutor ainda tava organizando uns papéis na mesa dele quando eu saí.\""
+            },
+            {
+              "gatilhos": [
+                "yago",
+                "tenso",
+                "estranho",
+                "comportamento"
+              ],
+              "resposta": "\"Agora que você fala... o Yago pareceu meio tenso saindo da sessão naquele dia. Na hora eu não dei muita bola.\""
+            },
+            {
+              "gatilhos": [
+                "catia",
+                "cátia",
+                "secretaria",
+                "secretária"
+              ],
+              "resposta": "\"A Cátia sempre fica até mais tarde organizando a recepção, é bem dedicada ao trabalho.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu quero muito ajudar, só espero lembrar dos detalhes certos.\""
+        },
+        {
+          "id": "catia",
+          "nome": "Cátia Ferrari",
+          "apelido": "a secretária da clínica",
+          "idade": 45,
+          "ocupacao": "Secretária/recepcionista da clínica há 6 anos",
+          "descricao": "Cuida da agenda e da recepção da clínica. Foi ela quem encontrou o corpo na manhã seguinte, ao abrir o consultório.",
+          "alibi": "Diz que saiu antes de todos os pacientes, por volta das 20h45, pra pegar o último ônibus.",
+          "culpado": false,
+          "genero": "feminino",
+          "personalidadeIA": "Falante, prestativa, gosta de comentar a rotina da clínica com carinho por todo mundo. Fica visivelmente abalada e um pouco culpada ao perceber que pode ter comentado algo que não devia.",
+          "segredoIA": "Sem perceber a gravidade, ela comentou casualmente com uma amiga (numa mensagem privada) que 'o Dr. Henrique parecia prestes a denunciar um paciente' — sem saber que essa indiscrição pode ter chegado, por algum caminho, até a pessoa errada. Isso a deixa arrasada quando confrontada, mas ela não teve nenhuma participação direta no crime.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "onibus",
+                "ônibus"
+              ],
+              "resposta": "\"Saí antes de todo mundo, por volta das 20h45, pra pegar o último ônibus. Sempre saio nesse horário.\""
+            },
+            {
+              "gatilhos": [
+                "comentario",
+                "comentário",
+                "mensagem",
+                "amiga",
+                "fofoca"
+              ],
+              "resposta": "\"Eu... comentei uma coisa com uma amiga, sim, sobre o doutor parecer preocupado com um paciente. Não devia ter feito isso.\" *ela começa a chorar*"
+            },
+            {
+              "gatilhos": [
+                "denuncia",
+                "denúncia",
+                "sigilo",
+                "notificacao",
+                "notificação"
+              ],
+              "resposta": "\"Eu não sabia de detalhes, só que ele andava tenso e mencionou algo sobre 'ter que fazer a coisa certa'.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu me sinto péssima com tudo isso, sério.\""
+        }
+      ],
+      "evidencias": [
+        {
+          "tipo": "relatorio",
+          "arquivo": "Relatorio_Policial.pdf",
+          "descricao": "Relatório oficial da ocorrência, com a linha do tempo reconstruída a partir dos horários de saída dos pacientes."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_marcelo.txt",
+          "descricao": "Depoimento de Marcelo Andrade."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_debora.txt",
+          "descricao": "Depoimento de Débora Klein."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_yago.txt",
+          "descricao": "Depoimento de Yago Salgado."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_paula.txt",
+          "descricao": "Depoimento de Paula Menezes."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_catia.txt",
+          "descricao": "Depoimento de Cátia Ferrari."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_01_consultorio.png",
+          "titulo": "Consultório no momento do encontro do corpo",
+          "legenda": "Um busto de bronze decorativo, normalmente sobre a estante atrás da mesa, está fora do lugar, próximo à cadeira do paciente."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_02_arquivo.png",
+          "titulo": "Armário de prontuários",
+          "legenda": "Uma gaveta do armário de prontuários está entreaberta. Segundo a secretária, o prontuário de um paciente específico do grupo de terça-feira não foi localizado depois."
+        },
+        {
+          "tipo": "documento_pdf",
+          "arquivo": "Documentos/Nota_Evolucao_Clinica.pdf",
+          "titulo": "Trecho de nota de evolução clínica (sem identificação direta do paciente)",
+          "conteudo": [
+            "NOTA DE EVOLUCAO CLINICA - TRECHO",
+            "",
+            "Paciente do grupo de terca-feira apresenta padrao de comportamento preocupante relatado fora do ambiente terapeutico, incluindo indicios de perseguicao a uma ex-parceira.",
+            "",
+            "Considerando o principio de risco iminente previsto no codigo de etica profissional, avalio necessario romper o sigilo e notificar as autoridades competentes, apos nova tentativa de abordagem direta com o paciente na proxima sessao."
+          ]
+        },
+        {
+          "tipo": "documento_docx",
+          "arquivo": "Documentos/Rascunho_Notificacao.docx",
+          "titulo": "Rascunho de notificação às autoridades — nunca enviado",
+          "conteudo": [
+            "Rascunho encontrado no computador do Dr. Henrique Vasques, salvo na tarde do dia do crime.",
+            "",
+            "\"Venho, por meio desta, notificar as autoridades competentes sobre indicios de risco iminente envolvendo um paciente sob meus cuidados, amparado pela excecao etica de quebra de sigilo profissional prevista para tais casos. Pretendo conversar diretamente com o paciente antes de formalizar esta notificacao, na proxima sessao agendada.\"",
+            "",
+            "O documento nunca foi finalizado nem enviado."
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Conversa_Catia_Amiga.png",
+          "titulo": "Mensagem recuperada do celular de Cátia",
+          "appNome": "Mensagens",
+          "subtitulo": "Amiga (fora do trabalho)",
+          "mensagens": [
+            {
+              "de": "Cátia",
+              "texto": "acho que o Dr Henrique vai denunciar um paciente, ele tá tão tenso ultimamente",
+              "hora": "19:40",
+              "deMim": true
+            },
+            {
+              "de": "Amiga",
+              "texto": "nossa sério? denunciar de que jeito?",
+              "hora": "19:42",
+              "deMim": false
+            },
+            {
+              "de": "Cátia",
+              "texto": "não sei os detalhes, só sei que ele falou 'preciso fazer a coisa certa' outro dia",
+              "hora": "19:45",
+              "deMim": true
+            }
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Conversa_Yago_Contato.png",
+          "titulo": "Mensagens recuperadas do celular de Yago",
+          "appNome": "Mensagens",
+          "subtitulo": "contato sem nome salvo",
+          "mensagens": [
+            {
+              "de": "Yago",
+              "texto": "ela precisa entender que eu só quero conversar, não é nada demais",
+              "hora": "21:02",
+              "deMim": true
+            },
+            {
+              "de": "Contato",
+              "texto": "yago, ela já pediu pra você parar de aparecer no trabalho dela",
+              "hora": "21:05",
+              "deMim": false
+            },
+            {
+              "de": "Yago",
+              "texto": "isso é exagero dela, eu sei me controlar perfeitamente",
+              "hora": "21:08",
+              "deMim": true
+            }
+          ]
+        },
+        {
+          "tipo": "print_computador",
+          "arquivo": "Computador/Busca_Sigilo_Profissional.png",
+          "titulo": "Histórico de busca do computador do Dr. Henrique",
+          "subtitulo": "historico://ultimos-3-dias",
+          "linhas": [
+            "17:12 - quebra de sigilo profissional risco iminente CFP",
+            "17:20 - como notificar autoridades paciente perigoso",
+            "17:35 - protocolo etico psicologia risco a terceiros",
+            "20:58 - [documento salvo: Rascunho_Notificacao]"
+          ]
+        },
+        {
+          "tipo": "post_social",
+          "arquivo": "RedesSociais/Post_Yago_Antigo.png",
+          "titulo": "Publicação antiga de Yago, com comentário de um antigo colega",
+          "usuario": "@yago.salgado",
+          "legenda": "gratidão pelos parceiros que fizeram parte dessa jornada 🙏",
+          "curtidas": 89,
+          "comentarios": [
+            "parabéns yago!!",
+            "cuidado com esse cara, viu... (comentário depois apagado pelo autor)"
+          ]
+        },
+        {
+          "tipo": "audio",
+          "arquivo": "Audio_Pistas/audio_interfone.wav",
+          "titulo": "Trecho da gravação do interfone do prédio",
+          "descricao": "O sistema do interfone registrou uma sequência de bipes de confirmação de um código de acesso usado após o horário comercial, na noite do crime.",
+          "codigo": "1946"
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Prontuario_Sessao.zip",
+          "titulo": "Prontuário completo do grupo de terça-feira, obtido por mandado judicial",
+          "descricao": "Protegido por senha. Alguma coisa relacionada ao próprio grupo de terapia, combinada com um número específico, parece formar a senha.",
+          "senha": "GRUPO1946",
+          "dicaSenha": "O que reúne essas pessoas toda terça-feira, junto com um número ouvido em outro lugar bem específico do material, parecem se conectar.",
+          "conteudo": [
+            "PRONTUARIO COMPLETO - GRUPO DE TERCA-FEIRA (mandado judicial)",
+            "==================================================",
+            "",
+            "Anotacoes do Dr. Henrique sobre o paciente Yago Salgado ao longo dos ultimos 3 meses descrevem um padrao crescente de comportamento controlador e indicios de perseguicao a uma ex-parceira, relatados por terceiros.",
+            "",
+            "A ultima anotacao, feita na propria noite do crime, registra a intencao de abordar o assunto diretamente com o paciente antes de formalizar a notificacao as autoridades.",
+            "",
+            "Este documento e uma peca decisiva da investigacao."
+          ]
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Registro_Ameacas.zip",
+          "titulo": "Registro de ameaças reunido por uma ex-parceira de Yago (entregue anonimamente à investigação)",
+          "descricao": "Protegida por senha. É uma cifra de Vigenère — a chave pode ter a ver com o que reúne esse grupo de pessoas toda semana.",
+          "senha": "PERIGO",
+          "dicaSenha": "Existe um texto embaralhado por uma palavra-chave relacionado a esse arquivo: RMIKAZ. A chave pode ter relação com o motivo de todo mundo estar se encontrando toda terça-feira.",
+          "conteudo": [
+            "REGISTRO DE MENSAGENS E OCORRENCIAS - ENTREGUE ANONIMAMENTE",
+            "==================================================",
+            "",
+            "Serie de mensagens e relatos de uma ex-parceira de Yago Salgado descrevendo um padrao de perseguicao que se estendeu por meses, incluindo aparicoes nao solicitadas no local de trabalho dela.",
+            "",
+            "Um dos relatos menciona que ela havia procurado ajuda para 'convencer alguem proximo a ele a intervir', o que pode ter chegado, por algum caminho indireto, ao conhecimento do Dr. Henrique.",
+            "",
+            "Parecer anexado: ha um padrao consistente de comportamento obsessivo e controlador."
+          ]
+        }
+      ],
+      "pistasExtras": [
+        "O rascunho de notificação encontrado no computador do Dr. Henrique nunca foi enviado — mas já estava avançado o suficiente pra deixar claro que ele pretendia agir antes da próxima sessão.",
+        "Uma indiscrição comentada por Cátia com uma amiga, fora do ambiente de trabalho, pode ter chegado, por algum caminho indireto, ao paciente errado.",
+        "O busto de bronze da estante, normalmente decorativo, foi encontrado fora do lugar, perto da cadeira reservada ao paciente.",
+        "A sequência de bipes do áudio do interfone, contada com calma, forma quatro dígitos.",
+        "Uma nota clínica confidencial descreve um padrão de comportamento perigoso num paciente do grupo, sem citar o nome diretamente.",
+        "Um comentário apagado numa publicação antiga de Yago alertava sobre algo — só que foi removido pelo próprio autor da publicação."
+      ],
+      "solucao": {
+        "suspeitoId": "yago",
+        "arma": "busto de bronze decorativo",
+        "local": "consultorio particular"
+      },
+      "pontosMax": 180
+    },
+    {
+      "id": "hotel07",
+      "numero": 7,
+      "titulo": "Quarto 1408",
+      "capa": "🏨",
+      "resumo": "Um hóspede é encontrado morto em seu quarto de hotel, sem nenhum sinal de arrombamento. A perícia identifica o mesmo padrão exato de dois crimes não resolvidos em hotéis de outras cidades.",
+      "requerCodigo": true,
+      "vitima": {
+        "nome": "Otto Wexler",
+        "idade": 52,
+        "ocupacao": "Empresário, viajava a negócios"
+      },
+      "local": "Quarto 1408, Hotel Aurora Palace",
+      "dataHora": "madrugada, entre 1h00 e 3h00",
+      "introducao": "Otto Wexler foi encontrado morto em seu quarto de hotel pela camareira, na manhã seguinte. A porta não apresentava nenhum sinal de arrombamento — foi aberta com um cartão-chave válido. Um relógio de bolso antigo, item de valor sentimental que ele sempre carregava, não foi encontrado entre os pertences dele. A perícia identificou que o padrão do crime — sem arrombamento, sem roubo de itens de valor real, exceto um único objeto pessoal — é idêntico a dois casos não resolvidos em hotéis de outras cidades nos últimos dois anos.",
+      "suspeitos": [
+        {
+          "id": "larissa",
+          "nome": "Larissa Bomtempo",
+          "apelido": "a recepcionista",
+          "idade": 28,
+          "ocupacao": "Recepcionista do hotel, turno da noite",
+          "descricao": "Estava no balcão da recepção durante toda a madrugada do crime. Tem acesso ao sistema que emite cartões-chave para qualquer quarto do hotel.",
+          "alibi": "Diz que não saiu do balcão da recepção em nenhum momento, e que as câmeras do saguão devem confirmar isso.",
+          "culpado": false,
+          "genero": "feminino",
+          "personalidadeIA": "Profissional, um pouco cansada pelo turno da noite, fala com cuidado sobre os hóspedes por treinamento de discrição, mas colabora bem quando entende que é importante.",
+          "segredoIA": "Não tem nenhuma participação no crime — só emitiu um cartão-chave extra a pedido de um hóspede do 1410 sem desconfiar de nada, seguindo o procedimento padrão do hotel.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "balcao",
+                "balcão",
+                "recepcao",
+                "recepção"
+              ],
+              "resposta": "\"Não saí do balcão a madrugada toda, tem câmera me mostrando lá desde o início do turno.\""
+            },
+            {
+              "gatilhos": [
+                "cartao",
+                "cartão",
+                "chave",
+                "acesso"
+              ],
+              "resposta": "\"Emiti um cartão extra pra um hóspede do 1410, sim, ele disse que tinha perdido o dele. É procedimento normal, pedimos documento e confirmamos o número do quarto.\""
+            },
+            {
+              "gatilhos": [
+                "hospede estranho",
+                "hóspede estranho",
+                "suspeito"
+              ],
+              "resposta": "\"O hóspede do 1410 pediu pra não ser incomodado por arrumação o tempo todo, mas isso não é tão incomum assim.\""
+            }
+          ],
+          "respostaPadrao": "\"Fico à disposição pra ajudar a esclarecer o que aconteceu.\""
+        },
+        {
+          "id": "ederson",
+          "nome": "Ederson Piloto",
+          "apelido": "o camareiro",
+          "idade": 35,
+          "ocupacao": "Camareiro do turno da noite",
+          "descricao": "Responsável pela limpeza e manutenção do andar 14 naquela madrugada. Tem acesso mestre a todos os quartos do andar.",
+          "alibi": "Diz que fez a ronda de manutenção normal, sem entrar em nenhum quarto ocupado, e bateu ponto de saída às 2h30.",
+          "culpado": false,
+          "genero": "masculino",
+          "personalidadeIA": "Trabalhador dedicado, fala com orgulho do próprio trabalho, fica na defensiva quando questionam sobre ter acesso mestre a todos os quartos.",
+          "segredoIA": "Não tem nenhuma relação com o crime — só se sente incomodado por saber que, tecnicamente, ele é uma das poucas pessoas com acesso mestre ao andar inteiro, o que o coloca sob suspeita só por causa da própria função.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "ronda",
+                "ponto"
+              ],
+              "resposta": "\"Fiz minha ronda normal de manutenção, não entrei em quarto ocupado nenhum. Bati ponto de saída às 2h30, tá registrado.\""
+            },
+            {
+              "gatilhos": [
+                "acesso mestre",
+                "chave mestra",
+                "todos os quartos"
+              ],
+              "resposta": "\"Sim, eu tenho acesso mestre, é parte da função. Isso não significa nada além disso.\""
+            },
+            {
+              "gatilhos": [
+                "viu",
+                "notou",
+                "estranho",
+                "corredor"
+              ],
+              "resposta": "\"Reparei que a luz do corredor perto do 1408 tava piscando aquela noite, pedi manutenção pra trocar.\""
+            }
+          ],
+          "respostaPadrao": "\"Trabalho aqui há anos, nunca tive problema nenhum, juro.\""
+        },
+        {
+          "id": "vitor",
+          "nome": "Vitor Almada",
+          "apelido": "o hóspede do quarto vizinho",
+          "idade": 44,
+          "ocupacao": "Não confirmada — hóspede do quarto 1410, identidade sob suspeita",
+          "descricao": "Hóspede do quarto ao lado da vítima, check-in feito dois dias antes do crime. Pediu expressamente para não ser incomodado por arrumação.",
+          "alibi": "Diz que estava dormindo no próprio quarto a madrugada toda e não ouviu nem viu nada de estranho.",
+          "culpado": true,
+          "genero": "masculino",
+          "personalidadeIA": "Educado, discreto, fala pouco e escolhe bem as palavras — o tipo de hóspede que ninguém repara. Mantém um tom calmo e cordial o tempo todo, só ficando sutilmente mais seco quando perguntam sobre documentos, outras viagens ou hotéis anteriores.",
+          "segredoIA": "Ele usa identidades diferentes em cada cidade que visita, sempre hospedado perto da vítima escolhida, e é responsável pela morte de Otto Wexler e pelos dois casos não resolvidos anteriores em outros hotéis — sempre levando um único item pessoal de valor sentimental da vítima como troféu. Nunca admite nada, mantém a calma e desconversa educadamente sempre que o assunto se aproxima demais.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "dormindo",
+                "quarto"
+              ],
+              "resposta": "\"Estava dormindo, não ouvi nada de anormal. Viagem cansativa, dormi cedo.\""
+            },
+            {
+              "gatilhos": [
+                "documento",
+                "identidade",
+                "nome",
+                "passaporte"
+              ],
+              "resposta": "\"Meus documentos estão todos em ordem, se é isso que está insinuando.\" *o tom fica mais seco*"
+            },
+            {
+              "gatilhos": [
+                "outras cidades",
+                "outros hoteis",
+                "outros hotéis",
+                "viagem"
+              ],
+              "resposta": "\"Viajo bastante a trabalho, sim. Não vejo o que isso tem a ver com o que aconteceu no quarto ao lado.\""
+            },
+            {
+              "gatilhos": [
+                "relogio",
+                "relógio",
+                "objeto pessoal"
+              ],
+              "resposta": "\"Não tenho ideia do que aconteceu com os pertences dele.\""
+            }
+          ],
+          "respostaPadrao": "\"Espero que resolvam isso rápido, esse tipo de situação incomoda qualquer hóspede.\""
+        },
+        {
+          "id": "ronaldo",
+          "nome": "Ronaldo Xisto",
+          "apelido": "o investigador particular",
+          "idade": 58,
+          "ocupacao": "Investigador particular, contratado pela família de uma vítima de um caso anterior",
+          "descricao": "Está hospedado no mesmo hotel, investigando por conta própria uma possível ligação entre este caso e os dois anteriores, a pedido da família de uma das vítimas antigas.",
+          "alibi": "Diz que estava no próprio quarto revisando anotações de casos antigos, e que ficou sabendo do crime só de manhã.",
+          "culpado": false,
+          "genero": "masculino",
+          "personalidadeIA": "Fala como quem já viu de tudo, direto, um pouco cansado, trata o caso com profissionalismo mas também com uma urgência pessoal visível — ele realmente quer resolver isso.",
+          "segredoIA": "Não tem nenhuma participação no crime — só está no hotel por conta própria, investigando informalmente, o que naturalmente o torna um suspeito óbvio demais por estar sempre no lugar certo, na hora certa.",
+          "perguntas": [
+            {
+              "gatilhos": [
+                "alibi",
+                "onde voce estava",
+                "onde você estava",
+                "quarto",
+                "anotacoes",
+                "anotações"
+              ],
+              "resposta": "\"Tava no meu quarto revisando anotações dos dois casos antigos, tentando achar um padrão geográfico. Só soube do crime de manhã.\""
+            },
+            {
+              "gatilhos": [
+                "por que esta aqui",
+                "porque está aqui",
+                "investigacao",
+                "investigação",
+                "familia",
+                "família"
+              ],
+              "resposta": "\"Fui contratado pela família de uma das vítimas de um caso parecido, há uns meses. Vim atrás de uma pista que me trouxe até este hotel.\""
+            },
+            {
+              "gatilhos": [
+                "padrao",
+                "padrão",
+                "suspeito",
+                "teoria"
+              ],
+              "resposta": "\"Minha teoria é que é a mesma pessoa nos três casos, viajando de hotel em hotel. Só não consegui provar ainda quem é.\""
+            }
+          ],
+          "respostaPadrao": "\"Eu vim pra ajudar a resolver isso, não pra atrapalhar.\""
+        }
+      ],
+      "evidencias": [
+        {
+          "tipo": "relatorio",
+          "arquivo": "Relatorio_Policial.pdf",
+          "descricao": "Relatório oficial da ocorrência, com a comparação preliminar com os dois casos anteriores em outras cidades."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_larissa.txt",
+          "descricao": "Depoimento de Larissa Bomtempo."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_ederson.txt",
+          "descricao": "Depoimento de Ederson Piloto."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_vitor.txt",
+          "descricao": "Depoimento de Vitor Almada."
+        },
+        {
+          "tipo": "depoimento",
+          "arquivo": "Depoimentos/dep_ronaldo.txt",
+          "descricao": "Depoimento de Ronaldo Xisto."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_01_quarto.png",
+          "titulo": "Quarto 1408 no momento do encontro do corpo",
+          "legenda": "Nenhum sinal de arrombamento na porta. A fechadura eletrônica registra apenas entradas por cartão-chave válido."
+        },
+        {
+          "tipo": "foto",
+          "arquivo": "Evidencias_Fotos/foto_02_relogio.png",
+          "titulo": "Registro do relógio de bolso desaparecido",
+          "legenda": "Foto antiga da vítima com o relógio de bolso de família que sempre carregava consigo em viagens. O item não foi encontrado entre os pertences dele."
+        },
+        {
+          "tipo": "documento_pdf",
+          "arquivo": "Documentos/Laudo_Comparativo_Hoteis.pdf",
+          "titulo": "Laudo comparativo entre os três casos em hotéis",
+          "conteudo": [
+            "LAUDO COMPARATIVO - PERICIA CRIMINAL",
+            "Comparacao entre a ocorrencia atual e dois casos nao solucionados em hoteis de outras cidades, nos ultimos 24 meses.",
+            "",
+            "Caso A (ha 20 meses, outra cidade): hospede encontrado morto em quarto de hotel, sem sinais de arrombamento. Item pessoal de valor sentimental ausente.",
+            "Caso B (ha 11 meses, outra cidade): hospede encontrado morto em quarto de hotel, sem sinais de arrombamento. Item pessoal de valor sentimental ausente.",
+            "",
+            "Conclusao preliminar: em todos os tres casos, o hospede do quarto vizinho havia feito check-in dias antes e check-out logo apos o crime, sob nomes diferentes."
+          ]
+        },
+        {
+          "tipo": "documento_docx",
+          "arquivo": "Documentos/Ficha_CheckIn_Comparativa.docx",
+          "titulo": "Comparação de fichas de check-in entre hotéis",
+          "conteudo": [
+            "Documento reunido pelo investigador particular Ronaldo Xisto, cruzando fichas de check-in dos tres hoteis envolvidos.",
+            "",
+            "O numero do cartao de credito usado para reservar o quarto 1410 neste hotel e identico ao numero usado para reservar quartos vizinhos as vitimas nos dois casos anteriores, ainda que sob nomes de hospede diferentes em cada reserva.",
+            "",
+            "Nota do investigador: 'Mesma pessoa, nomes diferentes. Preciso confirmar antes que ele va embora de novo.'"
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Conversa_Larissa_Gerente.png",
+          "titulo": "Conversa entre Larissa e o gerente do hotel",
+          "appNome": "Mensagens",
+          "subtitulo": "Gerente do hotel",
+          "mensagens": [
+            {
+              "de": "Gerente",
+              "texto": "como foi o turno? algum hóspede dando trabalho?",
+              "hora": "23:10",
+              "deMim": false
+            },
+            {
+              "de": "Larissa",
+              "texto": "só o do 1410, pediu pra não ser incomodado por arrumação e um cartão extra",
+              "hora": "23:14",
+              "deMim": true
+            },
+            {
+              "de": "Gerente",
+              "texto": "normal, tem gente que gosta de privacidade mesmo",
+              "hora": "23:16",
+              "deMim": false
+            }
+          ]
+        },
+        {
+          "tipo": "print_celular",
+          "arquivo": "Celular/Chip_Descartavel_Encontrado.png",
+          "titulo": "Mensagens recuperadas de um chip descartável encontrado no lixo do hotel",
+          "appNome": "Mensagens",
+          "subtitulo": "contato sem nome salvo",
+          "mensagens": [
+            {
+              "de": "Desconhecido",
+              "texto": "mais um concluído. andando pra próxima cidade em breve",
+              "hora": "03:20",
+              "deMim": true
+            },
+            {
+              "de": "Contato",
+              "texto": "tudo certo por aí?",
+              "hora": "03:25",
+              "deMim": false
+            },
+            {
+              "de": "Desconhecido",
+              "texto": "tudo certo. mais um troféu pra coleção",
+              "hora": "03:27",
+              "deMim": true
+            }
+          ]
+        },
+        {
+          "tipo": "print_computador",
+          "arquivo": "Computador/Sistema_Reservas_Cruzado.png",
+          "titulo": "Sistema de reservas do hotel, com busca cruzada de cartão de crédito",
+          "subtitulo": "sistema://reservas/busca-cruzada",
+          "linhas": [
+            "Reserva quarto 1410 - nome: Vitor Almada - cartao final 7734",
+            "Busca cruzada em rede de hoteis parceiros:",
+            "Hotel outra cidade (ha 20 meses) - nome: Marcos Hilario - cartao final 7734",
+            "Hotel outra cidade (ha 11 meses) - nome: Cassio Duarte - cartao final 7734",
+            "ALERTA: mesmo numero de cartao, tres nomes diferentes"
+          ]
+        },
+        {
+          "tipo": "post_social",
+          "arquivo": "RedesSociais/Post_Ronaldo_Grupo.png",
+          "titulo": "Publicação de Ronaldo num grupo de familiares de vítimas",
+          "usuario": "@ronaldo.investiga",
+          "legenda": "alguém mais notou que os últimos casos têm hotéis parecidos e sempre um objeto pessoal levado? preciso conversar com quem tiver mais informação",
+          "curtidas": 56,
+          "comentarios": [
+            "também reparei nisso!!",
+            "manda mensagem no privado, tenho uma informação",
+            "força pra você nessa busca"
+          ]
+        },
+        {
+          "tipo": "audio",
+          "arquivo": "Audio_Pistas/audio_corredor.wav",
+          "titulo": "Trecho da câmera de segurança do corredor do 14º andar",
+          "descricao": "A câmera de segurança do corredor captou o som de confirmação da fechadura eletrônica do quarto 1408 sendo destravada durante a madrugada — uma sequência de bipes.",
+          "codigo": "1410"
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Registro_Reservas_Cruzado.zip",
+          "titulo": "Registro completo de reservas cruzadas entre os três hotéis",
+          "descricao": "Protegido por senha. Alguma coisa relacionada ao próprio hotel, combinada com um número específico, parece formar a senha.",
+          "senha": "AURORA1410",
+          "dicaSenha": "O nome do hotel onde tudo isso aconteceu, junto com um número ouvido em outro lugar bem específico do material, parecem se conectar.",
+          "conteudo": [
+            "REGISTRO COMPLETO - RESERVAS CRUZADAS ENTRE HOTEIS (rede parceira)",
+            "==================================================",
+            "",
+            "O cartao de credito final 7734, usado para reservar o quarto 1410 neste hotel, esta vinculado a uma conta aberta com documentos que a pericia acredita serem falsificados.",
+            "",
+            "O mesmo cartao aparece em reservas de quartos vizinhos as duas vitimas anteriores, sempre dois ou tres dias antes de cada crime, sob nomes diferentes.",
+            "",
+            "Este documento e uma peca decisiva da investigacao."
+          ]
+        },
+        {
+          "tipo": "confidencial",
+          "arquivo": "Perfil_Serial.zip",
+          "titulo": "Perfil reconstruído do suspeito em série, montado pelo investigador particular Ronaldo",
+          "descricao": "Protegida por senha. É uma cifra de Vigenère — a chave pode ter a ver com o próprio hotel onde tudo isso está acontecendo agora.",
+          "senha": "PADRAO",
+          "dicaSenha": "Existe um texto embaralhado por uma palavra-chave relacionado a esse arquivo: PUUFRO. A chave pode ter relação com o nome do lugar onde você está investigando agora.",
+          "conteudo": [
+            "PERFIL RECONSTRUIDO - INVESTIGACAO INDEPENDENTE (Ronaldo Xisto)",
+            "==================================================",
+            "",
+            "Reunindo os tres casos, o padrao e consistente: hospede solitario, a maioria homens de negocio viajando sozinhos, item pessoal de valor sentimental sempre levado como unico objeto ausente da cena.",
+            "",
+            "O suspeito parece escolher hoteis de porte medio a grande, sempre reservando o quarto vizinho ao da vitima com dois a tres dias de antecedencia, sob identidade diferente a cada vez.",
+            "",
+            "Conclusao do investigador: 'Ele nao rouba por dinheiro. Ele guarda alguma coisa de cada um. Isso e um padrao de colecionador, nao de ladrao.'"
+          ]
+        }
+      ],
+      "pistasExtras": [
+        "Em todos os três casos, o quarto vizinho ao da vítima foi reservado dois ou três dias antes do crime, sob um nome de hóspede diferente a cada vez.",
+        "O mesmo número de cartão de crédito aparece nas três reservas, apesar dos nomes diferentes.",
+        "O único item levado da cena, em todos os três casos, foi um objeto pessoal de valor sentimental da vítima — nunca dinheiro ou eletrônicos.",
+        "A sequência de bipes do áudio da câmera do corredor, contada com calma, forma quatro dígitos.",
+        "Um chip de celular descartável foi encontrado no lixo do hotel, com mensagens que parecem confirmar mais de uma ocorrência parecida.",
+        "O hóspede do quarto vizinho pediu expressamente para não ser incomodado por arrumação — um detalhe pequeno, mas consistente com querer manter algo escondido no quarto."
+      ],
+      "solucao": {
+        "suspeitoId": "vitor",
+        "arma": "cinto do roupao do proprio hotel",
+        "local": "quarto 1408"
+      },
+      "pontosMax": 180
+    }
+  ]
+}

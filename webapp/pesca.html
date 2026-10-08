@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pesca — System Nejire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#071a24;
+    --bg-panel:#0e2c3b;
+    --bg-panel-2:#123648;
+    --line:#1d475b;
+    --accent:#4ff0c8;
+    --accent-dim:#2a8f78;
+    --warm:#ffb35a;
+    --text:#e9f6f5;
+    --text-muted:#7fa3ae;
+    --comum:#c7d3d6; --incomum:#5fe08a; --raro:#4fb4f0; --epico:#c98bf5; --lendario:#ffcf5c;
+    --radius:20px;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    position:relative;
+    background:
+      radial-gradient(ellipse at 20% -10%, #123a4d 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 0%, #0c2836 0%, transparent 40%),
+      var(--bg-deep);
+    color:var(--text);
+    font-family:"Manrope", system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    min-height:100%;
+  }
+  h1,h2,h3,.display{ font-family:"Fredoka", system-ui, sans-serif; font-weight:600; margin:0; }
+  .wrap{ max-width:480px; margin:0 auto; padding:18px 16px 100px; position:relative; z-index:2; }
+
+  /* ── textura de granulação sobre o fundo, dá profundidade sem pesar ── */
+  .ruido{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* ── partículas bioluminescentes, boiando devagar no fundo ── */
+  .particulas{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  .particulas span{
+    position:absolute; border-radius:50%;
+    background:radial-gradient(circle, rgba(79,240,200,.55), rgba(79,240,200,0) 70%);
+    animation:boiar linear infinite;
+  }
+  @keyframes boiar{
+    0%{ transform:translateY(0) translateX(0); opacity:0; }
+    10%{ opacity:.8; }
+    90%{ opacity:.5; }
+    100%{ transform:translateY(-620px) translateX(30px); opacity:0; }
+  }
+
+  /* ── ondas decorativas fixas no rodapé, atrás das abas ── */
+  .ondas{ position:fixed; left:0; right:0; bottom:0; z-index:1; pointer-events:none; opacity:.5; }
+  .ondas svg{ display:block; width:100%; height:auto; }
+
+  /* ── textura de rede de pesca, bem sutil, sobre o painel de água ── */
+  .agua::after{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.05;
+    background-image:
+      repeating-linear-gradient(45deg, var(--accent) 0 1px, transparent 1px 26px),
+      repeating-linear-gradient(-45deg, var(--accent) 0 1px, transparent 1px 26px);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .particulas span{ animation:none; opacity:.3; }
+  }
+
+  /* ── topo ── */
+  .topo{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+  .anel{ width:52px; height:52px; border-radius:50%; flex:none; display:grid; place-items:center;
+    background:conic-gradient(var(--accent) calc(var(--pct,0)*1%), var(--line) 0);
+  }
+  .anel span{ width:42px; height:42px; border-radius:50%; background:var(--bg-panel); display:grid; place-items:center;
+    font-family:"Fredoka"; font-size:15px; color:var(--accent); }
+  .topo-info{ flex:1; min-width:0; }
+  .topo-info .nome{ font-size:15px; color:var(--text-muted); }
+  .topo-info .xp{ font-size:12px; color:var(--text-muted); }
+  .saldo{ font-family:"Fredoka"; font-size:16px; color:var(--warm); white-space:nowrap; }
+
+  /* ── painel de água / pescar ── */
+  .agua{
+    position:relative; border-radius:28px; padding:28px 20px 24px;
+    background:linear-gradient(180deg, #0c3448 0%, #071e2a 100%);
+    border:1px solid var(--line);
+    overflow:hidden;
+    text-align:center;
+  }
+  .agua::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(79,240,200,.10), transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(79,180,240,.10), transparent 40%);
+    pointer-events:none;
+  }
+  .local-atual{ font-size:13px; color:var(--text-muted); margin-bottom:4px; }
+  .local-nome{ font-size:22px; margin-bottom:18px; }
+  .linha-btn{
+    width:132px; height:132px; border-radius:50%; border:none; cursor:pointer;
+    background:radial-gradient(circle at 35% 30%, #6bffd9, var(--accent-dim));
+    color:#05221b; font-family:"Fredoka"; font-size:17px; font-weight:600;
+    box-shadow:0 0 0 8px rgba(79,240,200,.08), 0 12px 30px rgba(0,0,0,.35);
+    transition:transform .15s ease;
+  }
+  .linha-btn:active{ transform:scale(.94); }
+  .linha-btn:disabled{
+    background:var(--bg-panel-2); color:var(--text-muted); box-shadow:none; cursor:default;
+  }
+  .linha-btn .sub{ display:block; font-family:"Manrope"; font-weight:500; font-size:12px; margin-top:4px; opacity:.75; }
+
+  /* ── card de captura (animação única e deliberada) ── */
+  .captura-card{
+    margin-top:18px; padding:16px; border-radius:18px;
+    background:var(--bg-panel-2); border:1px solid var(--rc, var(--line));
+    box-shadow:0 0 24px -4px var(--rc, transparent);
+    display:none; text-align:left;
+    animation:subir .38s cubic-bezier(.2,.8,.2,1);
+  }
+  .captura-card.show{ display:block; }
+  @keyframes subir{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:translateY(0); } }
+  .captura-card .linha1{ display:flex; align-items:center; gap:10px; }
+  .captura-card .emoji{ font-size:34px; }
+  .captura-card .nome{ font-family:"Fredoka"; font-size:17px; }
+  .captura-card .raridade{ font-size:12px; color:var(--rc, var(--text-muted)); }
+  .captura-card .stats{ margin-top:8px; font-size:13px; color:var(--text-muted); display:flex; gap:14px; }
+
+  /* ── seções ── */
+  section{ margin-top:24px; }
+  section h2{ font-size:16px; margin-bottom:10px; }
+  .card-lista{ display:flex; flex-direction:column; gap:8px; }
+  .item{
+    display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:14px;
+    background:var(--bg-panel); border:1px solid var(--line);
+  }
+  .item .emoji{ font-size:22px; flex:none; }
+  .item .info{ flex:1; min-width:0; }
+  .item .info .t{ font-size:14px; }
+  .item .info .d{ font-size:12px; color:var(--text-muted); }
+  .item button{
+    flex:none; border:none; border-radius:10px; padding:8px 12px; font-size:13px; font-weight:600;
+    background:var(--accent); color:#05221b; cursor:pointer; font-family:"Manrope";
+  }
+  .item button.fraco{ background:var(--bg-panel-2); color:var(--text); border:1px solid var(--line); }
+  .item.bloqueado{ opacity:.5; }
+  .item.atual{ border-color:var(--accent); }
+
+  .vazio{ font-size:13px; color:var(--text-muted); padding:16px; text-align:center; background:var(--bg-panel); border-radius:14px; }
+
+  .rank-linha{ display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--bg-panel); border-radius:12px; margin-bottom:6px; font-size:13px; }
+  .rank-linha .pos{ font-family:"Fredoka"; width:24px; color:var(--accent); }
+
+  /* ── tabs ── */
+  nav.tabs{
+    position:fixed; left:0; right:0; bottom:0; z-index:5;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));
+    background:linear-gradient(180deg, transparent, var(--bg-deep) 30%);
+  }
+  nav.tabs .track{
+    max-width:480px; margin:0 auto; display:flex; gap:6px;
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:18px; padding:6px;
+    background-image:radial-gradient(circle at 6px 6px, rgba(79,240,200,.06) 1.5px, transparent 1.5px);
+    background-size:14px 14px;
+  }
+  nav.tabs button{
+    flex:1; padding:10px 4px; border:none; border-radius:14px; background:transparent; color:var(--text-muted);
+    font-family:"Manrope"; font-weight:600; font-size:12px; cursor:pointer;
+  }
+  nav.tabs button.ativo{ background:var(--bg-panel-2); color:var(--accent); }
+
+  .tela{ display:none; }
+  .tela.ativa{ display:block; }
+
+  .toast{
+    position:fixed; left:50%; top:14px; transform:translate(-50%,-140%);
+    background:var(--bg-panel-2); border:1px solid var(--line); color:var(--text);
+    padding:10px 16px; border-radius:12px; font-size:13px; z-index:20;
+    transition:transform .25s ease; max-width:90%; text-align:center;
+  }
+  .toast.show{ transform:translate(-50%,0); }
+
+  .carregando{ text-align:center; color:var(--text-muted); padding:40px 0; font-size:13px; }
+
+  @media (prefers-reduced-motion: reduce){
+    .captura-card{ animation:none; }
+    .linha-btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ruido"></div>
+<div class="particulas" id="particulas"></div>
+<div class="ondas">
+  <svg viewBox="0 0 800 120" preserveAspectRatio="none">
+    <path d="M0,60 C150,110 250,10 400,55 C550,100 650,20 800,60 L800,120 L0,120 Z" fill="#0c3448" opacity=".55"/>
+    <path d="M0,80 C180,40 300,110 480,70 C620,40 700,90 800,75 L800,120 L0,120 Z" fill="#0e2c3b" opacity=".8"/>
+  </svg>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="wrap" id="app">
+  <div class="carregando" id="carregando">carregando seu painel de pesca…</div>
+</div>
+
+<nav class="tabs" id="tabs" style="display:none">
+  <div class="track">
+    <button data-tela="pescar" class="ativo">Pescar</button>
+    <button data-tela="loja">Loja</button>
+    <button data-tela="bag">Bag</button>
+    <button data-tela="ranking">Ranking</button>
+  </div>
+</nav>
+
+<script>
+function boiarInit(){
+  const box = document.getElementById("particulas");
+  const n = 14;
+  for (let i=0;i<n;i++){
+    const s = document.createElement("span");
+    const tam = 3 + Math.random()*5;
+    s.style.width = s.style.height = tam + "px";
+    s.style.left = Math.random()*100 + "%";
+    s.style.bottom = "-20px";
+    s.style.animationDuration = (14 + Math.random()*14) + "s";
+    s.style.animationDelay = (Math.random()*18) + "s";
+    box.appendChild(s);
+  }
+}
+boiarInit();
+
+const params = new URLSearchParams(location.search);
+const token = params.get("token");
+const RC = { comum:"var(--comum)", incomum:"var(--incomum)", raro:"var(--raro)", epico:"var(--epico)", lendario:"var(--lendario)" };
+
+let estado = null;
+let catalogo = null;
+
+function toast(msg){
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(()=> el.classList.remove("show"), 2600);
+}
+
+async function api(path, body){
+  const opts = body
+    ? { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ token, ...body }) }
+    : { method:"GET" };
+  const url = path + (body ? "" : (path.includes("?") ? "&" : "?") + "token=" + encodeURIComponent(token));
+  const res = await fetch(url, opts);
+  const data = await res.json().catch(()=>({ ok:false, erro:"resposta inválida do servidor" }));
+  if (res.status === 401) throw new Error(data.erro || "sessão expirada");
+  return data;
+}
+
+function fmtTempo(ms){
+  const s = Math.ceil(ms/1000);
+  return s + "s";
+}
+
+function render(){
+  if (!estado) return;
+  const pct = Math.min(100, Math.round((estado.xpPesca / estado.xpProximoNivel) * 100));
+
+  document.getElementById("app").innerHTML = `
+    <div class="topo">
+      <div class="anel" style="--pct:${pct}"><span>${estado.nivel}</span></div>
+      <div class="topo-info">
+        <div class="nome">nível ${estado.nivel} de pesca</div>
+        <div class="xp">${estado.xpPesca} / ${estado.xpProximoNivel} xp</div>
+      </div>
+      <div class="saldo">💰 ${estado.saldo}</div>
+    </div>
+
+    <div class="agua">
+      <div class="local-atual">você está em</div>
+      <div class="local-nome">${estado.local.emoji} ${cap(estado.local.nome)}</div>
+      <button class="linha-btn" id="btnPescar" ${estado.podePescar ? "" : "disabled"}>
+        ${estado.podePescar ? "Puxar a linha" : fmtTempo(estado.cooldownRestanteMs)}
+        <span class="sub">${estado.vara.emoji} ${estado.vara.nome}</span>
+      </button>
+      <div class="captura-card" id="capturaCard"></div>
+    </div>
+
+    <div class="tela ativa" id="tela-pescar">
+      <section>
+        <h2>locais</h2>
+        <div class="card-lista" id="listaLocais"></div>
+      </section>
+    </div>
+
+    <div class="tela" id="tela-loja">
+      <section>
+        <h2>varas</h2>
+        <div class="card-lista" id="listaVaras"></div>
+      </section>
+      <section>
+        <h2>iscas</h2>
+        <div class="card-lista" id="listaIscas"></div>
+      </section>
+    </div>
+
+    <div class="tela" id="tela-bag">
+      <section>
+        <h2>sua bag — ${estado.bag.peixes.length}/${estado.bag.capacidade} · 💰 ${estado.bag.valorTotal}</h2>
+        <div class="card-lista" id="listaBag"></div>
+      </section>
+    </div>
+
+    <div class="tela" id="tela-ranking">
+      <section>
+        <h2>top pescadores</h2>
+        <div id="listaRanking"><div class="carregando">carregando…</div></div>
+      </section>
+    </div>
+  `;
+
+  document.getElementById("btnPescar").onclick = pescar;
+  renderLocais();
+  renderLoja();
+  renderBag();
+
+  document.getElementById("tabs").style.display = "block";
+}
+
+function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+
+function renderLocais(){
+  const box = document.getElementById("listaLocais");
+  box.innerHTML = estado.locaisDisponiveis.map(l => `
+    <div class="item ${l.liberado ? "" : "bloqueado"} ${l.id === estado.local.id ? "atual" : ""}">
+      <div class="emoji">${l.emoji}</div>
+      <div class="info">
+        <div class="t">${cap(l.nome)}</div>
+        <div class="d">${l.liberado ? (l.id === estado.local.id ? "local atual" : "toque para ir") : `precisa nível ${l.nivelMin} · vara ${l.varaMinima}`}</div>
+      </div>
+      ${l.liberado && l.id !== estado.local.id ? `<button data-local="${l.id}">Ir</button>` : ""}
+    </div>
+  `).join("");
+
+  box.querySelectorAll("button[data-local]").forEach(b => b.onclick = () => irParaLocal(b.dataset.local));
+}
+
+function renderLoja(){
+  const varas = document.getElementById("listaVaras");
+  varas.innerHTML = catalogo.varas.map(v => {
+    const tem = estado.varasCompradas.some(x => x.id === v.id);
+    const equipada = estado.vara.id === v.id;
+    return `
+      <div class="item ${equipada ? "atual" : ""}">
+        <div class="emoji">${v.emoji}</div>
+        <div class="info">
+          <div class="t">${v.nome}</div>
+          <div class="d">${equipada ? "equipada" : (tem ? "você já tem" : (v.preco === 0 ? "grátis" : v.preco + " moedas"))}</div>
+        </div>
+        ${equipada ? "" : `<button data-vara="${v.id}" class="${tem ? "fraco" : ""}">${tem ? "Equipar" : "Comprar"}</button>`}
+      </div>`;
+  }).join("");
+  varas.querySelectorAll("button[data-vara]").forEach(b => b.onclick = () => comprarVara(b.dataset.vara));
+
+  const iscas = document.getElementById("listaIscas");
+  iscas.innerHTML = catalogo.iscas.map(i => {
+    const qtd = (estado.iscas.find(x => x.id === i.id) || {}).qtd || 0;
+    return `
+      <div class="item">
+        <div class="emoji">${i.emoji}</div>
+        <div class="info">
+          <div class="t">${i.nome} ${qtd ? `· você tem ${qtd}` : ""}</div>
+          <div class="d">${i.preco} moedas cada</div>
+        </div>
+        <button data-isca="${i.id}">+5</button>
+      </div>`;
+  }).join("");
+  iscas.querySelectorAll("button[data-isca]").forEach(b => b.onclick = () => comprarIsca(b.dataset.isca));
+}
+
+function renderBag(){
+  const box = document.getElementById("listaBag");
+  if (!estado.bag.peixes.length){
+    box.innerHTML = `<div class="vazio">sua bag está vazia. pesque para começar!</div>`;
+    return;
+  }
+  box.innerHTML = estado.bag.peixes.map((p, i) => `
+    <div class="item">
+      <div class="emoji">${p.emoji}</div>
+      <div class="info">
+        <div class="t" style="color:${RC[p.raridade]||'inherit'}">${p.nome}</div>
+        <div class="d">${p.peso}kg · 💰 ${p.valor}</div>
+      </div>
+      <button data-vender="${i}" class="fraco">Vender</button>
+    </div>
+  `).join("") + `<button id="venderTudo" style="margin-top:10px;width:100%;padding:12px;border:none;border-radius:12px;background:var(--warm);color:#2a1600;font-weight:700;font-family:Fredoka;cursor:pointer">Vender tudo por ${estado.bag.valorTotal}</button>`;
+
+  box.querySelectorAll("button[data-vender]").forEach(b => b.onclick = () => vender(Number(b.dataset.vender)));
+  document.getElementById("venderTudo").onclick = () => vender("tudo");
+}
+
+async function renderRanking(){
+  const data = await api("/api/pesca/ranking");
+  const box = document.getElementById("listaRanking");
+  if (!data.ranking?.length){ box.innerHTML = `<div class="vazio">ninguém pescou nada ainda.</div>`; return; }
+  const medalha = ["🥇","🥈","🥉"];
+  box.innerHTML = data.ranking.map((u,i) => `
+    <div class="rank-linha">
+      <div class="pos">${medalha[i]||(i+1)}</div>
+      <div style="flex:1">${u.jid.split("@")[0]}</div>
+      <div style="color:var(--text-muted)">nível ${u.nivel} · ${u.totalPescarias} pescas</div>
+    </div>
+  `).join("");
+}
+
+async function pescar(){
+  const btn = document.getElementById("btnPescar");
+  btn.disabled = true;
+  try{
+    const data = await api("/api/pesca/pescar", {});
+    estado = data.estado;
+    mostrarCaptura(data.resultado);
+    render();
+    if (!data.resultado.ok) toast(mensagemErro(data.resultado));
+  } catch(e){ toast(e.message); }
+}
+
+function mensagemErro(r){
+  if (r.motivo === "cooldown") return "a isca ainda tá na água, espera um pouco";
+  if (r.motivo === "bag_cheia") return "sua bag encheu — venda uns peixes primeiro";
+  if (r.motivo === "local_bloqueado") return "você não pode pescar aqui ainda";
+  return "não deu pra pescar agora";
+}
+
+function mostrarCaptura(r){
+  if (!r.ok) return;
+  const c = r.captura;
+  const card = document.getElementById("capturaCard");
+  if (!card) return;
+  card.style.setProperty("--rc", RC[c.raridade] || "var(--line)");
+  card.innerHTML = `
+    <div class="linha1">
+      <div class="emoji">${c.emoji}</div>
+      <div>
+        <div class="nome">${c.nome}</div>
+        <div class="raridade">${c.raridade}${r.subiuDeNivel ? ` · subiu para o nível ${r.nivel}!` : ""}</div>
+      </div>
+    </div>
+    <div class="stats"><span>⚖️ ${c.peso}kg</span><span>💰 ${c.valor} moedas</span><span>✨ +${r.xpGanho} xp</span></div>
+  `;
+  card.classList.remove("show"); void card.offsetWidth; card.classList.add("show");
+}
+
+async function irParaLocal(id){
+  try{
+    const data = await api("/api/pesca/local", { local: id });
+    if (!data.resultado.ok){ toast("esse local ainda está bloqueado pra você"); return; }
+    estado = data.estado; render();
+    toast(`agora você está pescando em ${data.resultado.local.nome}`);
+  } catch(e){ toast(e.message); }
+}
+
+async function comprarVara(id){
+  try{
+    const data = await api("/api/pesca/comprar-vara", { id });
+    if (!data.resultado.ok){ toast(data.resultado.motivo === "saldo" ? "moedas insuficientes" : "não deu pra comprar"); return; }
+    estado = data.estado; render();
+    toast(`${data.resultado.vara.nome} equipada!`);
+  } catch(e){ toast(e.message); }
+}
+
+async function comprarIsca(id){
+  try{
+    const data = await api("/api/pesca/comprar-isca", { id, qtd: 5 });
+    if (!data.resultado.ok){ toast(data.resultado.motivo === "saldo" ? "moedas insuficientes" : "não deu pra comprar"); return; }
+    estado = data.estado; render();
+    toast(`comprou 5x ${data.resultado.isca.nome}`);
+  } catch(e){ toast(e.message); }
+}
+
+async function vender(indice){
+  try{
+    const data = await api("/api/pesca/vender", { indice });
+    if (!data.resultado.ok){ toast("não foi possível vender"); return; }
+    estado = data.estado; render();
+    const ganho = data.resultado.total ?? data.resultado.peixe?.valor;
+    toast(`vendido por ${ganho} moedas`);
+  } catch(e){ toast(e.message); }
+}
+
+document.getElementById("tabs").addEventListener("click", e => {
+  const btn = e.target.closest("button[data-tela]");
+  if (!btn) return;
+  document.querySelectorAll("nav.tabs button").forEach(b => b.classList.remove("ativo"));
+  btn.classList.add("ativo");
+  document.querySelectorAll(".tela").forEach(t => t.classList.remove("ativa"));
+  const alvo = document.getElementById("tela-" + btn.dataset.tela);
+  if (alvo) alvo.classList.add("ativa");
+  if (btn.dataset.tela === "ranking") renderRanking();
+});
+
+async function iniciar(){
+  if (!token){
+    document.getElementById("app").innerHTML = `<div class="carregando">link inválido — gera um novo com #painelpesca no whatsapp</div>`;
+    return;
+  }
+  try{
+    const [estadoRes, catalogoRes] = await Promise.all([
+      api("/api/pesca/estado"),
+      api("/api/pesca/catalogo")
+    ]);
+    estado = estadoRes.estado;
+    catalogo = catalogoRes;
+    render();
+  } catch(e){
+    document.getElementById("app").innerHTML = `<div class="carregando">${e.message}</div>`;
+  }
+}
+
+iniciar();
+</script>
+</body>
+</html>

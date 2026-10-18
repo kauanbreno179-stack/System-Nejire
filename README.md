@@ -534,9 +534,9 @@ Esta versão é **gratuita e ofuscada**. A versão **desofuscada** tem o código
 | | |
 |---|---|
 | 👤 **Criador** | **Lopes** (by Lopes) |
-| 👩‍💻 **Colaboradora** | [GabsBillie](https://github.com/GabsBillie) |
+| 👩‍💻 **Colaborador** | [GabsBillie](https://github.com/GabsBillie) |
 | 🎨 **Design das artes** | **Mikkira** |
-| 📚 **Base** | [Baileys](https://github.com/WhiskeySockets/Baileys) (`@systemzero/baileys`) |
+| 📚 **Base** | [Baileys](https://www.npmjs.com/package/@systemzero/baileys) (`@systemzero/baileys`) |
 | 💬 **Suporte** | [5567998229189](https://wa.me/5567998229189) |
 | 📢 **Canal** | [Seguir o canal](https://whatsapp.com/channel/0029Vb8rVXsDOQIWsbKuAd34) |
 | 📄 **Licença** | MIT |

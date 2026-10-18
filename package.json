@@ -1,6 +1,6 @@
 {
   "name": "system-nejire",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Bot de WhatsApp inspirado na Nejire com identidade rosa aesthetic completa",
   "main": "connect.js",
   "scripts": {
